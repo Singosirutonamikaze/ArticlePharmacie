@@ -1,7 +1,7 @@
 [
     {
         "nom": "Amoxicilline (800)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Amoxicilline.jpg",
         "description": "Un antibiotique de la classe des pénicillines, efficace contre de nombreuses infections bactériennes.",
         "utilisations": [
             "Infections respiratoires",
@@ -13,7 +13,7 @@
     },
     {
         "nom": "Biba Sirop (2400)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Biba Sirop.jpg",
         "description": "Un médicament généralement utilisé pour traiter la toux et les maladies respiratoires, souvent à base d'extraits de plantes ou de principes actifs pour apaiser la gorge.",
         "utilisations": [
             "Toux sèche",
@@ -23,7 +23,7 @@
     },
     {
         "nom": "Cac (1000) (Calcium)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image": "ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Cac (1000) (Calcium).webp",
         "description": "Complément alimentaire contenant du calcium, essentiel pour la santé osseuse et dentaire.",
         "utilisations": [
             "Prévenir ou traiter l'ostéoporose",
@@ -33,7 +33,7 @@
     },
     {
         "nom": "Fedal Sirop (2800)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Fedal Sirop.jpg",
         "description": "Médicament utilisé pour le traitement des infections et des inflammations.",
         "utilisations": [
             "Maladies respiratoires",
@@ -43,7 +43,7 @@
     },
     {
         "nom": "Ibumol cp B130 (2600)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Ibumol.jpg",
         "description": "Médicament anti-inflammatoire non stéroïdien (AINS), utilisé pour soulager la douleur et réduire la fièvre.",
         "utilisations": [
             "Douleurs légères à modérées (maux de tête, douleurs dentaires, douleurs musculaires)",
@@ -62,7 +62,7 @@
     },
     {
         "nom": "Litacold cp B120 (4500)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Litacold cp B120 (4500).png",
         "description": "Médicament combiné souvent utilisé pour traiter les symptômes du rhume et de la grippe.",
         "utilisations": [
             "Nez qui coule",
@@ -72,7 +72,7 @@
     },
     {
         "nom": "Parafiz cp (2700)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Parafiz cp(2700).webp",
         "description": "Médicament généralement utilisé comme antalgique et antipyrétique.",
         "utilisations": [
             "Douleurs",
@@ -82,7 +82,7 @@
     },
     {
         "nom": "Apramol cp (1025)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Apramol cp (1025).webp",
         "description": "Antalgique utilisé pour soulager la douleur et réduire la fièvre.",
         "utilisations": [
             "Douleurs légères à modérées (telles que douleurs de tête, dentaires ou musculaires)"
@@ -90,7 +90,7 @@
     },
     {
         "nom": "Artefan (2100)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Artefan (2100).webp",
         "description": "Médicament généralement utilisé pour le traitement des infections à virus ou des infections bactériennes.",
         "utilisations": [
             "Rhumes",
@@ -152,7 +152,7 @@
     },
     {
         "nom": "Omeprazole (20 mg)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Omeprazole (20 mg).jpeg.webp",
         "description": "Inhibiteur de la pompe à protons, utilisé pour réduire la production d'acide gastrique.",
         "utilisations": [
             "Ulcères gastroduodénaux",
@@ -161,7 +161,7 @@
     },
     {
         "nom": "Amoxicilline + Acide Clavulanique (875/125 mg)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Amocilline + Acide Clavulanique (875/125 mg).webp",
         "description": "Antibiotique combiné pour traiter les infections bactériennes.",
         "utilisations": [
             "Infections des voies respiratoires",
@@ -171,7 +171,7 @@
     },
     {
         "nom": "Cetirizine + Pseudoéphédrine",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/citrizine + pseudoéphédrine.jpeg",
         "description": "Combiné antihistaminique et décongestionnant.",
         "utilisations": [
             "Allergies",
