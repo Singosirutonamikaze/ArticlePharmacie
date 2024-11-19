@@ -12,8 +12,6 @@
 6. [Contributions](#contributions)
 7. [Licences](#licences)
 
----
-
 ## Aperçu du Projet
 
 Le projet **ArticlePharmacie** vise à simplifier la gestion de la vente de produits pharmaceutiques dans un environnement numérique. Il permet aux utilisateurs de consulter les informations produits, gérer les stocks et assurer un suivi en temps réel des ventes, afin d’améliorer l'efficacité et la précision des opérations pharmaceutiques.
@@ -29,9 +27,8 @@ Le projet **ArticlePharmacie** vise à simplifier la gestion de la vente de prod
 ## Installation
 
 Clonez le dépôt :
-   git clone "https://github.com/username/ArticlePharmacie.git"
+   git clone "<https://github.com/username/ArticlePharmacie.git>"
    cd ArticlePharmacie
-
 
 ## Structure de la Base de Données
 
@@ -54,7 +51,3 @@ Les contributions sont les bienvenues ! Veuillez consulter le fichier `CONTRIBUT
 ## Licences
 
 Ce projet est sous licence MIT. Consultez le fichier `LICENSE` pour plus de détails.
-
----
-
-Avec ce README, les utilisateurs auront une vue d’ensemble complète de **ArticlePharmacie** et pourront rapidement commencer à utiliser et contribuer au projet.

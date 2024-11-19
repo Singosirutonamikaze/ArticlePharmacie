@@ -62,7 +62,7 @@
     },
     {
         "nom": "Litacold cp B120 (4500)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Litacold cp B120.png",
         "description": "Médicament combiné souvent utilisé pour traiter les symptômes du rhume et de la grippe.",
         "utilisations": [
             "Nez qui coule",
@@ -110,7 +110,7 @@
     },
     {
         "nom": "Apdyl H (1500)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Apdyl H (1500).jpg",
         "description": "Médicament utilisé pour traiter les symptômes allergiques et inflammatoires.",
         "utilisations": [
             "Allergies",
