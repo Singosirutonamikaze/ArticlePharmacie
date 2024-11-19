@@ -1,6 +1,7 @@
 [
     {
         "nom": "Amoxicilline (800)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Un antibiotique de la classe des pénicillines, efficace contre de nombreuses infections bactériennes.",
         "utilisations": [
             "Infections respiratoires",
@@ -12,6 +13,7 @@
     },
     {
         "nom": "Biba Sirop (2400)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Un médicament généralement utilisé pour traiter la toux et les maladies respiratoires, souvent à base d'extraits de plantes ou de principes actifs pour apaiser la gorge.",
         "utilisations": [
             "Toux sèche",
@@ -21,6 +23,7 @@
     },
     {
         "nom": "Cac (1000) (Calcium)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Complément alimentaire contenant du calcium, essentiel pour la santé osseuse et dentaire.",
         "utilisations": [
             "Prévenir ou traiter l'ostéoporose",
@@ -30,6 +33,7 @@
     },
     {
         "nom": "Fedal Sirop (2800)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Médicament utilisé pour le traitement des infections et des inflammations.",
         "utilisations": [
             "Maladies respiratoires",
@@ -39,6 +43,7 @@
     },
     {
         "nom": "Ibumol cp B130 (2600)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Médicament anti-inflammatoire non stéroïdien (AINS), utilisé pour soulager la douleur et réduire la fièvre.",
         "utilisations": [
             "Douleurs légères à modérées (maux de tête, douleurs dentaires, douleurs musculaires)",
@@ -47,6 +52,7 @@
     },
     {
         "nom": "Limmox cp (1200)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Antibiotique utilisé pour traiter les infections bactériennes.",
         "utilisations": [
             "Infections des voies respiratoires",
@@ -56,6 +62,7 @@
     },
     {
         "nom": "Litacold cp B120 (4500)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Médicament combiné souvent utilisé pour traiter les symptômes du rhume et de la grippe.",
         "utilisations": [
             "Nez qui coule",
@@ -65,6 +72,7 @@
     },
     {
         "nom": "Parafiz cp (2700)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Médicament généralement utilisé comme antalgique et antipyrétique.",
         "utilisations": [
             "Douleurs",
@@ -74,6 +82,7 @@
     },
     {
         "nom": "Apramol cp (1025)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Antalgique utilisé pour soulager la douleur et réduire la fièvre.",
         "utilisations": [
             "Douleurs légères à modérées (telles que douleurs de tête, dentaires ou musculaires)"
@@ -81,6 +90,7 @@
     },
     {
         "nom": "Artefan (2100)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Médicament généralement utilisé pour le traitement des infections à virus ou des infections bactériennes.",
         "utilisations": [
             "Rhumes",
@@ -90,6 +100,7 @@
     },
     {
         "nom": "Pinko (1100)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Médicament efficace contre les allergies et les symptômes associés.",
         "utilisations": [
             "Allergies",
@@ -99,6 +110,7 @@
     },
     {
         "nom": "Apdyl H (1500)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Médicament utilisé pour traiter les symptômes allergiques et inflammatoires.",
         "utilisations": [
             "Allergies",
@@ -108,6 +120,7 @@
     },
     {
         "nom": "Paracetamol (500 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Médicament anti-inflammatoire non stéroïdien, utilisé pour soulager la douleur et la fièvre.",
         "utilisations": [
             "Maux de tête",
@@ -118,6 +131,7 @@
     },
     {
         "nom": "Ibuprofène (400 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "AINS utilisé pour réduire la douleur, l'inflammation et la fièvre.",
         "utilisations": [
             "Douleurs musculaires",
@@ -128,6 +142,7 @@
     },
     {
         "nom": "Cetrizine (10 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Antihistaminique utilisé pour soulager les symptômes d'allergies.",
         "utilisations": [
             "Rhinites allergiques",
@@ -137,6 +152,7 @@
     },
     {
         "nom": "Omeprazole (20 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Inhibiteur de la pompe à protons, utilisé pour réduire la production d'acide gastrique.",
         "utilisations": [
             "Ulcères gastroduodénaux",
@@ -145,6 +161,7 @@
     },
     {
         "nom": "Amoxicilline + Acide Clavulanique (875/125 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Antibiotique combiné pour traiter les infections bactériennes.",
         "utilisations": [
             "Infections des voies respiratoires",
@@ -154,6 +171,7 @@
     },
     {
         "nom": "Cetirizine + Pseudoéphédrine",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
         "description": "Combiné antihistaminique et décongestionnant.",
         "utilisations": [
             "Allergies",
@@ -162,6 +180,7 @@
     },
     {
         "nom": "Montélukast (10 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Montélukast.jpg",
         "description": "Antagoniste des récepteurs des leucotriènes, utilisé pour prévenir l'asthme.",
         "utilisations": [
             "Asthme",
@@ -170,6 +189,7 @@
     },
     {
         "nom": "Ranitidine (150 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Ranitidine.jpg",
         "description": "Médicament utilisé pour réduire l'acidité gastrique.",
         "utilisations": [
             "Ulcères",
@@ -178,6 +198,7 @@
     },
     {
         "nom": "Simvastatine (20 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Simvastatine.jpg",
         "description": "Médicament hypolipémiant utilisé pour abaisser le taux de cholestérol.",
         "utilisations": [
             "Hypercholestérolémie",
@@ -186,6 +207,7 @@
     },
     {
         "nom": "Metformine (500 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Metformine.jpg",
         "description": "Médicament antidiabétique utilisé pour traiter le diabète de type 2.",
         "utilisations": [
             "Diabète de type 2",
@@ -194,6 +216,7 @@
     },
     {
         "nom": "Lorazépam (1 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Lorazépam.jpg",
         "description": "Benzodiazépine utilisée pour l'anxiété et les troubles du sommeil.",
         "utilisations": [
             "Anxiété",
@@ -202,6 +225,7 @@
     },
     {
         "nom": "Clopidogrel (75 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Clopidogrel.jpg",
         "description": "Médicament antiplaquettaire utilisé pour prévenir les caillots sanguins.",
         "utilisations": [
             "Prévention des accidents vasculaires cérébraux",
@@ -210,6 +234,7 @@
     },
     {
         "nom": "Lansoprazole (30 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Lansoprazole.jpg",
         "description": "Inhibiteur de la pompe à protons pour réduire la production d'acide gastrique.",
         "utilisations": [
             "Ulcères",
@@ -218,6 +243,7 @@
     },
     {
         "nom": "Furosemide (40 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Furosemide.jpg",
         "description": "Diurétique utilisé pour réduire la rétention d'eau.",
         "utilisations": [
             "Hypertension",
@@ -226,6 +252,7 @@
     },
     {
         "nom": "Amlodipine (5 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Amlodipine.jpg",
         "description": "Antihypertenseur utilisé pour traiter l'hypertension et l'angine de poitrine.",
         "utilisations": [
             "Hypertension",
@@ -234,6 +261,7 @@
     },
     {
         "nom": "Prednisone (20 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Prednisone.jpg",
         "description": "Corticostéroïde utilisé pour traiter l'inflammation.",
         "utilisations": [
             "Maladies inflammatoires",
@@ -242,6 +270,7 @@
     },
     {
         "nom": "Dexaméthasone (4 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Dexaméthasone.jpg",
         "description": "Corticostéroïde utilisé pour son effet anti-inflammatoire.",
         "utilisations": [
             "Allergies",
@@ -251,6 +280,7 @@
     },
     {
         "nom": "Erythromycine (500 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Eythromycine.jpg",
         "description": "Antibiotique macrolide efficace contre divers types d'infections bactériennes.",
         "utilisations": [
             "Infections respiratoires",
@@ -259,6 +289,7 @@
     },
     {
         "nom": "Tétracycline (250 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Tétracycline.jpg",
         "description": "Antibiotique utilisé contre diverses infections bactériennes.",
         "utilisations": [
             "Acné",
@@ -268,6 +299,7 @@
     },
     {
         "nom": "Métronidazole (500 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Métronidazole.jpg",
         "description": "Antibiotique utilisé contre certaines infections parasitaires et bactériennes.",
         "utilisations": [
             "Infections gastro-intestinales",
@@ -276,6 +308,7 @@
     },
     {
         "nom": "Fluconazole (150 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Fluconazole.jpg",
         "description": "Antifongique utilisé pour traiter les infections fongiques, y compris celles à levures.",
         "utilisations": [
             "Candidoses",
@@ -284,6 +317,7 @@
     },
     {
         "nom": "Levothyroxine (50 mcg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Levothyroxine.jpg",
         "description": "Hormone thyroïdienne utilisée pour traiter l'hypothyroïdie.",
         "utilisations": [
             "Hypothyroïdie",
@@ -292,6 +326,7 @@
     },
     {
         "nom": "Sertraline (50 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Sertraline.jpg",
         "description": "Antidépresseur (inhibiteur sélectif de la recapture de la sérotonine).",
         "utilisations": [
             "Dépression",
@@ -301,6 +336,7 @@
     },
     {
         "nom": "Zolpidem (10 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Zolpidem.jpg",
         "description": "Médicament utilisé pour traiter l'insomnie à court terme.",
         "utilisations": [
             "Insomnie"
@@ -308,6 +344,7 @@
     },
     {
         "nom": "Propranolol (40 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Propranolol.jpg",
         "description": "Bêta-bloquant utilisé pour les maladies cardiovasculaires.",
         "utilisations": [
             "Hypertension",
@@ -317,6 +354,7 @@
     },
     {
         "nom": "Loratadine (10 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Loratadine.jpg",
         "description": "Antihistaminique utilisé pour soulager les symptômes allergiques.",
         "utilisations": [
             "Rhinite allergique",
@@ -325,6 +363,7 @@
     },
     {
         "nom": "Salmétérol (50 mcg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Salmétérol.jpg",
         "description": "Bronchodilatateur utilisé pour le traitement de l'asthme et de la BPCO.",
         "utilisations": [
             "Asthme",
@@ -333,6 +372,7 @@
     },
     {
         "nom": "Ciprofloxacine (500 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Ciprofloxacine.jpg",
         "description": "Antibiotique fluoroquinolone utilisé contre diverses infections bactériennes.",
         "utilisations": [
             "Infections urinaires",
@@ -342,6 +382,7 @@
     },
     {
         "nom": "Prazosine (1 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Prazosine.jpg",
         "description": "Médicament antihypertenseur qui agit en relaxant les vaisseaux sanguins.",
         "utilisations": [
             "Hypertension",
@@ -350,6 +391,7 @@
     },
     {
         "nom": "Tamsulosine (0,4 mg)",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Tamsulosine.jpg",
         "description": "Médicament utilisé pour traiter les symptômes de l'hyperplasie bénigne de la prostate.",
         "utilisations": [
             "Difficultés de miction",
