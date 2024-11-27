@@ -62,7 +62,7 @@
     },
     {
         "nom": "Litacold cp B120 (4500)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Litacold cp B120 (4500).png",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Litacold cp B120.png",
         "description": "Médicament combiné souvent utilisé pour traiter les symptômes du rhume et de la grippe.",
         "utilisations": [
             "Nez qui coule",
@@ -110,7 +110,7 @@
     },
     {
         "nom": "Apdyl H (1500)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Apdyl H (1500).jpg",
         "description": "Médicament utilisé pour traiter les symptômes allergiques et inflammatoires.",
         "utilisations": [
             "Allergies",
@@ -120,7 +120,7 @@
     },
     {
         "nom": "Paracetamol (500 mg)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Paracetamol (500 mg).jpg.webp",
         "description": "Médicament anti-inflammatoire non stéroïdien, utilisé pour soulager la douleur et la fièvre.",
         "utilisations": [
             "Maux de tête",
@@ -131,7 +131,7 @@
     },
     {
         "nom": "Ibuprofène (400 mg)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Ibuprofène (400 mg).jpg.webp",
         "description": "AINS utilisé pour réduire la douleur, l'inflammation et la fièvre.",
         "utilisations": [
             "Douleurs musculaires",
@@ -142,7 +142,7 @@
     },
     {
         "nom": "Cetrizine (10 mg)",
-        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/",
+        "image":"ProjetBaseDeDonnées/ArticlePharmacie/siteWeb/assets/images/Cetrizine (10 mg).webp",
         "description": "Antihistaminique utilisé pour soulager les symptômes d'allergies.",
         "utilisations": [
             "Rhinites allergiques",
