@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home_page nav{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: 2rem auto ;
+    border: 1px solid red;
+    padding: 8px;
+    backdrop-filter: blur(15px);
+}
+.home_page nav .search__user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.home_page nav .lien_de_navigation ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+.home_page nav .lien_de_navigation ul li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+
+}
+.home_page nav .search_input{
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    gap: 2px ;
+    border: 1px solid black;
+    padding: 2px 10px;
+    border-radius: 120px;
+    background: #fff;
+}
+.home_page nav .search_input input{
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+    width: 12rem;
+}
+
+.home_page nav .user_acount{
+    background: rgb(211, 209, 209);
+    padding: 13px 15px;
+    border-radius: 50%;
+}
+.home_page nav .user_acount i{
+    font-size: 16px;
+}
+.home_page .home_page_body{
+    height: 100vh;
+    background-image: url(/ArticlePharmacie/assets/images/homePageImage.jpeg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+}
