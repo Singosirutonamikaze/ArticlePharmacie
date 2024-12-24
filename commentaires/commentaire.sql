@@ -1,0 +1,46 @@
+-- COMMENTAIRE EXPLICATIF : REQUÊTES SQL POUR LE PROJET
+-- 
+-- Les requêtes SQL seront réalisées pour interagir avec la base de données PostgreSQL.
+-- L'objectif est de manipuler les données relatives aux questions, réponses, et autres informations
+-- liées à l'histoire de l'informatique et aux systèmes d'exploitation.
+--
+-- 1. Connexion à la base de données PostgreSQL :
+--    Nous utiliserons les fonctionnalités PostgreSQL pour nous connecter à la base de données.
+--    Cela peut être réalisé via des bibliothèques comme 'psql' ou 'pg-promise' pour Node.js, 
+--    ou avec des outils comme 'pgAdmin' pour une gestion manuelle.
+--
+-- 2. Structure de la base de données :
+--    Nous aurons une table pour stocker les questions et leurs réponses. Chaque question sera 
+--    associée à une catégorie (informatique, systèmes d'exploitation, figures historiques, etc.)
+--
+--    Exemple de table pour les questions :
+--    CREATE TABLE questions (
+--        id SERIAL PRIMARY KEY,       -- ID unique pour chaque question
+--        question TEXT NOT NULL,      -- Le texte de la question
+--        answer TEXT NOT NULL,        -- La réponse associée
+--        category VARCHAR(255)        -- La catégorie à laquelle appartient la question
+--    );
+--
+-- 3. Exemple de requêtes SQL pour la gestion des données :
+--
+--    a. Ajouter une nouvelle question dans la base :
+--    INSERT INTO questions (question, answer, category)
+--    VALUES ('Premier ancêtre connu des ordinateurs, utilisé pour des calculs astronomiques', 'Machine d\'Anticythère', 'Histoire de l\'informatique');
+--
+--    b. Sélectionner toutes les questions de la catégorie 'Histoire de l\'informatique' :
+--    SELECT * FROM questions WHERE category = 'Histoire de l\'informatique';
+--
+--    c. Mettre à jour la réponse d'une question :
+--    UPDATE questions SET answer = 'Nouvelle réponse' WHERE id = 1;
+--
+--    d. Supprimer une question en fonction de son ID :
+--    DELETE FROM questions WHERE id = 10;
+--
+-- 4. Requêtes spécifiques liées à PostgreSQL :
+--    - PostgreSQL supporte des fonctionnalités avancées comme les requêtes JSONB, ce qui pourrait être utilisé
+--      si nous décidons de stocker des données complexes comme des listes ou des objets au format JSON.
+--    - PostgreSQL permet aussi des recherches full-text pour rechercher des termes spécifiques dans les questions.
+--    - Nous utiliserons des transactions pour garantir l'intégrité des données lors des opérations complexes.
+--
+-- Ces requêtes doivent être optimisées pour fonctionner de manière fluide avec la base de données PostgreSQL,
+-- en prenant en compte les bonnes pratiques pour éviter les erreurs de performance (indexation, transactions, etc.).
