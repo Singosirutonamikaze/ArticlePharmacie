@@ -30,7 +30,13 @@
     text-transform: uppercase;
     text-decoration: none;
     color: black;
+    transition: width 0.3s ease;
+    font-weight: bold;
+}
 
+.home_page nav .lien_de_navigation ul li a:hover{
+    color: rgb(36, 211, 36);
+    width: 100%;
 }
 .home_page nav .search_input{
     display: flex ;
@@ -49,18 +55,36 @@
     width: 12rem;
 }
 
-.home_page nav .user_acount{
-    background: rgb(211, 209, 209);
-    padding: 13px 15px;
-    border-radius: 50%;
+.home_page nav .user_acount button{
+    display: flex;
+    padding: 10px 25px;
+    outline: none;
+    border: solid 1px #000;
+    border-radius: 120px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.home_page nav .user_acount button:hover{
+    background: rgb(36, 211, 36);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border: solid 1px rgb(36, 211, 36);
 }
 .home_page nav .user_acount i{
     font-size: 16px;
 }
 .home_page .home_page_body{
     height: 100vh;
-    background-image: url(/ArticlePharmacie/assets/images/homePageImage.jpeg);
+    background-image: url(/assets/images/homePageImage.jpeg);
     background-repeat:no-repeat;
     background-size: cover;
     background-position: center;
+}
+.home_page .home_page_body h1{
+    text-align: center;
+    padding: 10rem 0;
+    text-transform: uppercase;
+    font-size: 40px;
 }
