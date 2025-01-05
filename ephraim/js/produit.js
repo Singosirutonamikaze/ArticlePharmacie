@@ -130,7 +130,7 @@ function getProducts(piece) {
 
             const input = document.createElement("input");
             input.type = "number";
-            input.min = "1";
+            input.min = "0";
             input.max = "25";
             input.value = "1";
             divInput.appendChild(input);
@@ -291,7 +291,7 @@ function getProducts(piece) {
 
             const input = document.createElement("input");
             input.type = "number";
-            input.min = "1";
+            input.min = "0";
             input.max = "25";
             input.value = "1";
             divInput.appendChild(input);
@@ -450,7 +450,7 @@ function getProducts(piece) {
 
             const input = document.createElement("input");
             input.type = "number";
-            input.min = "1";
+            input.min = "0";
             input.max = "25";
             input.value = "1";
             divInput.appendChild(input);
