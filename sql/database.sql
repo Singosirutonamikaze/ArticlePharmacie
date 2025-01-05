@@ -32,8 +32,8 @@ CREATE TABLE Produit (
     Description TEXT,
     Prix DECIMAL(10, 2),
     Stock INT,
-    ID_Catégorie INT,
-    FOREIGN KEY (ID_Catégorie) REFERENCES Catégorie(ID_Catégorie)
+    ID_Categorie INT,
+    FOREIGN KEY (ID_Categorie) REFERENCES Catégorie(ID_Categorie)
 );
 
 --Commande de creation de la table categorie--
@@ -47,7 +47,7 @@ CREATE TABLE Categorie (
 --Commande de creation de la table Employe--
 
 CREATE TABLE Employe (
-    ID_Employé INT PRIMARY KEY,
+    ID_Employe INT PRIMARY KEY,
     Nom VARCHAR(50),
     Prenom VARCHAR(50),
     Email VARCHAR(100),

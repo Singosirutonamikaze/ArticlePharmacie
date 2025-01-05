@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Déclaration du type de document en HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Définit le jeu de caractères en UTF-8, assurant la prise en charge des caractères spéciaux -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configuration de la mise à l'échelle pour une meilleure adaptabilité sur tous types d'écrans (ordinateurs, tablettes, mobiles) -->
+
+    <!-- Titre de la page, qui apparaîtra dans l'onglet du navigateur -->
+    <title>ArticlePharmacie_Admin</title>
+
+    <!-- Lien vers la feuille de style CSS principale pour les styles généraux de la page -->
+    <link rel="stylesheet" href="../Admin/css/Admin.css">
+    <link rel="stylesheet" href="../Admin/css/uploadimage.css">
+
+    <!-- Lien vers le fichier JavaScript principal pour gérer les interactions et les fonctions dynamiques de la page -->
+    <script src="../Admin/js/appAdmin.js" defer></script>
+    <script src="../Admin/js/formulaire.js" defer></script>
+
+    <!-- Inclusion des polices Google Fonts pour styliser le texte -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Liens vers des logos populaires (par exemple, font-awesome pour des icônes de réseaux sociaux, de recherche, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Corps de la page de login. -->
+    <main>
+        <!-- Conteneur du header -->
+        <header>
+            <h1>Admin</h1>
+            <nav>
+                <!-- Boutons pour les actions administratives -->
+                <button class="BtnUser" id="userProfile" title="Cliquer pour voir le profil utilisateur">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-user" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+                <button class="BtnUser" id="addDrug" title="Veuillez cliquer pour ajouter un médicament">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-plus-circle" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+                <button class="BtnUser" id="DelDrug" title="Veuillez cliquer pour supprimer un médicament">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-trash-alt" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+                <button class="BtnUser" id="UpdateDRUG" title="Veuillez cliquer pour mettre à jour un médicament">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-edit" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+                <button class="BtnUser" id="notification" title="Veuillez cliquer pour voir les notifications">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-bell" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Remplacer les sections par des divs -->
+        <!-- Conteneur pour le premier groupe d'éléments -->
+        <div class="container" id="addElement1">
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+        </div>
+
+        <!-- Conteneur pour le deuxième groupe d'éléments -->
+        <div class="container" id="addElement2">
+            <!-- Modal Container -->
+            <div class="modal-container">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <span class="modal-title" style="margin-left: 2%;">Nouveau Produit</span>
+                            <button class="icon-button" type="button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                    <path
+                                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Première partie -->
+                            <div class="form-section">
+                                <div class="form-group">
+                                    <label class="form-label">Nom du Produit<span style="color: red;">*</span></label>
+                                    <input class="form-input" type="text" placeholder="Entrez le nom du projet"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Prix du Produit <span style="color: red;">*</span></label>
+                                    <input class="form-input" type="text" placeholder="Entrez le prix du produit"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Image du Produit<span style="color: red;">*</span></label>
+                                    <input class="form-input" type="file" accept="image/*" required id="file-input">
+                                    <p class="form-description">Ajoutez une image pour votre projet (format JPEG/PNG).
+                                    </p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Descriptions du Produit <span
+                                            style="color: red;">*</span></label>
+                                    <textarea class="form-input form-input--textarea"
+                                        placeholder="Fournissez une description complète du projet" required></textarea>
+                                    <p class="form-description">Donnez une description claire pour que tout le monde
+                                        comprenne son but.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Maladies du Produit <span
+                                            style="color: red;">*</span></label>
+                                    <input class="form-input" type="text" placeholder="Listez les maladies concernées"
+                                        required>
+                                    <p class="form-description">Séparez les maladies par des virgules (ex. : rhume,
+                                        grippe).</p>
+                                </div>
+                            </div>
+
+                            <!-- Deuxième partie -->
+                            <div class="form-section">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" style="margin-bottom: 1%;">Utilisations du
+                                            Produit<span style="color: red;">*</span></label>
+                                        <textarea class="form-input form-input--textarea"
+                                            placeholder="Indiquez les utilisations principales" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" style="margin-bottom: 1%;">Posologie du Produit<span
+                                                style="color: red;">*</span></label>
+                                        <textarea class="form-input form-input--textarea"
+                                            placeholder="Ajoutez des détails sur la posologie" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" style="margin-bottom: 1%;">Précautions du Produit<span
+                                                style="color: red;">*</span></label>
+                                        <textarea class="form-input form-input--textarea"
+                                            placeholder="Ajoutez des précautions importantes"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" style="margin-bottom: 3%;">Liens de Référence du
+                                            Produit<span style="color: red;">*</span></label>
+                                        <input class="form-input" type="url"
+                                            placeholder="Ajoutez des liens de référence">
+                                        <p class="form-description">Ajoutez des liens utiles pour plus d'informations.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="primary-button" type="submit">Ajouter le produit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteneur pour le troisième groupe d'éléments -->
+        <div class="container" id="addElement3">
+            <!-- Avertissement général -->
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-general">
+                <!-- Contenu de confirmation -->
+                <div class="confirm-div">
+                    <p>
+                        <!-- Titre principal de l'avertissement -->
+                        <strong>The “Horror Games” category will be eliminated.</strong>
+                        <!-- Sous-titre pour poser une question à l'utilisateur -->
+                        <span>Are you sure you want to continue?</span>
+                    </p>
+                    <!-- Conteneur pour les boutons -->
+                    <div class="modals-container">
+                        <!-- Bouton pour annuler l'action -->
+                        <button class="red-btn">Cancel</button>
+                        <!-- Bouton pour accepter l'action -->
+                        <button class="green-btn">Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+/* --- Variables --- */
+:root {
+    --primary-color: #007dab;
+    --secondary-color: #181818;
+    --background-color: #7103030b;
+    --border-color: #000;
+    --light-gray: rgba(156, 156, 156, 0.466);
+    --hover-bg-color: #ededed;
+    --modal-bg-color: #fff;
+    --box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+}
+
+/* --- Global Styles --- */
+body,
+main {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* --- Header Styles --- */
+header {
+    color: var(--secondary-color);
+    border: transparent;
+    height: 100vh;
+    width: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+/* --- Button User Styles --- */
+.BtnUser {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 20% 0%;
+    transition: all 0.3s ease;
+}
+
+.BtnUser .svgContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    margin: 3% 1%;
+    border-radius: 10px;
+    border: 1px solid var(--modal-bg-color);
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.BtnUser .BG {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--modal-bg-color);
+    z-index: -1;
+    border-radius: 10px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.BtnUser:hover .BG {
+    transform: rotate(35deg);
+    transform-origin: bottom;
+}
+
+.BtnUser:hover .svgContainer {
+    background-color: var(--light-gray);
+    backdrop-filter: blur(4px);
+}
+
+/* --- Content Element Styles --- */
+.contentElement {
+    background-color: blue;
+    height: 100px;
+    width: 300px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 1%;
+    border-radius: 8px;
+}
+
+/* --- Container Styles --- */
+.container {
+    width: 83vw;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 1% 1%;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 1%;
+    position: relative;
+    overflow: hidden;
+    background-color: #f1f2f1;
+}
+
+/* Hide first container */
+.container:first-of-type {
+    display: none;
+}
+
+/* Display second container */
+.container:nth-of-type(2) {
+    display: none;
+}
+
+/* Show third container */
+.container:nth-of-type(3) {
+    display: flex;
+}
+
+/* --- Modal Styles --- */
+.modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.modal-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-body {
+    padding: 0.5rem;
+    display: flex;
+    gap: 2%;
+}
+
+.modal-footer {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* --- Form and Button Styles --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group+.form-group {
+    margin-top: 1.5rem;
+}
+
+.form-label {
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.form-input {
+    display: block;
+    margin-top: 0.4rem;
+    border: 1px solid #DDD;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    transition: 0.15s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color), 0 0 0 4px rgba(0, 125, 171, 0.25);
+}
+
+.form-input--textarea {
+    min-height: 100px;
+    max-width: 100%;
+}
+
+.form-description {
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    color: #8d8d8d;
+}
+
+.form-section{
+    width: 100%;
+    margin: 2%;
+}
+
+/* File Input Styles */
+#file-input::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    background: var(--primary-color);
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+#file-input::file-selector-button:hover {
+    background: #006489;
+}
+
+/* --- Button Icon Styles --- */
+.icon-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: transparent;
+    border-radius: 0.25rem;
+}
+
+.icon-button:focus,
+.icon-button:hover {
+    background-color: var(--hover-bg-color);
+}
+
+/* Primary Button Style */
+.primary-button {
+    background-color: #1cc972;
+    border-color: #1cc972;
+    color: #FFF;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.primary-button:hover {
+    background-color: #006489;
+}
