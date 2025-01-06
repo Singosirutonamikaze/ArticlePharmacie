@@ -150,7 +150,6 @@ VALUES
 
 ('Tétracycline (250 mg)', '../Admin/assets/images/Tétracycline.jpg', 'Antibiotique utilisé contre diverses infections bactériennes.', 2500, 'Acné, Infections urinaires, Infections respiratoires', 'Traitement de l\'acné, Traitement des infections urinaires', 'Adultes : 250 à 500 mg toutes les 6 heures, selon la prescription médicale, Enfants : Posologie adaptée en fonction du poids et de l\'âge, selon la prescription médicale', 'Suivre le traitement complet, Ne pas utiliser en cas d\'allergie connue aux tétracyclines, Éviter l\'exposition prolongée au soleil', 'https://www.exemple.com/tetracycline');
 
-
 -- Insertion des employés--
 INSERT INTO employe (id_employe, nom, prenom, email, role) VALUES
 (1, 'Togbui', 'Kossi', 'kossi.togbui@email.tg', 'Responsable'),
@@ -165,6 +164,6 @@ INSERT INTO livreur (id_livreur, nom, prenom, email, vehicule) VALUES
 
 -- Insertion des fournisseurs--
 INSERT INTO fournisseur (id_fournisseur, nom, adresse, telephone, email) VALUES
-(1, 'PharmaTogo', 'Cotonou, Lomé', '22222222', 'pharmatogo@email.tg'),
+(1, 'PharmaTogo', 'Cotonou', 'Lomé', '22222222', 'pharmatogo@email.tg'),
 (2, 'Fournitures Médicales', 'Agoè, Lomé', '23333333', 'fournituresmed@email.tg'),
 (3, 'MedicoTogo', 'Kpalimé, Lomé', '24444444', 'medicotogo@email.tg');
