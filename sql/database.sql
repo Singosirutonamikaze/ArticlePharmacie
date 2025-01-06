@@ -167,3 +167,64 @@ INSERT INTO fournisseur (id_fournisseur, nom, adresse, telephone, email) VALUES
 (1, 'PharmaTogo', 'Cotonou', 'Lomé', '22222222', 'pharmatogo@email.tg'),
 (2, 'Fournitures Médicales', 'Agoè, Lomé', '23333333', 'fournituresmed@email.tg'),
 (3, 'MedicoTogo', 'Kpalimé, Lomé', '24444444', 'medicotogo@email.tg');
+
+-- Insertion des clients
+INSERT INTO client (id_client, nom, prenom, email, mot_de_passe, adresse, telephone) VALUES
+(1, 'Kouadio', 'Eric', 'eric.kouadio@email.tg', 'mdp1234', 'Lomé, Togo', '90909090'),
+(2, 'Djedje', 'Aminata', 'aminata.djedje@email.tg', 'mdp5678', 'Tsévié, Togo', '91919191'),
+(3, 'Yao', 'Clarisse', 'clarisse.yao@email.tg', 'mdp1122', 'Kpalimé, Togo', '92929292'),
+(4, 'Mensah', 'Patrick', 'patrick.mensah@email.tg', 'mdp3344', 'Lomé, Togo', '93939393'),
+(5, 'Kossi', 'Alice', 'alice.kossi@email.tg', 'mdp5566', 'Atakpamé, Togo', '94949494'),
+(6, 'Afouda', 'Kofi', 'kofi.afouda@email.tg', 'mdp7788', 'Sokodé, Togo', '95959595'),
+(7, 'Tchoumi', 'Lucie', 'lucie.tchoumi@email.tg', 'mdp9900', 'Tsévié, Togo', '96969696'),
+(8, 'Awi', 'Didier', 'didier.awi@email.tg', 'mdp2233', 'Lomé, Togo', '97979797'),
+(9, 'Adom', 'Solange', 'solange.adom@email.tg', 'mdp4455', 'Dapaong, Togo', '98989898'),
+(10, 'Lohou', 'Jean-Pierre', 'jeanpierre.lohou@email.tg', 'mdp6677', 'Lomé, Togo', '99999999');
+
+-- Ce trigger met à jour le total de la commande lorsqu'un produit est ajouté--
+CREATE TRIGGER update_total AFTER INSERT ON contient
+FOR EACH ROW
+BEGIN
+    -- Met à jour le total de la commande en fonction du prix du produit et de la quantité commandée
+    UPDATE commande 
+    SET total = total + (SELECT prix FROM produits WHERE id_produit = NEW.id_produit) * NEW.quantite
+    WHERE id_commande = NEW.id_commande;
+END;
+
+-- Ce trigger vérifie si la quantité demandée d'un produit est disponible en stock avant d'ajouter une commande--
+CREATE TRIGGER validate_stock BEFORE INSERT ON contient
+FOR EACH ROW
+BEGIN
+    -- Vérifie si le stock disponible est inférieur à la quantité demandée
+    IF (SELECT stock FROM produits WHERE id_produit = NEW.id_produit) < NEW.quantite THEN
+        -- Si le stock est insuffisant, lance une erreur et empêche l'insertion
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Insufficient stock';
+    END IF;
+END;
+
+-- Ce trigger enregistre dans un log les modifications des rôles des employés--
+CREATE TRIGGER log_employe_changes AFTER UPDATE ON employe
+FOR EACH ROW
+BEGIN
+    -- Insère un enregistrement dans la table de log avec l'ancien et le nouveau rôle de l'employé
+    INSERT INTO employe_log (id_employe, old_role, new_role, change_date)
+    VALUES (NEW.id_employe, OLD.role, NEW.role, NOW());
+END;
+
+-- Ce trigger met à jour le statut de la commande en fonction du total de la commande.
+CREATE TRIGGER update_statut AFTER UPDATE ON commande
+FOR EACH ROW
+BEGIN
+    -- Si le total de la commande est supérieur à 10 000, on classe la commande comme "High Value"
+    IF NEW.total > 10000 THEN
+        UPDATE commande 
+        SET statut = 'High Value'
+        WHERE id_commande = NEW.id_commande;
+    ELSE
+        -- Sinon, la commande est classée comme "Standard"
+        UPDATE commande 
+        SET statut = 'Standard'
+        WHERE id_commande = NEW.id_commande;
+    END IF;
+END;
+
