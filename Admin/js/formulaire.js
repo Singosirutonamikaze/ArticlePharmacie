@@ -55,3 +55,118 @@ formulaire.addEventListener('submit', function(event) {
         alert('Une erreur s\'est produite.');
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const jsonURL = "../Admin/dataSiteElement.json"; // Chemin vers ton fichier JSON
+
+    // Charger le fichier JSON
+    async function chargerProduits() {
+        try {
+            const response = await fetch(jsonURL);
+            if (!response.ok) {
+                console.error(`Erreur HTTP : ${response.status} - ${response.statusText}`);
+                return [];
+            }
+            const produits = await response.json();
+            return produits;
+        } catch (error) {
+            console.error("Erreur lors du chargement des produits :", error);
+            return [];
+        }
+    }
+    
+
+    // Ajouter un nouveau produit
+    async function ajouterProduit(event) {
+        event.preventDefault(); // Empêche la soumission par défaut
+
+        // Récupération des valeurs du formulaire
+        const nomInput = document.getElementById("nomProduit");
+        const prixInput = document.getElementById("prixProduit");
+        const imageInput = document.getElementById("imageProduit");
+        const descriptionInput = document.getElementById("descriptionProduit");
+        const maladiesInput = document.getElementById("maladiesProduit");
+        const utilisationsInput = document.getElementById("utilisationsProduit");
+        const posologieInput = document.getElementById("posologieProduit");
+        const precautionsInput = document.getElementById("precautionsProduit");
+        const liensReferenceInput = document.getElementById("liensProduit");
+
+        // Vérification des champs
+        if (!nomInput || !prixInput || !imageInput || !descriptionInput || !maladiesInput || 
+            !utilisationsInput || !posologieInput || !precautionsInput || !liensReferenceInput) {
+            console.error("Certains champs de formulaire sont introuvables !");
+            return;
+        }
+
+        // Récupérer les valeurs
+        const nom = nomInput.value;
+        const prix = parseFloat(prixInput.value);
+        const imageFile = imageInput.files[0];
+        const description = descriptionInput.value;
+        const maladies = maladiesInput.value.split(",");
+        const utilisations = utilisationsInput.value.split("\n");
+        const posologie = posologieInput.value.split("\n");
+        const precautions = precautionsInput.value.split("\n");
+        const liens_de_reference = liensReferenceInput.value;
+
+        // Vérification des champs obligatoires
+        if (!imageFile) {
+            alert("Veuillez ajouter une image pour le produit !");
+            return;
+        }
+
+        // Conversion de l'image en Base64
+        const image = await convertirImageBase64(imageFile);
+
+        // Création du nouvel objet produit
+        const nouveauProduit = {
+            nom,
+            prix,
+            image,
+            description,
+            maladies,
+            utilisations,
+            posologie,
+            precautions,
+            liens_de_reference
+        };
+
+        // Charger le JSON existant
+        const produits = await chargerProduits();
+
+        // Ajouter le nouveau produit au tableau
+        produits.push(nouveauProduit);
+
+        // Afficher le JSON mis à jour (ou proposer un téléchargement)
+        console.log("JSON mis à jour :", produits);
+        sauvegarderJSON(produits);
+    }
+
+    // Convertir une image en Base64
+    function convertirImageBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = (error) => reject(error);
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // Proposer le téléchargement du JSON mis à jour
+    function sauvegarderJSON(data) {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
+        const downloadAnchor = document.createElement("a");
+        downloadAnchor.setAttribute("href", dataStr);
+        downloadAnchor.setAttribute("download", "produits.json");
+        downloadAnchor.click();
+    }
+
+    // Écouter la soumission du formulaire
+    const formulaire = document.getElementById("productForm");
+    if (formulaire) {
+        formulaire.addEventListener("submit", ajouterProduit);
+    } else {
+        console.error("Formulaire introuvable !");
+    }
+});
