@@ -9,7 +9,7 @@ const notificationBtn = document.getElementById('notification');
 const AddDrugCard = document.getElementById("addElement2");
 const DeleteDrugCard = document.getElementById("addElement3");
 const UpdateDrugCard = document.getElementById("addElement1");
-const NotificationCard = document.getElementById("notificationCard");
+const NotificationCard = document.getElementById("addElement4");
 
 // Événements pour les boutons
 addDrugBtn.addEventListener("click", () => {
