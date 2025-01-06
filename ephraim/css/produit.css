@@ -133,14 +133,20 @@ nav .user_acount i
     gap: 5px;
     animation: fade 0.8s ease;
 }
-
+.box .products_container article
+{
+    background-color: #fff;
+    border: 2px solid rgb(36, 211, 36);
+}
 .box .products_container article img
 {
     width: 75%;
     height: 75%;
     margin: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     object-fit: contain;
-    border: #000 solid 2px; 
     animation: scale 0.8s ease;
 }
 @keyframes scale {
