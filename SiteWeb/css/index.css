@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Engagement", serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -12,7 +12,6 @@
     justify-content:space-around;
     align-items: center;
     margin: 2rem auto ;
-    border: 1px solid red;
     padding: 8px;
     backdrop-filter: blur(15px);
 }
@@ -39,7 +38,7 @@
     color: black;
     transition: width 0.3s ease;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .home_page nav .lien_de_navigation ul li a:hover{
@@ -60,22 +59,22 @@
 .home_page nav .search_input input{
     border: none;
     outline: none;
-    padding: 8px 10px;
+    padding: 6px 10px;
     width: 12rem;
-    font-size: 18px;
+    font-size: 15px;
 }
 .home_page nav .search_input input::placeholder{
-    font-size: 18px;
+    font-size: 12px;
     color: #000000b7;
 }
 
 .home_page nav .user_acount button{
     display: flex;
-    padding:4px 25px;
+    padding:7px 25px;
     outline: none;
     border: solid 1px #000;
     border-radius: 120px;
-    font-size: 25px;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -99,6 +98,7 @@
     text-align: center;
     padding: 10rem 0;
     font-size: 7rem;
+    font-family: "Engagement", serif;
     font-weight: bold;
     color: #fff;
     text-shadow: 
@@ -106,4 +106,23 @@
         0 0 20px rgb(36,211,36), 
         0 0 40px rgb(68, 197, 236), 
         0 0 50px rgb(0,0,255);
+}
+
+.container .title{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    font-size: 20px;
+}
+
+.container .box_commande{
+    border: 2px solid rgb(36, 211, 36);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
 }
