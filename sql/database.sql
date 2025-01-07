@@ -206,7 +206,7 @@ BEGIN
     -- Vérifie si le stock disponible est inférieur à la quantité demandée
     IF (SELECT stock FROM produits WHERE id_produit = NEW.id_produit) < NEW.quantite THEN
         -- Si le stock est insuffisant, lance une erreur et empêche l'insertion
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Insufficient stock';
+        SIGNAL SQLSTATE '5' SET MESSAGE_TEXT = 'Insufficient stock';
     END IF;
 END;
 
