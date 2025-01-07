@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "DM Serif Text", serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
 }
 
@@ -13,7 +13,6 @@ nav
     justify-content:space-around;
     align-items: center;
     margin: 2rem auto ;
-    border: 1px solid red;
     padding: 8px;
     backdrop-filter: blur(15px);
 }
@@ -44,7 +43,7 @@ nav .lien_de_navigation ul li a
     color: black;
     transition: width 0.3s ease;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 15px;
 }
 nav .lien_de_navigation ul li a:hover
 {
@@ -67,7 +66,7 @@ nav .search_input input
 {
     border: none;
     outline: none;
-    padding: 7px 10px;
+    padding: 4px 10px;
     width: 10rem;
     font-size: 15px;
 }
@@ -78,11 +77,11 @@ nav .search_input input::placeholder{
 nav .user_acount button
 {
     display: flex;
-    padding: 4px 25px;
+    padding: 7px 25px;
     outline: none;
     border: solid 1px #000;
     border-radius: 120px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 400;
     cursor: pointer;
 }
@@ -100,7 +99,6 @@ nav .user_acount i
 .box
 {
     display: flex;
-    border: 2px solid red;
     width: 100vw;
     height: 160vh;
 }
@@ -135,6 +133,12 @@ nav .user_acount i
 }
 .box .products_container article
 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -143,10 +147,17 @@ nav .user_acount i
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+.box .products_container article:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
 .box .products_container article img
 {
-    width: 75%;
-    height: 75%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
     margin: 10px 20px;
     display: flex;
     justify-content: center;
@@ -166,14 +177,17 @@ nav .user_acount i
 {
     animation: scale 0.8s forwards;
 }
+.box .products_container article h4{
+    text-align: center;
+    margin-top: 3rem;
+}
 .box .products_container article button{
     margin: auto 50px;
-    padding:5px 25px;
-    border-radius: 120px;
+    padding:5px 15px;
+    border-radius: 10px;
     background: #fff;
     border: 2px solid rgb(36, 211, 36);
     font-size: 17px;
-    font-weight: bold;
 }
 .box .products_container article button:hover{
     background: rgb(36, 211, 36);
@@ -199,6 +213,7 @@ nav .user_acount i
     justify-content: center;
     align-items: center;
     gap: 6rem;
+    margin-top: 1.5rem;
 }
 .box .products .arrows .left_arrow,.right_arrow
 {
@@ -240,46 +255,69 @@ nav .user_acount i
     font-size: 25px;
 }
 .box .products_informations .shopping_cart .number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(36, 211, 36);
     color: #fff;
-    padding: 5px 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     font-size: 20px;
     border-radius: 50%;
 }
 .box .products_informations .shopping_cart h3{
     font-size: 20px;
 }
-.box .products_informations label
+.box .products_informations h3
 {
     text-align: start;
-    font-size: 20px;
+    font-size: 15px;
     padding-left: 15px;
 }
 .box .products_informations .content_info .entete_info{
-    border: #000 solid 2px;
     display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    margin: 0 15px;
+    justify-content: space-around;
+    gap: 15px;
+    margin: 0 10px;
 }
 .box .products_informations .content_info .entete_info img{
-    height: 30%;
-    width: 30%;
-    object-fit: contain;
-    border: #000 solid 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .box .products_informations .content_info .entete_info ul{
     list-style: none;
     font-size: 14px;
-    border: #000 solid 2px;
     padding: 5px 10px;
     width: 60%;
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.box .products_informations .content_info .entete_info ul li{
+    margin-top: 5px;
+    text-align: start;
+}
+
 .box .products_informations .content_info .description p{
-    border: #000 solid 2px;
-    margin: 7px 15px;
+    margin: 7px 20px;
+    padding: 10px;
     text-align: center;
     font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .box .products_informations .content_info .utili_poso{
     display: flex;
@@ -289,10 +327,19 @@ nav .user_acount i
     margin: 7px 15px;
 }
 .box .products_informations .content_info .utili_poso ul{
-    list-style-type: square;
-    font-size: 16px;
-    border: #000 solid 2px;
+    list-style: none;
+    font-size: 13px;
+    height: 210px;
+    width: 200px;
     padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.box .products_informations .content_info .utili_poso ul li{
+    margin-top: 7px;
+    text-align: start;
 }
 .box .products_informations .content_info .utili_poso h3{
     font-size: 17px;
@@ -309,10 +356,13 @@ nav .user_acount i
 }
 
 .box .products_informations .content_info .precautions ul{
-    list-style-type: square;
+    list-style: none;
     font-size: 15px;
-    border: #000 solid 2px;
-    padding: 5px 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .box .products_informations .content_info .precautions h3{
