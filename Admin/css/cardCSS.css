@@ -72,9 +72,9 @@
 }
 
 /* Styles pour les éléments de contenu */
-.contentElementLast {
-    width: 100%;
-    height: 100px;
+.contentElementLastP {
+    width: 400px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -87,9 +87,14 @@
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.contentElementLast:hover {
+.contentElementLastP:hover {
     transform: scale(1.05);
     /* Légère agrandissement au survol */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     /* Ombre plus marquée */
+}
+
+.deleteDivContainer{
+    display: flex;
+    flex-wrap: wrap;
 }
