@@ -11,7 +11,10 @@ async function loadProducts() {
     }
 }
 
-
+let nbreAjoutPanier = 0;
+const number = document.querySelector(".number span");
+// convertir le nombre dans le span en entier
+number.textContent = parseInt(number.textContent);
 
 function getProducts(piece) {
     const firstSection = document.querySelector(".first_section");
@@ -30,6 +33,9 @@ function getProducts(piece) {
         // Créer une balise img pour chaque medicament
         const image = document.createElement("img");
         image.src = medicaments.image;
+
+        const name = document.createElement("h4");
+        name.textContent = medicaments.nom;
 
         // Ajouter un bouton voir plus sur chaque medicament
         const voirPlus = document.createElement("button");
@@ -130,7 +136,7 @@ function getProducts(piece) {
 
             const input = document.createElement("input");
             input.type = "number";
-            input.min = "1";
+            input.min = "0";
             input.max = "25";
             input.value = "1";
             divInput.appendChild(input);
@@ -148,7 +154,44 @@ function getProducts(piece) {
             acheter.textContent = "Ajouter au panier";
             divAchat.appendChild(acheter);
 
+            // ecouter un evenement sur le bouton acheter pour ajouter le medicament au panier
             
+                acheter.addEventListener("click", () => {
+                    const quantite = input.value;
+                    if(quantite > 0){
+                        nbreAjoutPanier++;
+                        number.textContent = nbreAjoutPanier;
+                    }
+                    contentInfo.innerHTML = '';
+                    // recuperer l'element .box_commande depuis le html validation.html
+                    const boxCommande = document.querySelector(".box_commande");
+                    if(!boxCommande){
+                        console.error("L'element .box_commande n'a pas ete trouve");
+                        return;
+                    }
+                    // recuperer l'image la quantite et le prix total 
+                    const articleCommande = document.createElement("article");
+                    const imageCommande = document.createElement("img");
+                    imageCommande.src = medicaments.image;
+                    const titleCommande = document.createElement("h3");
+                    titleCommande.textContent = medicaments.nom;
+                    const quantiteCommande = document.createElement("p");
+                    quantiteCommande.textContent = `Quantité : ${quantite}`;
+                    const prixCommande = document.createElement("p");
+                    prixCommande.textContent = `Prix total : ${medicaments.prix * quantite} fcfa`;
+                    const supprimerCommande = document.createElement("button");
+                    supprimerCommande.textContent = "Supprimer";
+    
+                    articleCommande.appendChild(imageCommande);
+                    articleCommande.appendChild(titleCommande);
+                    articleCommande.appendChild(quantiteCommande);
+                    articleCommande.appendChild(prixCommande);
+                    articleCommande.appendChild(supprimerCommande);
+                    
+                    boxCommande.appendChild(articleCommande);
+                
+                })
+                
             
             div.appendChild(imageInfo);
             div.appendChild(ul);
@@ -173,6 +216,7 @@ function getProducts(piece) {
 
         // Ajouter les éléments au DOM
         pieceMedicaments.appendChild(image);
+        pieceMedicaments.appendChild(name);
         pieceMedicaments.appendChild(voirPlus);
         firstSection.appendChild(pieceMedicaments);
     }
@@ -193,6 +237,8 @@ function getProducts(piece) {
         const image = document.createElement("img");
         image.src = medicaments.image;
 
+        const name = document.createElement("h4");
+        name.textContent = medicaments.nom;
         // Ajouter un bouton voir plus sur chaque medicament
         const voirPlus = document.createElement("button");
         voirPlus.textContent = "Voir plus";
@@ -291,7 +337,7 @@ function getProducts(piece) {
 
             const input = document.createElement("input");
             input.type = "number";
-            input.min = "1";
+            input.min = "0";
             input.max = "25";
             input.value = "1";
             divInput.appendChild(input);
@@ -332,6 +378,7 @@ function getProducts(piece) {
         })
         // Ajouter les éléments au DOM
         pieceMedicaments.appendChild(image);
+        pieceMedicaments.appendChild(name);
         pieceMedicaments.appendChild(voirPlus);
         secondSection.appendChild(pieceMedicaments);
     }
@@ -352,6 +399,8 @@ function getProducts(piece) {
         const image = document.createElement("img");
         image.src = medicaments.image;              
 
+        const name = document.createElement("h4");
+        name.textContent = medicaments.nom;
         // Ajouter un bouton voir plus sur chaque medicament
         const voirPlus = document.createElement("button");
         voirPlus.textContent = "Voir plus";
@@ -450,7 +499,7 @@ function getProducts(piece) {
 
             const input = document.createElement("input");
             input.type = "number";
-            input.min = "1";
+            input.min = "0";
             input.max = "25";
             input.value = "1";
             divInput.appendChild(input);
@@ -492,6 +541,7 @@ function getProducts(piece) {
 
         // Ajouter les éléments au DOM
         pieceMedicaments.appendChild(image);
+        pieceMedicaments.appendChild(name);
         pieceMedicaments.appendChild(voirPlus);
         thirdSection.appendChild(pieceMedicaments);
     }
