@@ -22,7 +22,7 @@ async function fetchAndRenderProducts() {
                             <h3>${products[productIndex].nom}</h3>
                             <p>Prix : ${products[productIndex].prix} FCFA</p>
                         </span>
-                        <button class="hoverButton">Update</button>
+                        <button class="hoverButton">Mis à jour</button>
                     `;
                     element.style.display = "block"; // Réaffiche l'élément
                 } else {
