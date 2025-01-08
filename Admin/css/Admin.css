@@ -35,11 +35,12 @@ main {
     margin: 0;
     padding: 0;
     font-family: var(--font-primary);
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 *,
@@ -218,7 +219,7 @@ header h1 {
 /* --- Container Styles --- */
 .container {
     width: 83vw;
-    height: 100vh;
+    min-height: 100vh;
     box-sizing: border-box;
     margin: 0 auto;
     padding: 1% 1%;
@@ -227,7 +228,9 @@ header h1 {
     flex-wrap: wrap;
     gap: 1%;
     position: relative;
-    background-color: #f1f2f1;
+    background-color: #ccc;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 /* Hide first container */
@@ -243,6 +246,10 @@ header h1 {
 /* Show third container */
 .container:nth-of-type(3) {
     display: flex;
+}
+
+.container:nth-of-type(4){
+    display: none;
 }
 
 /* Show third container */

@@ -1,42 +1,128 @@
-
-.contentElementMedicament {
-    width: 250px;
-    height: 250px; 
+/* Style de la div du médicament */
+.deleteDiv {
+    position: relative;
+    width: 435px;
+    /* Largeur fixe pour la div */
+    height: 220px;
+    box-sizing: border-box;
+    /* Hauteur égale à la largeur pour un format carré */
+    border: 1px solid #37fd10;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0.5%;
+    overflow: hidden;
+    /* Cache le débordement */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease;
+    /* Transition pour l'effet hover */
 }
 
-.contentElementMedicament:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+/* Contenu de la div du médicament */
+.deleteDivContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    bottom: 10px;
+    /* Positionner le texte au bas */
 }
 
-/* Bouton de suppression */
+/* Image du médicament - Cercle */
+.deleteDivContainer img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #37fd10;
+    /* Pour rendre l'image ronde */
+    object-fit: cover;
+    /* Assure que l'image remplit le cercle */
+    margin-bottom: 10px;
+}
+
+/* Titre et description */
+.deleteDivContainer h3,
+.deleteDivContainer p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Bouton de suppression - caché par défaut */
 .red-btn {
-    background-color: #f44336; /* Rouge vif */
+    display: none;
+    /* Caché par défaut */
+    position: absolute;
+    /* Positionné par rapport à .contentElement */
+    top: 50%;
+    /* Aligné en bas de la div */
+    left: 50%;
+    transform: translateX(-50%, -50%);
+    background-color: #f92b2b;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
+/* Affichage du bouton lors du survol */
+.deleteDiv:hover .red-btn {
+    display: block;
+    transform: translateX(-50%) scale(1);
+}
+
+.deleteDiv:hover{
+    background-color: #f7f5f537;
+}
+
+
+/* Style du bouton sur survol */
 .red-btn:hover {
-    background-color: #d32f2f; /* Rouge plus foncé au survol */
+    background-color: darkred;
 }
 
-/* Flèches de pagination */
+.contentElementLas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centre verticalement */
+    align-items: center;
+    /* Centre horizontalement */
+    margin: 0 auto;
+    height: 100%;
+    /* Assurez-vous que la hauteur de la div parent est définie pour un centrage vertical */
+    width: 100%;
+    /* Optionnel si vous voulez que la div occupe toute la largeur disponible */
+}
+
+.deleteDivContainerRow{
+    position: relative;
+    width: 424px;
+    /* Largeur fixe pour la div */
+    height: 220px;
+    box-sizing: border-box;
+    /* Hauteur égale à la largeur pour un format carré */
+    border: 1px solid #37fd10;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0.5%;
+    overflow: hidden;
+    /* Cache le débordement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    /* Transition pour l'effet hover */
+}
+
+
 .left_arrowR,
 .right_arrowR {
     border: 1px solid #57f92b;
@@ -47,39 +133,17 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: #59ff27; /* Couleur par défaut de l'icône */
+    color: #57f92b;
+    /* Couleur par défaut de l'icône */
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .left_arrowR:hover,
 .right_arrowR:hover {
-    background-color: #2c9f18;
+    background-color: #57f92b;
+    /* Couleur identique à la bordure */
     color: #fff;
+    /* Texte ou icône en blanc pour contraste */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Conteneur de pagination */
-.deleteDivContainerRow {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    height: 100px;
-    align-items: center;
-    margin-left: 2%;
-    width: 300px;
-    background-color: transparent;
-}
-
-/* Conteneur principal */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
-#addElement3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* Ombre légère pour profondeur */
 }
