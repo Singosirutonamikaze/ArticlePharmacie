@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livraison</title>
-    <link rel="stylesheet" href="../css/livraison.css">
+    <link rel="stylesheet" href="../css/css/livraison.css">
 </head>
 
 <body>
