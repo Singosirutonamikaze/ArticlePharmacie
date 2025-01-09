@@ -1,0 +1,134 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+    border-radius: 20px;
+    padding: 5%;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.25);
+    margin: auto;
+    margin-top: 10%;
+}
+
+.entete {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+}
+
+h1 {
+    color: rgb(36, 211, 36);
+}
+
+.form label {
+    position: relative;
+}
+.flex {
+    display: flex;
+    width: 100%;
+}
+
+.form label .input[type="text"]  {
+    width: 250px;
+    height: 55px;
+}
+
+.form label .input[type="email"] {
+    width: 510px;
+    height: 55px;
+}
+
+.form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.form label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.name-fields input {
+    flex: 1;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form label .input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus+span,.form label .input:valid+span {
+    top: 40px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .input:valid + span {
+    color: green;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: rgb(36, 211, 36);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    transform: .3s ease;
+    padding: 15px auto;
+    width: 35.5vw;
+    height: 55px;
+    cursor: pointer;
+  }
+  
+  .submit:hover {
+    background-color: rgb(16, 151, 16);
+  }
+
+  .flex .input:focus {
+    outline: none;
+    border-color: rgb(36, 211, 36);
+  }
+
+  .name-fields .input:focus {
+    outline: none;
+    border-color: rgb(36, 211, 36);
+  }
+
+  .flex .input::placeholder {
+    opacity: 0.5;
+  }
