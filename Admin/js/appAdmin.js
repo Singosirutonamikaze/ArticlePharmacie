@@ -1,53 +1,45 @@
-// Les variables
-const userProfileBtn = document.getElementById('userProfile');
 const addDrugBtn = document.getElementById('addDrug');
 const delDrugBtn = document.getElementById('DelDrug');
 const updateDrugBtn = document.getElementById('UpdateDRUG');
 const notificationBtn = document.getElementById('notification');
+const userProfileBtn = document.getElementById('userProfile');
 
-// Récupération des conteneurs
-const AddDrugCard = document.getElementById("addElement2");
-const DeleteDrugCard = document.getElementById("addElement3");
-const UpdateDrugCard = document.getElementById("addElement1");
-const NotificationCard = document.getElementById("addElement4");
-const firsTPage = document.getElementById("addElement5");
+const addDrugCard = document.getElementById("addElement2");
+const deleteDrugCard = document.getElementById("addElement3");
+const updateDrugCard = document.getElementById("addElement1");
+const notificationCard = document.getElementById("addElement4");
+const firstPage = document.getElementById("addElement5");
 
-// Par défaut, afficher la première page
-firsTPage.style.display = "block";
-AddDrugCard.style.display = "none";
-DeleteDrugCard.style.display = "none";
-UpdateDrugCard.style.display = "none";
-NotificationCard.style.display = "none";
+// // Afficher la première page par défaut
+firstPage.classList.add("active");
 
-// Événements pour les boutons
+// Cacher tous les conteneurs
+const hideAllContainers = () => {
+    const containers = document.querySelectorAll(".container");
+    containers.forEach(container => container.classList.remove("active"));
+};
+
+userProfileBtn.addEventListener("click", () => {
+    hideAllContainers();
+    firstPage.classList.add("active");
+});
+
 addDrugBtn.addEventListener("click", () => {
-    AddDrugCard.style.display = "flex";
-    DeleteDrugCard.style.display = "none";
-    UpdateDrugCard.style.display = "none";
-    NotificationCard.style.display = "none"; 
-    firsTPage.style.display = "none";
+    hideAllContainers();
+    addDrugCard.classList.add("active");
 });
 
 delDrugBtn.addEventListener("click", () => {
-    DeleteDrugCard.style.display = "flex";
-    AddDrugCard.style.display = "none";
-    UpdateDrugCard.style.display = "none";
-    NotificationCard.style.display = "none"; 
-    firsTPage.style.display = "none";
+    hideAllContainers();
+    deleteDrugCard.classList.add("active");
 });
 
 updateDrugBtn.addEventListener("click", () => {
-    UpdateDrugCard.style.display = "flex";
-    AddDrugCard.style.display = "none";
-    DeleteDrugCard.style.display = "none";
-    NotificationCard.style.display = "none";
-    firsTPage.style.display = "none";
+    hideAllContainers();
+    updateDrugCard.classList.add("active");
 });
 
 notificationBtn.addEventListener("click", () => {
-    NotificationCard.style.display = "flex";
-    AddDrugCard.style.display = "none";
-    DeleteDrugCard.style.display = "none";
-    UpdateDrugCard.style.display = "none"; 
-    firsTPage.style.display = "none";
+    hideAllContainers();
+    notificationCard.classList.add("active");
 });

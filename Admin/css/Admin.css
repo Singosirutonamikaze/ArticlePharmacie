@@ -223,7 +223,7 @@ header h1 {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 1% 1%;
-    display: flex;
+    display: none;
     flex-grow: 1;
     flex-wrap: wrap;
     gap: 1%;
@@ -233,28 +233,14 @@ header h1 {
     overflow-x: hidden;
 }
 
-/* Hide first container */
-.container:first-of-type {
+.container {
     display: none;
+    /* Par défaut, tous les conteneurs sont masqués */
 }
 
-/* Display second container */
-.container:nth-of-type(2) {
-    display: none;
-}
-
-/* Show third container */
-.container:nth-of-type(3) {
-    display: none;
-}
-
-.container:nth-of-type(4){
-    display: none;
-}
-
-/* Show third container */
-.container:last-of-type {
+.container.active {
     display: flex;
+    /* Affiche les conteneurs ayant la classe active */
 }
 
 /* --- Modal Styles --- */
@@ -393,4 +379,21 @@ header h1 {
 
 .primary-button:hover {
     background-color: #006489;
+}
+
+#addElement1,
+#addElement2,
+#addElement3,
+#addElement4 {
+    display: none;
+}
+
+#addElement5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 10%;
+    background-color: #fef9f9;
 }

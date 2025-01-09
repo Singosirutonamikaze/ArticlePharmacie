@@ -106,105 +106,126 @@ CREATE TABLE contient (
 );
 
 -- Fonction pour calculer le total d'une commande
-DELIMITER $$
-CREATE FUNCTION CalculerTotalCommande(p_id_commande INT)
-RETURNS DECIMAL(10, 2)
-DETERMINISTIC
+CREATE OR REPLACE FUNCTION CalculerTotalCommande(p_id_commande INT)
+RETURNS NUMERIC(10, 2) AS $$
 BEGIN
-    DECLARE total DECIMAL(10, 2);
-    SELECT SUM(p.prix * c.quantite) 
-    INTO total
-    FROM contient c
-    JOIN produit p ON c.id_produit = p.id_produit
-    WHERE c.id_commande = p_id_commande;
-    RETURN total;
-END$$
-DELIMITER ;
+    RETURN (
+        SELECT COALESCE(SUM(p.prix * c.quantite), 0)
+        FROM contient c
+        JOIN produit p ON c.id_produit = p.id_produit
+        WHERE c.id_commande = p_id_commande
+    );
+END;
+$$ LANGUAGE plpgsql;
 
 -- Procédure pour ajouter un produit
-DELIMITER $$
-CREATE PROCEDURE AjouterProduit(
-    IN p_nom VARCHAR(255),
-    IN p_image VARCHAR(255),
-    IN p_description TEXT,
-    IN p_prix DECIMAL(10, 2),
-    IN p_maladies TEXT,
-    IN p_utilisations TEXT,
-    IN p_posologie TEXT,
-    IN p_precautions TEXT,
-    IN p_liens_de_reference VARCHAR(255),
-    IN p_id_categorie INT
+CREATE OR REPLACE PROCEDURE AjouterProduit(
+    p_nom VARCHAR(255),
+    p_image VARCHAR(255),
+    p_description TEXT,
+    p_prix NUMERIC(10, 2),
+    p_maladies TEXT,
+    p_utilisations TEXT,
+    p_posologie TEXT,
+    p_precautions TEXT,
+    p_liens_de_reference VARCHAR(255),
+    p_id_categorie INT
 )
+LANGUAGE plpgsql AS $$
 BEGIN
-    INSERT INTO produit (nom, image, description, prix, maladies, utilisations, posologie, precautions, liens_de_reference, id_categorie)
-    VALUES (p_nom, p_image, p_description, p_prix, p_maladies, p_utilisations, p_posologie, p_precautions, p_liens_de_reference, p_id_categorie);
-END$$
-DELIMITER ;
+    INSERT INTO produit (
+        nom, image, description, prix, maladies, utilisations, posologie, precautions, liens_de_reference, id_categorie
+    )
+    VALUES (
+        p_nom, p_image, p_description, p_prix, p_maladies, p_utilisations, p_posologie, p_precautions, p_liens_de_reference, p_id_categorie
+    );
+END;
+$$;
 
 -- Procédure pour ajouter un client
-DELIMITER $$
-CREATE PROCEDURE AjouterClient(
-    IN p_nom VARCHAR(50),
-    IN p_prenom VARCHAR(50),
-    IN p_email VARCHAR(100),
-    IN p_mot_de_passe VARCHAR(255),
-    IN p_adresse VARCHAR(255),
-    IN p_telephone VARCHAR(15)
+CREATE OR REPLACE PROCEDURE AjouterClient(
+    p_nom VARCHAR(50),
+    p_prenom VARCHAR(50),
+    p_email VARCHAR(100),
+    p_mot_de_passe VARCHAR(255),
+    p_adresse VARCHAR(255),
+    p_telephone VARCHAR(15)
 )
+LANGUAGE plpgsql AS $$
 BEGIN
-    INSERT INTO client (nom, prenom, email, mot_de_passe, adresse, telephone)
-    VALUES (p_nom, p_prenom, p_email, p_mot_de_passe, p_adresse, p_telephone);
-END$$
-DELIMITER ;
+    INSERT INTO client (
+        nom, prenom, email, mot_de_passe, adresse, telephone
+    )
+    VALUES (
+        p_nom, p_prenom, p_email, p_mot_de_passe, p_adresse, p_telephone
+    );
+END;
+$$;
 
--- Trigger pour mettre à jour le total de la commande après une insertion dans "contient"
-CREATE TRIGGER update_total AFTER INSERT ON contient
-FOR EACH ROW
+--Trigger pour mettre à jour le total de la commande après une insertion dans `contient`
+CREATE OR REPLACE FUNCTION update_total_func()
+RETURNS TRIGGER AS $$
 BEGIN
-    DECLARE v_total DECIMAL(10, 2);
-    SELECT SUM(p.prix * c.quantite) INTO v_total
-    FROM contient c
-    JOIN produit p ON c.id_produit = p.id_produit
-    WHERE c.id_commande = NEW.id_commande;
+    -- Calculer le nouveau total de la commande
     UPDATE commande
-    SET total = v_total
+    SET total = (
+        SELECT SUM(p.prix * c.quantite)
+        FROM contient c
+        JOIN produit p ON c.id_produit = p.id_produit
+        WHERE c.id_commande = NEW.id_commande
+    )
     WHERE id_commande = NEW.id_commande;
-END;
 
--- Trigger pour vérifier la disponibilité du produit avant insertion dans "contient"
-CREATE TRIGGER validate_stock BEFORE INSERT ON contient
-FOR EACH ROW
-BEGIN
-    DECLARE v_stock INT;
-    SELECT stock INTO v_stock
-    FROM produit
-    WHERE id_produit = NEW.id_produit;
-    IF v_stock < NEW.quantite THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Stock insuffisant';
-    END IF;
+    RETURN NEW;
 END;
+$$ LANGUAGE plpgsql;
 
--- Trigger pour mettre à jour le stock du produit après insertion dans "contient"
-CREATE TRIGGER update_stock AFTER INSERT ON contient
+CREATE TRIGGER update_total
+AFTER INSERT ON contient
 FOR EACH ROW
+EXECUTE FUNCTION update_total_func();
+
+--Trigger pour vérifier la disponibilité du produit avant insertion dans `contient`
+CREATE OR REPLACE FUNCTION validate_stock_func()
+RETURNS TRIGGER AS $$
+DECLARE
+    v_stock INT;
 BEGIN
-    DECLARE v_stock INT;
-    
-    -- Récupérer le stock actuel du produit
+    -- Vérifier le stock disponible
     SELECT stock INTO v_stock
     FROM produit
     WHERE id_produit = NEW.id_produit;
 
-    -- Vérifier qu'il y a suffisamment de stock pour cette quantité
     IF v_stock < NEW.quantite THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Stock insuffisant';
-    ELSE
-        -- Réduire le stock en fonction de la quantité commandée
-        UPDATE produit
-        SET stock = stock - NEW.quantite
-        WHERE id_produit = NEW.id_produit;
+        RAISE EXCEPTION 'Stock insuffisant pour le produit %', NEW.id_produit;
     END IF;
+
+    RETURN NEW;
 END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER validate_stock
+BEFORE INSERT ON contient
+FOR EACH ROW
+EXECUTE FUNCTION validate_stock_func();
+
+--Trigger pour mettre à jour le stock du produit après insertion dans `contient`
+CREATE OR REPLACE FUNCTION update_stock_func()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Réduire le stock en fonction de la quantité commandée
+    UPDATE produit
+    SET stock = stock - NEW.quantite
+    WHERE id_produit = NEW.id_produit;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER update_stock
+AFTER INSERT ON contient
+FOR EACH ROW
+EXECUTE FUNCTION update_stock_func();
 
 -- Vue des commandes des clients
 CREATE VIEW vue_commandes_clients AS
@@ -290,108 +311,152 @@ ALTER TABLE livreur
 ADD COLUMN id_role INT,
 ADD CONSTRAINT fk_livreur_role FOREIGN KEY (id_role) REFERENCES role(id_role);
 
---Fonction de recuperation des rôles--
-DELIMITER $$
-
-CREATE FUNCTION GetRoleId(p_nom_role VARCHAR(50))
-RETURNS INT
-DETERMINISTIC
+-- Fonction pour calculer le total d'une commande
+CREATE OR REPLACE FUNCTION CalculerTotalCommande(p_id_commande INT)
+RETURNS NUMERIC(10, 2) AS $$
 BEGIN
-    DECLARE v_id_role INT;
+    RETURN (
+        SELECT COALESCE(SUM(p.prix * c.quantite), 0)
+        FROM contient c
+        JOIN produit p ON c.id_produit = p.id_produit
+        WHERE c.id_commande = p_id_commande
+    );
+END;
+$$ LANGUAGE plpgsql;
+
+-- Procédure pour ajouter un produit
+CREATE OR REPLACE PROCEDURE AjouterProduit(
+    p_nom VARCHAR(255),
+    p_image VARCHAR(255),
+    p_description TEXT,
+    p_prix NUMERIC(10, 2),
+    p_maladies TEXT,
+    p_utilisations TEXT,
+    p_posologie TEXT,
+    p_precautions TEXT,
+    p_liens_de_reference VARCHAR(255),
+    p_id_categorie INT
+)
+LANGUAGE plpgsql AS $$
+BEGIN
+    INSERT INTO produit (
+        nom, image, description, prix, maladies, utilisations, posologie, precautions, liens_de_reference, id_categorie
+    )
+    VALUES (
+        p_nom, p_image, p_description, p_prix, p_maladies, p_utilisations, p_posologie, p_precautions, p_liens_de_reference, p_id_categorie
+    );
+END;
+$$;
+
+-- Procédure pour ajouter un client
+CREATE OR REPLACE PROCEDURE AjouterClient(
+    p_nom VARCHAR(50),
+    p_prenom VARCHAR(50),
+    p_email VARCHAR(100),
+    p_mot_de_passe VARCHAR(255),
+    p_adresse VARCHAR(255),
+    p_telephone VARCHAR(15)
+)
+LANGUAGE plpgsql AS $$
+BEGIN
+    INSERT INTO client (
+        nom, prenom, email, mot_de_passe, adresse, telephone
+    )
+    VALUES (
+        p_nom, p_prenom, p_email, p_mot_de_passe, p_adresse, p_telephone
+    );
+END;
+$$;
+
+-- Fonction pour récupérer les rôles
+CREATE OR REPLACE FUNCTION GetRoleId(p_nom_role VARCHAR(50))
+RETURNS INT AS $$
+DECLARE
+    v_id_role INT;
+BEGIN
     SELECT id_role INTO v_id_role
     FROM role
     WHERE nom_role = p_nom_role;
     RETURN v_id_role;
-END $$
+END;
+$$ LANGUAGE plpgsql;
 
-DELIMITER ;
-
---Fonction pour ajouter le role
-DELIMITER $$
-
-CREATE PROCEDURE AjouterClientAvecRole(
-    IN p_nom VARCHAR(50),
-    IN p_prenom VARCHAR(50),
-    IN p_email VARCHAR(100),
-    IN p_mot_de_passe VARCHAR(255),
-    IN p_adresse VARCHAR(255),
-    IN p_telephone VARCHAR(15),
-    IN p_nom_role VARCHAR(50)
+-- Procédure pour ajouter un client avec un rôle
+CREATE OR REPLACE PROCEDURE AjouterClientAvecRole(
+    p_nom VARCHAR(50),
+    p_prenom VARCHAR(50),
+    p_email VARCHAR(100),
+    p_mot_de_passe VARCHAR(255),
+    p_adresse VARCHAR(255),
+    p_telephone VARCHAR(15),
+    p_nom_role VARCHAR(50)
 )
+LANGUAGE plpgsql AS $$
+DECLARE
+    v_id_role INT;
 BEGIN
-    DECLARE v_id_role INT;
+    v_id_role := GetRoleId(p_nom_role);
+    INSERT INTO client (
+        nom, prenom, email, mot_de_passe, adresse, telephone, id_role
+    )
+    VALUES (
+        p_nom, p_prenom, p_email, p_mot_de_passe, p_adresse, p_telephone, v_id_role
+    );
+END;
+$$;
 
-    -- Obtenir l'ID du rôle à partir du nom du rôle
-    SET v_id_role = GetRoleId(p_nom_role);
-
-    -- Ajouter un client avec son rôle
-    INSERT INTO client (nom, prenom, email, mot_de_passe, adresse, telephone, id_role)
-    VALUES (p_nom, p_prenom, p_email, p_mot_de_passe, p_adresse, p_telephone, v_id_role);
-END $$
-
-DELIMITER ;
-
---Fonction pour ajouter le role au livreur
-
-DELIMITER $$
-
-CREATE PROCEDURE AjouterLivreurAvecRole(
-    IN p_nom VARCHAR(50),
-    IN p_prenom VARCHAR(50),
-    IN p_email VARCHAR(100),
-    IN p_vehicule VARCHAR(50),
-    IN p_nom_role VARCHAR(50)
+-- Procédure pour ajouter un livreur avec un rôle
+CREATE OR REPLACE PROCEDURE AjouterLivreurAvecRole(
+    p_nom VARCHAR(50),
+    p_prenom VARCHAR(50),
+    p_email VARCHAR(100),
+    p_vehicule VARCHAR(50),
+    p_nom_role VARCHAR(50)
 )
+LANGUAGE plpgsql AS $$
+DECLARE
+    v_id_role INT;
 BEGIN
-    DECLARE v_id_role INT;
+    v_id_role := GetRoleId(p_nom_role);
+    INSERT INTO livreur (
+        nom, prenom, email, vehicule, id_role
+    )
+    VALUES (
+        p_nom, p_prenom, p_email, p_vehicule, v_id_role
+    );
+END;
+$$;
 
-    -- Obtenir l'ID du rôle à partir du nom du rôle
-    SET v_id_role = GetRoleId(p_nom_role);
-
-    -- Ajouter un livreur avec son rôle
-    INSERT INTO livreur (nom, prenom, email, vehicule, id_role)
-    VALUES (p_nom, p_prenom, p_email, p_vehicule, v_id_role);
-END $$
-
-DELIMITER ;
-
---Fonction pour modifier le role de l'utilisateur
-DELIMITER $$
-
-CREATE PROCEDURE ModifierRoleUtilisateur(
-    IN p_id_utilisateur INT,
-    IN p_nom_role VARCHAR(50),
-    IN p_type_utilisateur VARCHAR(50)
+-- Procédure pour modifier le rôle d'un utilisateur
+CREATE OR REPLACE PROCEDURE ModifierRoleUtilisateur(
+    p_id_utilisateur INT,
+    p_nom_role VARCHAR(50),
+    p_type_utilisateur VARCHAR(50)
 )
+LANGUAGE plpgsql AS $$
+DECLARE
+    v_id_role INT;
 BEGIN
-    DECLARE v_id_role INT;
-
-    -- Obtenir l'ID du rôle à partir du nom du rôle
-    SET v_id_role = GetRoleId(p_nom_role);
-
-    -- Mise à jour du rôle de l'utilisateur en fonction du type
+    v_id_role := GetRoleId(p_nom_role);
     IF p_type_utilisateur = 'client' THEN
         UPDATE client
         SET id_role = v_id_role
         WHERE id_client = p_id_utilisateur;
-    ELSEIF p_type_utilisateur = 'employe' THEN
+    ELSIF p_type_utilisateur = 'employe' THEN
         UPDATE employe
         SET id_role = v_id_role
         WHERE id_employe = p_id_utilisateur;
-    ELSEIF p_type_utilisateur = 'livreur' THEN
+    ELSIF p_type_utilisateur = 'livreur' THEN
         UPDATE livreur
         SET id_role = v_id_role
         WHERE id_livreur = p_id_utilisateur;
     END IF;
-END $$
+END;
+$$;
 
-DELIMITER ;
-
---Procédure pour afficher les clients et leur role
-
-DELIMITER $$
-
-CREATE PROCEDURE AfficherClientsAvecRole()
+-- Procédure pour afficher les clients avec leurs rôles
+CREATE OR REPLACE PROCEDURE AfficherClientsAvecRole()
+LANGUAGE plpgsql AS $$
 BEGIN
     SELECT 
         c.id_client,
@@ -404,15 +469,12 @@ BEGIN
         client c
     JOIN
         role r ON c.id_role = r.id_role;
-END $$
+END;
+$$;
 
-DELIMITER ;
-
---Procédure pour afficher les employé et leur role
-
-DELIMITER $$
-
-CREATE PROCEDURE AfficherEmployesAvecRole()
+-- Procédure pour afficher les employés avec leurs rôles
+CREATE OR REPLACE PROCEDURE AfficherEmployesAvecRole()
+LANGUAGE plpgsql AS $$
 BEGIN
     SELECT 
         e.id_employe,
@@ -425,14 +487,12 @@ BEGIN
         employe e
     JOIN
         role r ON e.id_role = r.id_role;
-END $$
+END;
+$$;
 
-DELIMITER ;
-
---Procédure pour afficher les Livreurs et leur role
-DELIMITER $$
-
-CREATE PROCEDURE AfficherLivreursAvecRole()
+-- Procédure pour afficher les livreurs avec leurs rôles
+CREATE OR REPLACE PROCEDURE AfficherLivreursAvecRole()
+LANGUAGE plpgsql AS $$
 BEGIN
     SELECT 
         l.id_livreur,
@@ -445,9 +505,8 @@ BEGIN
         livreur l
     JOIN
         role r ON l.id_role = r.id_role;
-END $$
-
-DELIMITER ;
+END;
+$$;
 
 --Test des Ajouts
 -- Ajouter 5 clients avec le rôle 'client'
@@ -590,19 +649,19 @@ SELECT c.id_commande, c.total, cl.nom AS client_nom, cl.prenom AS client_prenom
 FROM commande c
 JOIN client cl ON c.id_client = cl.id_client;
 
--- Ajouter la colonne 'role' dans la table des employés
+--Ajouter la colonne 'role' dans la table des employés** :
+
 ALTER TABLE employe ADD COLUMN role VARCHAR(50) DEFAULT 'Utilisateur';
 
-DELIMITER $$
-
--- Procédure pour supprimer un client (accessible seulement à un administrateur)
-CREATE PROCEDURE SupprimerClient(
-    IN p_id_client INT,
-    IN p_user_email VARCHAR(100)  -- email de l'utilisateur appelant
+--Créer une fonction pour supprimer un client
+CREATE OR REPLACE FUNCTION SupprimerClient(
+    p_id_client INT,
+    p_user_email VARCHAR(100)  -- email de l'utilisateur appelant
 )
+RETURNS VOID AS $$
+DECLARE
+    v_role VARCHAR(50);
 BEGIN
-    DECLARE v_role VARCHAR(50);
-
     -- Récupérer le rôle de l'utilisateur appelant
     SELECT role INTO v_role
     FROM employe
@@ -614,68 +673,65 @@ BEGIN
         DELETE FROM client WHERE id_client = p_id_client;
     ELSE
         -- Si l'utilisateur n'est pas administrateur, afficher un message d'erreur
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Erreur : seul un administrateur peut supprimer des clients.';
+        RAISE EXCEPTION 'Erreur : seul un administrateur peut supprimer des clients.';
     END IF;
-END $$
+END;
+$$ LANGUAGE plpgsql;
 
-DELIMITER ;
-
-DELIMITER $$
-
--- Procédure pour supprimer un produit (accessible seulement à un administrateur)
-CREATE PROCEDURE SupprimerProduit(
-    IN p_id_produit INT,
-    IN p_user_email VARCHAR(100)  -- email de l'utilisateur appelant
+--Créer une fonction pour supprimer un produit
+CREATE OR REPLACE FUNCTION SupprimerProduit(
+    p_id_produit INT,
+    p_user_email VARCHAR(100)  -- email de l'utilisateur appelant
 )
+RETURNS VOID AS $$
+DECLARE
+    v_role VARCHAR(50);
 BEGIN
-    DECLARE v_role VARCHAR(50);
-
     -- Récupérer le rôle de l'utilisateur appelant
     SELECT role INTO v_role
     FROM employe
     WHERE email = p_user_email;
 
-    -- Vérifier si l'utilisateur est un administrateur
+    -- Vérifier si l'utilisateur a le rôle d'administrateur
     IF v_role = 'Administrateur' THEN
         -- Si l'utilisateur est un administrateur, on supprime le produit
         DELETE FROM produit WHERE id_produit = p_id_produit;
     ELSE
         -- Si l'utilisateur n'est pas administrateur, afficher un message d'erreur
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Erreur : seul un administrateur peut supprimer des produits.';
+        RAISE EXCEPTION 'Erreur : seul un administrateur peut supprimer des produits.';
     END IF;
-END $$
+END;
+$$ LANGUAGE plpgsql;
 
-DELIMITER ;
 
-DELIMITER $$
-
--- Procédure pour supprimer une commande (accessible seulement à un administrateur)
-CREATE PROCEDURE SupprimerCommande(
-    IN p_id_commande INT,
-    IN p_user_email VARCHAR(100)  -- email de l'utilisateur appelant
+--Créer une fonction pour supprimer une commande
+CREATE OR REPLACE FUNCTION SupprimerCommande(
+    p_id_commande INT,
+    p_user_email VARCHAR(100)  -- email de l'utilisateur appelant
 )
+RETURNS VOID AS $$
+DECLARE
+    v_role VARCHAR(50);
 BEGIN
-    DECLARE v_role VARCHAR(50);
-
     -- Récupérer le rôle de l'utilisateur appelant
     SELECT role INTO v_role
     FROM employe
     WHERE email = p_user_email;
 
-    -- Vérifier si l'utilisateur est un administrateur
+    -- Vérifier si l'utilisateur a le rôle d'administrateur
     IF v_role = 'Administrateur' THEN
         -- Si l'utilisateur est un administrateur, on supprime la commande
         DELETE FROM commande WHERE id_commande = p_id_commande;
     ELSE
         -- Si l'utilisateur n'est pas administrateur, afficher un message d'erreur
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Erreur : seul un administrateur peut supprimer des commandes.';
+        RAISE EXCEPTION 'Erreur : seul un administrateur peut supprimer des commandes.';
     END IF;
-END $$
+END;
+$$ LANGUAGE plpgsql;
 
-DELIMITER ;
-
-CALL SupprimerClient(1, 'admin@example.com');  -- Supprimer le client avec l'ID 1 si l'email de l'utilisateur est admin@example.com
-CALL SupprimerProduit(5, 'admin@example.com');  -- Supprimer le produit avec l'ID 5 si l'email de l'utilisateur est admin@example.com
-CALL SupprimerCommande(10, 'admin@example.com');  -- Supprimer la commande avec l'ID 10 si l'email de l'utilisateur est admin@example.com
+--Appeler les fonctions
+SELECT SupprimerClient(1, 'admin@example.com');  -- Supprimer le client avec l'ID 1 si l'email de l'utilisateur est admin@example.com
+SELECT SupprimerProduit(5, 'admin@example.com');  -- Supprimer le produit avec l'ID 5 si l'email de l'utilisateur est admin@example.com
+SELECT SupprimerCommande(10, 'admin@example.com');  -- Supprimer la commande avec l'ID 10 si l'email de l'utilisateur est admin@example.com
 
 
