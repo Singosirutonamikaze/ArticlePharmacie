@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Déclaration du type de document en HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Définit le jeu de caractères en UTF-8, assurant la prise en charge des caractères spéciaux -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configuration de la mise à l'échelle pour une meilleure adaptabilité sur tous types d'écrans (ordinateurs, tablettes, mobiles) -->
+
+    <!-- Titre de la page, qui apparaîtra dans l'onglet du navigateur -->
+    <title>ArticlePharmacie_Admin</title>
+
+    <!-- Lien vers la feuille de style CSS principale pour les styles généraux de la page -->
+    <link rel="stylesheet" href="../Admin/css/Admin.css">
+    <link rel="stylesheet" href="../Admin/css/uploadimage.css">
+    <link rel="stylesheet" href="../Admin/css/cardCSS.css">
+
+    <!-- Liens vers des logos populaires (par exemple, font-awesome pour des icônes de réseaux sociaux, de recherche, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Corps de la page de login. -->
+    <main>
+        <!-- Conteneur du header -->
+        <header>
+            <h1>Admin</h1>
+            <nav>
+                <!-- Boutons pour les actions administratives -->
+                <button class="BtnUser" id="userProfile" title="Cliquer pour voir le profil utilisateur">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-user" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+                <button class="BtnUser" id="addDrug" title="Veuillez cliquer pour ajouter un médicament">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-plus-circle" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+                <button class="BtnUser" id="DelDrug" title="Veuillez cliquer pour supprimer un médicament">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-trash-alt" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+                <button class="BtnUser" id="UpdateDRUG" title="Veuillez cliquer pour mettre à jour un médicament">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-edit" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+                <button class="BtnUser" id="notification" title="Veuillez cliquer pour voir les notifications">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-bell" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Remplacer les sections par des divs -->
+        <!-- Conteneur pour le premier groupe d'éléments -->
+        <div class="container" id="addElement1">
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElement"></div>
+            <div class="contentElementLast">
+                <div class="left_arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <div class="right_arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteneur pour le deuxième groupe d'éléments -->
+        <div class="container" id="addElement2">
+            <!-- Modal Container -->
+            <div class="modal-container">
+                <div class="modal-content">
+                    <form id="productForm">
+                        <div class="modal-header">
+                            <span class="modal-title">Nouveau Produit</span>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Première partie -->
+                            <div class="form-section">
+                                <div class="form-group">
+                                    <label class="form-label">Nom du Produit<span style="color: red;">*</span></label>
+                                    <input id="nomProduit" class="form-input" type="text"
+                                        placeholder="Entrez le nom du projet" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Prix du Produit<span style="color: red;">*</span></label>
+                                    <input id="prixProduit" class="form-input" type="number"
+                                        placeholder="Entrez le prix du produit" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Image du Produit<span style="color: red;">*</span></label>
+                                    <input id="imageProduit" class="form-input" type="file" accept="image/*" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Descriptions du Produit<span
+                                            style="color: red;">*</span></label>
+                                    <textarea id="descriptionProduit" class="form-input form-input--textarea"
+                                        placeholder="Fournissez une description complète du projet" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Maladies du Produit<span
+                                            style="color: red;">*</span></label>
+                                    <input id="maladiesProduit" class="form-input" type="text"
+                                        placeholder="Listez les maladies concernées" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Stock du Produit<span
+                                            style="color: red;">*</span></label>
+                                    <input id="stockproduit" class="form-input" type="number"
+                                        placeholder="Entrer le stock du produits" required>
+                                </div>
+                            </div>
+
+                            <!-- Deuxième partie -->
+                            <div class="form-section">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Utilisations du Produit<span
+                                                style="color: red;">*</span></label>
+                                        <textarea id="utilisationsProduit" class="form-input form-input--textarea"
+                                            placeholder="Indiquez les utilisations principales" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Posologie du Produit<span
+                                                style="color: red;">*</span></label>
+                                        <textarea id="posologieProduit" class="form-input form-input--textarea"
+                                            placeholder="Ajoutez des détails sur la posologie" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Précautions du Produit<span
+                                                style="color: red;">*</span></label>
+                                        <textarea id="precautionsProduit" class="form-input form-input--textarea"
+                                            placeholder="Ajoutez des précautions importantes"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Liens de Référence du Produit<span
+                                                style="color: red;">*</span></label>
+                                        <input id="liensProduit" class="form-input" type="url"
+                                            placeholder="Ajoutez des liens de référence" required>
+                                    </div>
+                                </div>
+                                <button class="primary-button" type="submit" style="margin-top: 3%;">Ajouter le produit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteneur pour le troisième groupe d'éléments -->
+        <div class="container" id="addElement3">
+            <!-- Conteneurs des médicaments -->
+            <div class="deleteDivContainer"></div>
+            <!-- Conteneur pour les flèches (caché initialement) -->
+            <div class="deleteDivContainerRow">
+                <div class="left_arrowR">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <div class="right_arrowR">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="addElement4"></div>
+
+        <div class="container" id="addElement5"> </div>
+    </main>
+
+    <div id="warbning" class="warbning">
+        <div class="card" id="card">
+            <p class="cookieHeading">Suppression</p>
+            <p class="cookieDescription">Voullez-vous supprimer le médicament/produit ?</p>
+            <div class="buttonContainer">
+                <button class="acceptButton">Oui</button>
+                <button class="declineButton">Non</button>
+            </div>
+        </div>
+    </div>    
+    
+    <!-- Lien vers le fichier JavaScript principal pour gérer les interactions et les fonctions dynamiques de la page -->
+    <script src="../Admin/js/appAdmin.js" defer></script>
+    <script type="module" src="../Admin/js/formulaire.js" defer></script>
+    <script type="module" src="../Admin/js/ProduitFormulaire.js" defer></script>
+    <script src="../Admin/js/update.JS" defer></script>
+    <script src="../Admin/js/delete.js" defer></script>
+</body>
+
+</html>

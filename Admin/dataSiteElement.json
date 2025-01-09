@@ -1,0 +1,986 @@
+[
+    {
+        "nom": "Fedal Sirop (2800 mg)",
+        "image": "../Admin/assets/images/Fedal Sirop.png",
+        "description": "Fedal Sirop est un médicament utilisé pour le traitement des infections et des inflammations.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "anémie ferriprive",
+            "carence en fer sans anémie"
+        ],
+        "utilisations": [
+            "Traitement de l'anémie ferriprive : Augmente les niveaux de fer dans le sang pour traiter l'anémie due à un déficit en fer",
+            "Traitement de la carence en fer sans anémie : Remédie à la carence en fer sans symptômes d'anémie"
+        ],
+        "posologie": [
+            "Enfants de 1 à 6 ans : 5 ml (1 cuillère-mesure) deux à quatre fois par jour, entre les repas",
+            "Adultes et enfants de plus de 6 ans : 10 ml (2 cuillères-mesures) deux à quatre fois par jour, entre les repas"
+        ],
+        "precautions": [
+            "Si vos symptômes ne s'améliorent pas dans les 3 semaines, veuillez en informer votre médecin",
+            "Excédent de fer dans l’organisme (hémochromatose, hémosidérose)",
+            "Le traitement par Fedal Sirop peut entraîner une coloration foncée des selles, toutefois elle est inoffensive"
+        ],
+        "liens_de_reference": "https://www.fedal.fr/medicaments/medicament/fedal-sirop/"
+    },
+    {
+        "nom": "Ibumol cp B130 (2600)",
+        "image": "../Admin/assets/images/Ibumol.jpg",
+        "description": "Ibumol cp B130 est un médicament anti-inflammatoire non stéroïdien (AINS), utilisé pour soulager la douleur et réduire la fièvre.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Douleurs légères à modérées (maux de tête, douleurs dentaires, douleurs musculaires)",
+            "Fièvre"
+        ],
+        "utilisations": [
+            "Traitement des douleurs légères à modérées : Maux de tête, douleurs dentaires, douleurs musculaires",
+            "Réduction de la fièvre"
+        ],
+        "posologie": [
+            "Adultes et enfants de plus de 12 ans : 200 à 400 mg toutes les 4 à 6 heures, ne pas dépasser 1200 mg par jour",
+            "Enfants de 6 à 12 ans : 200 mg toutes les 6 à 8 heures, ne pas dépasser 800 mg par jour"
+        ],
+        "precautions": [
+            "Ne pas dépasser les doses journalières recommandées pour éviter les surdosages",
+            "Boire un grand verre d'eau avec chaque prise pour protéger le système digestif",
+            "Prendre l'ibuprofène en mangeant pour éviter les brûlures d'estomac"
+        ],
+        "liens_de_reference": "https://www.dapmed-africa.com/medicaments/view/ibumol-400-mg-500-mg-cp-boite-de-30/"
+    },
+    {
+        "nom": "Linmox cp (500)",
+        "image": "../Admin/assets/images/Linmox-500_02.jpg",
+        "description": "Linmox cp est un antibiotique utilisé pour traiter les infections bactériennes.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Infections des voies respiratoires",
+            "Infections urinaires",
+            "Infections de la peau"
+        ],
+        "utilisations": [
+            "Traitement des infections des voies respiratoires",
+            "Traitement des infections urinaires"
+        ],
+        "posologie": [
+            "Adultes : 500 mg toutes les 8 heures ou selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Suivre le traitement complet même si les symptômes s'améliorent",
+            "Ne pas utiliser en cas d'allergie connue aux antibiotiques similaires",
+            "Consulter un médecin en cas d'effets indésirables sévères"
+        ],
+        "liens_de_reference": "https://www.exemple.com/linmox"
+    },
+    {
+        "nom": "Litacold cp B120 (4500)",
+        "image": "../Admin/assets/images/Litacold cp B120.png",
+        "description": "Litacold cp B120 est un médicament combiné souvent utilisé pour traiter les symptômes du rhume et de la grippe.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Nez qui coule",
+            "Congestion nasale",
+            "Maux de tête dus au rhume ou à la grippe"
+        ],
+        "utilisations": [
+            "Traitement du nez qui coule",
+            "Traitement de la congestion nasale"
+        ],
+        "posologie": [
+            "Adultes : 1 comprimé toutes les 4 à 6 heures, ne pas dépasser 4 comprimés par jour",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas utiliser chez les enfants de moins de 6 ans sans avis médical",
+            "Ne pas dépasser la dose recommandée pour éviter les effets indésirables",
+            "Consulter un médecin en cas de persistance des symptômes"
+        ],
+        "liens_de_reference": "https://www.exemple.com/litacold"
+    },
+    {
+        "nom": "Parafiz cp (2700)",
+        "image": "../Admin/assets/images/parafiz.jpeg",
+        "description": "Parafiz cp est un médicament généralement utilisé comme antalgique et antipyrétique.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Douleurs",
+            "Fièvre"
+        ],
+        "utilisations": [
+            "Traitement des douleurs légères à modérées",
+            "Réduction de la fièvre"
+        ],
+        "posologie": [
+            "Adultes : 500 mg toutes les 4 à 6 heures, ne pas dépasser 3 grammes par jour",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas d'effets indésirables",
+            "Ne pas utiliser en cas d'allergie connue au paracétamol"
+        ],
+        "liens_de_reference": "https://www.exemple.com/parafiz"
+    },
+    {
+        "nom": "Apramol cp (1025)",
+        "image": "../Admin/assets/images/Apramol cp (1025).webp",
+        "description": "Antalgique utilisé pour soulager la douleur et réduire la fièvre.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Douleurs légères à modérées",
+            "Fièvre"
+        ],
+        "utilisations": [
+            "Traitement des douleurs légères à modérées : Soulagement des maux de tête, douleurs dentaires et douleurs musculaires",
+            "Réduction de la fièvre"
+        ],
+        "posologie": [
+            "Adultes : 500 mg toutes les 4 à 6 heures, ne pas dépasser 3 grammes par jour",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Prendre avec de la nourriture pour éviter les troubles digestifs",
+            "Consulter un médecin en cas d'effets indésirables"
+        ],
+        "liens_de_reference": "https://www.exemple.com/apramol"
+    },
+    {
+        "nom": "Artefan (2100)",
+        "image": "../Admin/assets/images/Artefan (2100).webp",
+        "description": "Médicament généralement utilisé pour le traitement des infections à virus ou des infections bactériennes.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Rhumes",
+            "Grippes",
+            "Infections respiratoires"
+        ],
+        "utilisations": [
+            "Traitement des rhumes",
+            "Traitement des infections respiratoires"
+        ],
+        "posologie": [
+            "Adultes : 1 comprimé toutes les 12 heures, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de persistance des symptômes",
+            "Ne pas utiliser en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/artefan"
+    },
+    {
+        "nom": "Pinko (1100)",
+        "image": "../Admin/assets/images/pinko.jpg",
+        "description": "Médicament efficace contre les allergies et les symptômes associés.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Allergies",
+            "Rhinite allergique"
+        ],
+        "utilisations": [
+            "Traitement des allergies : Soulagement des symptômes allergiques comme les démangeaisons et les éruptions cutanées",
+            "Traitement de la rhinite allergique : Réduction des symptômes tels que le nez qui coule et les éternuements"
+        ],
+        "posologie": [
+            "Adultes : 10 mg une fois par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de réaction allergique sévère",
+            "Éviter de prendre en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/pinko"
+    },
+    {
+        "nom": "Apdyl H (1500)",
+        "image": "../Admin/assets/images/Apdyl H (1500).jpg",
+        "description": "Médicament utilisé pour traiter les symptômes allergiques et inflammatoires.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Allergies",
+            "Rhume des foins"
+        ],
+        "utilisations": [
+            "Traitement des allergies : Soulagement des symptômes allergiques",
+            "Traitement du rhume des foins : Réduction des symptômes tels que les yeux larmoyants et les éternuements"
+        ],
+        "posologie": [
+            "Adultes : 1 comprimé toutes les 8 heures, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de réaction allergique sévère",
+            "Éviter de prendre en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/apdyl_h"
+    },
+    {
+        "nom": "Paracetamol (500 mg)",
+        "image": "../Admin/assets/images/Paracetamol (500 mg).jpg.webp",
+        "description": "Médicament anti-inflammatoire non stéroïdien, utilisé pour soulager la douleur et la fièvre.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Douleurs légères à modérées",
+            "Fièvre"
+        ],
+        "utilisations": [
+            "Traitement des douleurs légères à modérées : Soulagement des maux de tête, douleurs dentaires et douleurs musculaires",
+            "Réduction de la fièvre"
+        ],
+        "posologie": [
+            "Adultes : 500 mg toutes les 4 à 6 heures, ne pas dépasser 3 grammes par jour",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas d'effets indésirables",
+            "Ne pas utiliser en cas d'allergie connue au paracétamol"
+        ],
+        "liens_de_reference": "https://www.exemple.com/paracetamol"
+    },
+    {
+        "nom": "Ibuprofène (400 mg)",
+        "image": "../Admin/assets/images/Ibuprofène (400 mg).jpg.webp",
+        "description": "AINS utilisé pour réduire la douleur, l'inflammation et la fièvre.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Douleurs musculaires",
+            "Douleurs articulaires",
+            "Migraines",
+            "Douleurs menstruelles"
+        ],
+        "utilisations": [
+            "Traitement des douleurs musculaires et articulaires",
+            "Soulagement des migraines"
+        ],
+        "posologie": [
+            "Adultes et enfants de plus de 12 ans : 200 à 400 mg toutes les 4 à 6 heures, ne pas dépasser 1200 mg par jour",
+            "Enfants de 6 à 12 ans : 200 mg toutes les 6 à 8 heures, ne pas dépasser 800 mg par jour"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée pour éviter les surdosages",
+            "Prendre avec de la nourriture pour éviter les troubles digestifs",
+            "Consulter un médecin en cas d'effets indésirables"
+        ],
+        "liens_de_reference": "https://www.exemple.com/ibuprofène"
+    },
+    {
+        "nom": "Cetrizine (10 mg)",
+        "image": "../Admin/assets/images/Cetrizine (10 mg).webp",
+        "description": "Antihistaminique utilisé pour soulager les symptômes d'allergies.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Rhinites allergiques",
+            "Urticaires",
+            "Allergies cutanées"
+        ],
+        "utilisations": [
+            "Soulagement des symptômes de rhinites allergiques, telles que le nez qui coule et les éternuements",
+            "Réduction des démangeaisons et de l'urticaire"
+        ],
+        "posologie": [
+            "Adultes et enfants de plus de 12 ans : 10 mg une fois par jour",
+            "Enfants de 6 à 12 ans : 5 mg deux fois par jour ou 10 mg une fois par jour, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de réaction allergique sévère",
+            "Éviter de prendre en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/cetrizine"
+    },
+    {
+        "nom": "Omeprazole (20 mg)",
+        "image": "../Admin/assets/images/Omeprazole (20 mg).jpg.webp",
+        "description": "Inhibiteur de la pompe à protons, utilisé pour réduire la production d'acide gastrique.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Ulcères gastroduodénaux",
+            "Reflux gastro-œsophagien"
+        ],
+        "utilisations": [
+            "Traitement des ulcères gastroduodénaux en réduisant la production d'acide gastrique",
+            "Réduction des symptômes du reflux gastro-œsophagien tels que les brûlures d'estomac"
+        ],
+        "posologie": [
+            "Adultes : 20 mg une fois par jour avant un repas, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Prendre avant les repas pour une meilleure efficacité",
+            "Consulter un médecin en cas de persistance des symptômes"
+        ],
+        "liens_de_reference": "https://www.exemple.com/omeprazole"
+    },
+    {
+        "nom": "Amoxicilline + Acide Clavulanique (875/125 mg)",
+        "image": "../Admin/assets/images/Amoxicilline + Acide Clavulanique.webp",
+        "description": "Antibiotique combiné pour traiter les infections bactériennes.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Infections des voies respiratoires",
+            "Sinusites",
+            "Otites"
+        ],
+        "utilisations": [
+            "Traitement des infections des voies respiratoires, y compris la bronchite",
+            "Traitement des sinusites aiguës"
+        ],
+        "posologie": [
+            "Adultes : 875 mg / 125 mg toutes les 12 heures, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Suivre le traitement complet même si les symptômes s'améliorent",
+            "Ne pas utiliser en cas d'allergie connue aux antibiotiques similaires",
+            "Consulter un médecin en cas d'effets indésirables sévères"
+        ],
+        "liens_de_reference": "https://www.exemple.com/amoxicilline_clavulanique"
+    },
+    {
+        "nom": "Cetirizine + Pseudoéphédrine",
+        "image": "../Admin/assets/images/Cetirizine + Pseudoéphédrine.jpeg",
+        "description": "Combiné antihistaminique et décongestionnant.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Allergies",
+            "Congestion nasale"
+        ],
+        "utilisations": [
+            "Soulagement des symptômes allergiques tels que les démangeaisons et les éruptions cutanées",
+            "Réduction de la congestion nasale associée aux allergies"
+        ],
+        "posologie": [
+            "Adultes et enfants de plus de 12 ans : 1 comprimé deux fois par jour, matin et soir, selon la prescription médicale",
+            "Enfants de 6 à 12 ans : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de réaction allergique sévère",
+            "Éviter de prendre en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/cetirizine_pseudoéphédrine"
+    },
+    {
+        "nom": "Montélukast (10 mg)",
+        "image": "../Admin/assets/images/Montélukast.jpg",
+        "description": "Antagoniste des récepteurs des leucotriènes, utilisé pour prévenir l'asthme.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Asthme",
+            "Rhinite allergique"
+        ],
+        "utilisations": [
+            "Prévention des crises d'asthme",
+            "Réduction des symptômes de la rhinite allergique"
+        ],
+        "posologie": [
+            "Adultes et enfants de plus de 15 ans : 10 mg une fois par jour, le soir",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas arrêter brusquement le traitement sans avis médical",
+            "Consulter un médecin en cas de troubles psychiatriques",
+            "Ne pas utiliser en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/montelukast"
+    },
+    {
+        "nom": "Ranitidine (150 mg)",
+        "image": "../Admin/assets/images/Ranitidine.jpg",
+        "description": "Médicament utilisé pour réduire l'acidité gastrique.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Ulcères",
+            "Reflux gastro-œsophagien"
+        ],
+        "utilisations": [
+            "Traitement des ulcères gastroduodénaux",
+            "Réduction des symptômes de reflux gastro-œsophagien"
+        ],
+        "posologie": [
+            "Adultes : 150 mg deux fois par jour ou 300 mg une fois par jour, le soir, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Consulter un médecin en cas de persistance des symptômes",
+            "Ne pas utiliser en cas d'allergie connue au médicament",
+            "Informer le médecin de toute autre condition médicale avant de prendre ce médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/ranitidine"
+    },
+    {
+        "nom": "Simvastatine (20 mg)",
+        "image": "../Admin/assets/images/simvastatine.avif",
+        "description": "Médicament hypolipémiant utilisé pour abaisser le taux de cholestérol.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Hypercholestérolémie",
+            "Prévention des maladies cardiovasculaires"
+        ],
+        "utilisations": [
+            "Réduction du taux de cholestérol dans le sang",
+            "Prévention des maladies cardiovasculaires"
+        ],
+        "posologie": [
+            "Adultes : 20 à 40 mg une fois par jour, le soir, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Informer le médecin de toute autre condition médicale avant de prendre ce médicament",
+            "Consulter un médecin en cas de douleurs musculaires importantes",
+            "Ne pas utiliser en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/simvastatine"
+    },
+    {
+        "nom": "Metformine (500 mg)",
+        "image": "../Admin/assets/images/metformine2.jpg",
+        "description": "Médicament antidiabétique utilisé pour traiter le diabète de type 2.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Diabète de type 2",
+            "Résistance à l'insuline"
+        ],
+        "utilisations": [
+            "Traitement du diabète de type 2",
+            "Amélioration de la sensibilité à l'insuline"
+        ],
+        "posologie": [
+            "Adultes : 500 mg deux à trois fois par jour, au début des repas, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de troubles gastro-intestinaux",
+            "Ne pas utiliser en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/metformine"
+    },
+    {
+        "nom": "Lorazépam (1 mg)",
+        "image": "../Admin/assets/images/Lorazepam.jpeg",
+        "description": "Benzodiazépine utilisée pour l'anxiété et les troubles du sommeil.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Anxiété",
+            "Insomnie"
+        ],
+        "utilisations": [
+            "Traitement de l'anxiété",
+            "Amélioration du sommeil"
+        ],
+        "posologie": [
+            "Adultes : 1 à 3 mg par jour en doses divisées, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Ne pas utiliser en cas d'allergie connue aux benzodiazépines",
+            "Consulter un médecin en cas de troubles respiratoires"
+        ],
+        "liens_de_reference": "https://www.exemple.com/lorazepam"
+    },
+    {
+        "nom": "Clopidogrel (75 mg)",
+        "image": "../Admin/assets/images/clopidrogel.jpg",
+        "description": "Médicament antiplaquettaire utilisé pour prévenir les caillots sanguins.",
+        "prix" : 2500,
+        "maladies": [
+            "Prévention des accidents vasculaires cérébraux",
+            "Infarctus du myocarde"
+        ],
+        "utilisations": [
+            "Prévention des accidents vasculaires cérébraux",
+            "Prévention des infarctus du myocarde"
+        ],
+        "posologie": [
+            "Adultes : 75 mg une fois par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de troubles hémorragiques",
+            "Ne pas utiliser en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/clopidogrel"
+    },
+    {
+        "nom": "Lansoprazole (30 mg)",
+        "image": "../Admin/assets/images/lansoprazole.jpeg",
+        "description": "Inhibiteur de la pompe à protons pour réduire la production d'acide gastrique.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Ulcères",
+            "Reflux gastro-œsophagien"
+        ],
+        "utilisations": [
+            "Traitement des ulcères gastroduodénaux",
+            "Réduction des symptômes de reflux gastro-œsophagien"
+        ],
+        "posologie": [
+            "Adultes : 30 mg une fois par jour avant un repas, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Prendre avant les repas pour une meilleure efficacité",
+            "Consulter un médecin en cas de persistance des symptômes"
+        ],
+        "liens_de_reference": "https://www.exemple.com/lansoprazole"
+    },
+    {
+        "nom": "Furosemide (40 mg)",
+        "image": "../Admin/assets/images/furosemide.jpeg",
+        "description": "Diurétique utilisé pour réduire la rétention d'eau.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Hypertension",
+            "Œdème"
+        ],
+        "utilisations": [
+            "Traitement de l'hypertension",
+            "Réduction de l'œdème"
+        ],
+        "posologie": [
+            "Adultes : 20 à 40 mg par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de déshydratation",
+            "Surveiller les niveaux de potassium"
+        ],
+        "liens_de_reference": "https://www.exemple.com/furosemide"
+    },
+    {
+        "nom": "Amlodipine (5 mg)",
+        "image": "../Admin/assets/images/Amlodipine.webp",
+        "description": "Antihypertenseur utilisé pour traiter l'hypertension et l'angine de poitrine.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Hypertension",
+            "Angine"
+        ],
+        "utilisations": [
+            "Traitement de l'hypertension",
+            "Soulagement de l'angine"
+        ],
+        "posologie": [
+            "Adultes : 5 à 10 mg une fois par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de douleurs thoraciques",
+            "Informer le médecin de toute autre condition médicale"
+        ],
+        "liens_de_reference": "https://www.exemple.com/amlodipine"
+    },
+    {
+        "nom": "Prednisone (20 mg)",
+        "image": "../Admin/assets/images/prednisone.jpg",
+        "description": "Corticostéroïde utilisé pour traiter l'inflammation.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Maladies inflammatoires",
+            "Allergies graves"
+        ],
+        "utilisations": [
+            "Traitement des maladies inflammatoires",
+            "Soulagement des allergies graves"
+        ],
+        "posologie": [
+            "Adultes : 5 à 60 mg par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas arrêter brusquement le traitement",
+            "Consulter un médecin en cas d'infections",
+            "Surveiller la pression artérielle"
+        ],
+        "liens_de_reference": "https://www.exemple.com/prednisone"
+    },
+    {
+        "nom": "Dexaméthasone (4 mg)",
+        "image": "../Admin/assets/images/Dexaméthasone.webp",
+        "description": "Corticostéroïde utilisé pour son effet anti-inflammatoire.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Allergies",
+            "Inflammations",
+            "Certaines maladies auto-immunes"
+        ],
+        "utilisations": [
+            "Traitement des allergies",
+            "Réduction des inflammations"
+        ],
+        "posologie": [
+            "Adultes : 0,5 à 10 mg par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas arrêter brusquement le traitement",
+            "Consulter un médecin en cas d'infections",
+            "Surveiller la glycémie"
+        ],
+        "liens_de_reference": "https://www.exemple.com/dexamethasone"
+    },
+    {
+        "nom": "Erythromycine (500 mg)",
+        "image": "../Admin/assets/images/Erythromycine.jpg",
+        "description": "Antibiotique macrolide efficace contre divers types d'infections bactériennes.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Infections respiratoires",
+            "Infections cutanées"
+        ],
+        "utilisations": [
+            "Traitement des infections respiratoires",
+            "Traitement des infections cutanées"
+        ],
+        "posologie": [
+            "Adultes : 250 à 500 mg toutes les 6 heures, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Suivre le traitement complet",
+            "Ne pas utiliser en cas d'allergie connue aux macrolides",
+            "Consulter un médecin en cas de troubles hépatiques"
+        ],
+        "liens_de_reference": "https://www.exemple.com/erythromycine"
+    },
+    {
+        "nom": "Tétracycline (250 mg)",
+        "image": "../Admin/assets/images/Tétracycline.jpg",
+        "description": "Antibiotique utilisé contre diverses infections bactériennes.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Acné",
+            "Infections urinaires",
+            "Infections respiratoires"
+        ],
+        "utilisations": [
+            "Traitement de l'acné",
+            "Traitement des infections urinaires"
+        ],
+        "posologie": [
+            "Adultes : 250 à 500 mg toutes les 6 heures, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Suivre le traitement complet",
+            "Ne pas utiliser en cas d'allergie connue aux tétracyclines",
+            "Éviter l'exposition prolongée au soleil"
+        ],
+        "liens_de_reference": "https://www.exemple.com/tetracycline"
+    },
+    {
+        "nom": "Métronidazole (500 mg)",
+        "image": "../Admin/assets/images/Métronidazole.png",
+        "description": "Antibiotique utilisé contre certaines infections parasitaires et bactériennes.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Infections gastro-intestinales",
+            "Infections vaginales"
+        ],
+        "utilisations": [
+            "Traitement des infections gastro-intestinales",
+            "Traitement des infections vaginales"
+        ],
+        "posologie": [
+            "Adultes : 500 mg deux à trois fois par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas consommer d'alcool pendant le traitement",
+            "Suivre le traitement complet",
+            "Consulter un médecin en cas de troubles neurologiques"
+        ],
+        "liens_de_reference": "https://www.exemple.com/metronidazole"
+    },
+    {
+        "nom": "Fluconazole (150 mg)",
+        "image": "../Admin/assets/images/Fluconazole.jpeg",
+        "description": "Antifongique utilisé pour traiter les infections fongiques, y compris celles à levures.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Candidoses",
+            "Infections fongiques systémiques"
+        ],
+        "utilisations": [
+            "Traitement des candidoses",
+            "Traitement des infections fongiques systémiques"
+        ],
+        "posologie": [
+            "Adultes : 150 mg en dose unique ou selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de troubles hépatiques",
+            "Éviter l'automédication"
+        ],
+        "liens_de_reference": "https://www.exemple.com/fluconazole"
+    },
+    {
+        "nom": "Levothyroxine (50 mcg)",
+        "image": "../Admin/assets/images/Levothyroxine.jpg",
+        "description": "Hormone thyroïdienne utilisée pour traiter l'hypothyroïdie.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Hypothyroïdie",
+            "Goitre"
+        ],
+        "utilisations": [
+            "Traitement de l'hypothyroïdie",
+            "Réduction du goitre"
+        ],
+        "posologie": [
+            "Adultes : 50 à 200 mcg une fois par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas arrêter brusquement le traitement",
+            "Consulter un médecin en cas de troubles cardiaques",
+            "Surveiller la fonction thyroïdienne régulièrement"
+        ],
+        "liens_de_reference": "https://www.exemple.com/levothyroxine"
+    },
+    {
+        "nom": "Sertraline (50 mg)",
+        "image": "../Admin/assets/images/Sertraline.jpg",
+        "description": "Antidépresseur (inhibiteur sélectif de la recapture de la sérotonine).",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Dépression",
+            "Anxiété",
+            "Troubles obsessionnels compulsifs"
+        ],
+        "utilisations": [
+            "Traitement de la dépression",
+            "Soulagement des symptômes anxieux"
+        ],
+        "posologie": [
+            "Adultes : 50 mg une fois par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas arrêter brusquement le traitement sans avis médical",
+            "Consulter un médecin en cas de pensées suicidaires",
+            "Éviter l'alcool pendant le traitement"
+        ],
+        "liens_de_reference": "https://www.exemple.com/sertraline"
+    },
+    {
+        "nom": "Zolpidem (10 mg)",
+        "image": "../Admin/assets/images/Zolpidem.webp",
+        "description": "Médicament utilisé pour traiter l'insomnie à court terme.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Insomnie"
+        ],
+        "utilisations": [
+            "Traitement de l'insomnie"
+        ],
+        "posologie": [
+            "Adultes : 10 mg au coucher, selon la prescription médicale",
+            "Enfants : Non recommandé"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Éviter de conduire ou d'utiliser des machines après la prise",
+            "Consulter un médecin en cas de somnolence diurne excessive"
+        ],
+        "liens_de_reference": "https://www.exemple.com/zolpidem"
+    },
+    {
+        "nom": "Propranolol (40 mg)",
+        "image": "../Admin/assets/images/Propranolol.jpg",
+        "description": "Bêta-bloquant utilisé pour les maladies cardiovasculaires.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Hypertension",
+            "Migraines",
+            "Anxiété"
+        ],
+        "utilisations": [
+            "Traitement de l'hypertension",
+            "Prévention des migraines"
+        ],
+        "posologie": [
+            "Adultes : 40 mg deux à trois fois par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas arrêter brusquement le traitement",
+            "Consulter un médecin en cas de troubles respiratoires",
+            "Éviter l'alcool pendant le traitement"
+        ],
+        "liens_de_reference": "https://www.exemple.com/propranolol"
+    },
+    {
+        "nom": "Loratadine (10 mg)",
+        "image": "../Admin/assets/images/Loratadine.jpg",
+        "description": "Antihistaminique utilisé pour soulager les symptômes allergiques.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Rhinite allergique",
+            "Urticaire"
+        ],
+        "utilisations": [
+            "Traitement de la rhinite allergique",
+            "Soulagement de l'urticaire"
+        ],
+        "posologie": [
+            "Adultes et enfants de plus de 12 ans : 10 mg une fois par jour",
+            "Enfants de 6 à 12 ans : 5 mg deux fois par jour ou 10 mg une fois par jour, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de réaction allergique sévère",
+            "Éviter de prendre en cas d'allergie connue au médicament"
+        ],
+        "liens_de_reference": "https://www.exemple.com/loratadine"
+    },
+    {
+        "nom": "Salmétérol (50 mcg)",
+        "image": "../Admin/assets/images/Salmétérol.webp",
+        "description": "Bronchodilatateur utilisé pour le traitement de l'asthme et de la BPCO.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Asthme",
+            "Bronchopneumopathie chronique obstructive"
+        ],
+        "utilisations": [
+            "Traitement de l'asthme",
+            "Traitement de la BPCO"
+        ],
+        "posologie": [
+            "Adultes et enfants de plus de 12 ans : 50 mcg deux fois par jour, selon la prescription médicale",
+            "Enfants de 4 à 12 ans : 25 mcg deux fois par jour, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de tremblements",
+            "Éviter l'alcool pendant le traitement"
+        ],
+        "liens_de_reference": "https://www.exemple.com/salmetérol"
+    },
+    {
+        "nom": "Ciprofloxacine (500 mg)",
+        "image": "../Admin/assets/images/Ciprofloxacine.jpeg",
+        "description": "Antibiotique fluoroquinolone utilisé contre diverses infections bactériennes.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Infections urinaires",
+            "Gastro-intestinales",
+            "Respiratoires"
+        ],
+        "utilisations": [
+            "Traitement des infections urinaires",
+            "Traitement des infections gastro-intestinales"
+        ],
+        "posologie": [
+            "Adultes : 500 mg toutes les 12 heures, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction du poids et de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas consommer de produits laitiers pendant le traitement",
+            "Suivre le traitement complet",
+            "Consulter un médecin en cas de douleurs tendineuses"
+        ],
+        "liens_de_reference": "https://www.exemple.com/ciprofloxacine"
+    },
+    {
+        "nom": "Prazosine (1 mg)",
+        "image": "../Admin/assets/images/Prazosine.webp",
+        "description": "Médicament antihypertenseur qui agit en relaxant les vaisseaux sanguins.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Hypertension",
+            "Symptômes d'hyperplasie bénigne de la prostate"
+        ],
+        "utilisations": [
+            "Traitement de l'hypertension",
+            "Soulagement des symptômes de l'hyperplasie bénigne de la prostate"
+        ],
+        "posologie": [
+            "Adultes : 1 mg deux à trois fois par jour, selon la prescription médicale",
+            "Enfants : Posologie adaptée en fonction de l'âge, selon la prescription médicale"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de vertiges",
+            "Éviter l'alcool pendant le traitement"
+        ],
+        "liens_de_reference": "https://www.exemple.com/prazosine"
+    },
+    {
+        "nom": "Tamsulosine (0,4 mg)",
+        "image": "../Admin/assets/images/Tamsulosine.jpeg",
+        "description": "Médicament utilisé pour traiter les symptômes de l'hyperplasie bénigne de la prostate.",
+        "prix" : 2500,
+        "stock": 50,
+        "maladies": [
+            "Difficultés de miction",
+            "Adénome de la prostate"
+        ],
+        "utilisations": [
+            "Traitement des difficultés de miction",
+            "Soulagement des symptômes de l'adénome de la prostate"
+        ],
+        "posologie": [
+            "Adultes : 0,4 mg une fois par jour après le repas, selon la prescription médicale",
+            "Enfants : Non recommandé"
+        ],
+        "precautions": [
+            "Ne pas dépasser la dose recommandée",
+            "Consulter un médecin en cas de vertiges",
+            "Éviter l'alcool pendant le traitement"
+        ],
+        "liens_de_reference": "https://www.exemple.com/tamsulosine"
+    }
+]
