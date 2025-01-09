@@ -15,6 +15,8 @@ nav
     margin: 2rem auto ;
     padding: 8px;
     backdrop-filter: blur(15px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                4px 0 6px rgba(0, 0, 0, 0.1);
 }
 nav .logo img
 {
@@ -239,9 +241,12 @@ nav .user_acount i
 .box .products_informations
 {
     width: 35%;
-    height: 100%;
-    border: 2px solid rgb(36, 211, 36);
     margin: 0 2rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    animation: fade 0.8s ease;
 }
 .box .products_informations .shopping_cart{
     display: flex;
@@ -285,7 +290,7 @@ nav .user_acount i
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
+    width: 150px;
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -383,7 +388,7 @@ nav .user_acount i
 }
 
 .box .products_informations .content_info .prix_achat button,input{
-    padding:8px 30px;
+    padding:13px 30px;
     border-radius: 10px;
     background: #fff;
     border: 2px solid rgb(36, 211, 36);
@@ -401,10 +406,11 @@ nav .user_acount i
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px ;
+    gap: 10px;
+    margin: 25px auto;
 }
 .box .products_informations .content_info .achat button{
-    padding:8px 30px;
+    padding:20px 30px;
     border-radius: 10px;
     background: #fff;
     border: 2px solid rgb(36, 211, 36);
@@ -418,3 +424,130 @@ nav .user_acount i
     font-weight: bold;
     border: solid 1px rgb(36, 211, 36);
 }
+
+.commande{
+    display: none;
+    border: 2px solid rgb(36, 211, 36);
+}
+.commande .title{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    font-size: 20px;
+}
+
+.commande .box_commande {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    gap: 10px; 
+}
+
+.commande .box_commande{
+    flex: 1 0 150px; 
+    margin: 5px; 
+}
+
+
+.box_commande article
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box_commande article img
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    animation: scale 0.8s ease;
+}
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.05);
+    }
+
+.box_commande article img:hover
+{
+    animation: scale 0.8s forwards;
+}
+
+.box_commande article button{
+    margin: 10px auto ;
+    padding:5px 15px;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px solid rgb(151, 32, 28);
+    font-size: 17px;
+}
+.box_commande article button:hover{
+    background: rgb(151, 32, 28) ;
+    color: #fff;
+    font-weight: bold;
+    border: solid 1px rgb(151, 32, 28);
+}
+
+.valider_achat{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 20px;
+}
+.valider_achat .check{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 15px;
+}
+#validate_check{
+    width: 20px;
+    height: 20px;
+}
+.valider_achat .check_validation p a{
+    font-size: 15px;
+    font-style: italic;
+}
+
+.valider_achat button{
+    padding:5px 15px;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px solid rgb(36, 211, 36);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.valider_achat button:hover{
+    background: rgb(36, 211, 36);
+    color: #fff;
+    font-weight: bold;
+    border: solid 1px rgb(36, 211, 36);
+}
+

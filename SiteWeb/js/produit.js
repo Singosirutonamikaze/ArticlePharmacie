@@ -13,8 +13,13 @@ async function loadProducts() {
 
 let nbreAjoutPanier = 0;
 const number = document.querySelector(".number span");
-// convertir le nombre dans le span en entier
-number.textContent = parseInt(number.textContent);
+let nbre = 0;
+number.innerHTML = nbre;
+
+// ecouter un evenement sur le bouton acheter pour ajouter le medicament au panier
+const sectionCommande = document.querySelector(".commande");
+const boxCommande = document.querySelector(".box_commande");
+
 
 function getProducts(piece) {
     const firstSection = document.querySelector(".first_section");
@@ -152,46 +157,52 @@ function getProducts(piece) {
             divAchat.classList.add("achat");
             const acheter = document.createElement("button");
             acheter.textContent = "Ajouter au panier";
+            
             divAchat.appendChild(acheter);
 
-            // ecouter un evenement sur le bouton acheter pour ajouter le medicament au panier
             
                 acheter.addEventListener("click", () => {
+                    sectionCommande.style.display = "block";
                     const quantite = input.value;
                     if(quantite > 0){
+                        
                         nbreAjoutPanier++;
-                        number.textContent = nbreAjoutPanier;
-                    }
-                    contentInfo.innerHTML = '';
-                    // recuperer l'element .box_commande depuis le html validation.html
-                    const boxCommande = document.querySelector(".box_commande");
-                    if(!boxCommande){
-                        console.error("L'element .box_commande n'a pas ete trouve");
-                        return;
-                    }
-                    // recuperer l'image la quantite et le prix total 
-                    const articleCommande = document.createElement("article");
-                    const imageCommande = document.createElement("img");
-                    imageCommande.src = medicaments.image;
-                    const titleCommande = document.createElement("h3");
-                    titleCommande.textContent = medicaments.nom;
-                    const quantiteCommande = document.createElement("p");
-                    quantiteCommande.textContent = `Quantité : ${quantite}`;
-                    const prixCommande = document.createElement("p");
-                    prixCommande.textContent = `Prix total : ${medicaments.prix * quantite} fcfa`;
-                    const supprimerCommande = document.createElement("button");
-                    supprimerCommande.textContent = "Supprimer";
+                        nbre = nbreAjoutPanier
+                        number.innerHTML = nbre;
+
+                        const articleCommande = document.createElement("article");
+                        const imageCommande = document.createElement("img");
+                        imageCommande.src = medicaments.image;
+                        const titleCommande = document.createElement("h3");
+                        titleCommande.textContent = medicaments.nom;
+                        const quantiteCommande = document.createElement("p");
+                        quantiteCommande.textContent = `Quantité : ${quantite}`;
+                        const prixCommande = document.createElement("p");
+                        prixCommande.textContent = `Prix total : ${medicaments.prix * quantite} fcfa`;
+                        const supprimerCommande = document.createElement("button");
+                        supprimerCommande.textContent = "Supprimer";
     
-                    articleCommande.appendChild(imageCommande);
-                    articleCommande.appendChild(titleCommande);
-                    articleCommande.appendChild(quantiteCommande);
-                    articleCommande.appendChild(prixCommande);
-                    articleCommande.appendChild(supprimerCommande);
-                    
-                    boxCommande.appendChild(articleCommande);
-                
-                })
-                
+                        articleCommande.appendChild(imageCommande);
+                        articleCommande.appendChild(titleCommande);
+                        articleCommande.appendChild(quantiteCommande);
+                        articleCommande.appendChild(prixCommande);
+                        articleCommande.appendChild(supprimerCommande);
+                        
+                        boxCommande.appendChild(articleCommande);
+                        
+                        // supprimer un produit du panier 
+                        supprimerCommande.addEventListener("click", () => {
+                            boxCommande.removeChild(articleCommande);
+                            nbreAjoutPanier--;
+                            nbre = nbreAjoutPanier
+                            number.innerHTML = nbre;
+                            if(nbre == 0){
+                                sectionCommande.style.display = "none";
+                            }
+                        })
+                    }
+                    contentInfo.innerHTML = "" ;
+                });
             
             div.appendChild(imageInfo);
             div.appendChild(ul);
@@ -356,6 +367,49 @@ function getProducts(piece) {
             divAchat.appendChild(acheter);
 
             
+            acheter.addEventListener("click", () => {
+                sectionCommande.style.display = "block";
+                const quantite = input.value;
+                if(quantite > 0){
+                    
+                    nbreAjoutPanier++;
+                    nbre = nbreAjoutPanier
+                    number.innerHTML = nbre;
+
+                    const articleCommande = document.createElement("article");
+                    const imageCommande = document.createElement("img");
+                    imageCommande.src = medicaments.image;
+                    const titleCommande = document.createElement("h3");
+                    titleCommande.textContent = medicaments.nom;
+                    const quantiteCommande = document.createElement("p");
+                    quantiteCommande.textContent = `Quantité : ${quantite}`;
+                    const prixCommande = document.createElement("p");
+                    prixCommande.textContent = `Prix total : ${medicaments.prix * quantite} fcfa`;
+                    const supprimerCommande = document.createElement("button");
+                    supprimerCommande.textContent = "Supprimer";
+
+                    articleCommande.appendChild(imageCommande);
+                    articleCommande.appendChild(titleCommande);
+                    articleCommande.appendChild(quantiteCommande);
+                    articleCommande.appendChild(prixCommande);
+                    articleCommande.appendChild(supprimerCommande);
+                    
+                    boxCommande.appendChild(articleCommande);
+                    
+                    // supprimer un produit du panier 
+                    supprimerCommande.addEventListener("click", () => {
+                        boxCommande.removeChild(articleCommande);
+                        nbreAjoutPanier--;
+                        nbre = nbreAjoutPanier
+                        number.innerHTML = nbre;
+                        if(nbre == 0){
+                            sectionCommande.style.display = "none";
+                        }
+                    })
+                }
+                contentInfo.innerHTML = "" ;
+            });
+            
             
             div.appendChild(imageInfo);
             div.appendChild(ul);
@@ -518,6 +572,48 @@ function getProducts(piece) {
             divAchat.appendChild(acheter);
 
             
+            acheter.addEventListener("click", () => {
+                sectionCommande.style.display = "block";
+                const quantite = input.value;
+                if(quantite > 0){
+                    
+                    nbreAjoutPanier++;
+                    nbre = nbreAjoutPanier
+                    number.innerHTML = nbre;
+
+                    const articleCommande = document.createElement("article");
+                    const imageCommande = document.createElement("img");
+                    imageCommande.src = medicaments.image;
+                    const titleCommande = document.createElement("h3");
+                    titleCommande.textContent = medicaments.nom;
+                    const quantiteCommande = document.createElement("p");
+                    quantiteCommande.textContent = `Quantité : ${quantite}`;
+                    const prixCommande = document.createElement("p");
+                    prixCommande.textContent = `Prix total : ${medicaments.prix * quantite} fcfa`;
+                    const supprimerCommande = document.createElement("button");
+                    supprimerCommande.textContent = "Supprimer";
+
+                    articleCommande.appendChild(imageCommande);
+                    articleCommande.appendChild(titleCommande);
+                    articleCommande.appendChild(quantiteCommande);
+                    articleCommande.appendChild(prixCommande);
+                    articleCommande.appendChild(supprimerCommande);
+                    
+                    boxCommande.appendChild(articleCommande);
+                    
+                    // supprimer un produit du panier 
+                    supprimerCommande.addEventListener("click", () => {
+                        boxCommande.removeChild(articleCommande);
+                        nbreAjoutPanier--;
+                        nbre = nbreAjoutPanier
+                        number.innerHTML = nbre;
+                        if(nbre == 0){
+                            sectionCommande.style.display = "none";
+                        }
+                    })
+                }
+                contentInfo.innerHTML = "" ;
+            });
             
             div.appendChild(imageInfo);
             div.appendChild(ul);

@@ -3,7 +3,8 @@
         "nom": "Fedal Sirop (2800 mg)",
         "image": "../assets/images/Fedal Sirop.png",
         "description": "Fedal Sirop est un médicament utilisé pour le traitement des infections et des inflammations.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "anémie ferriprive",
             "carence en fer sans anémie"
@@ -27,7 +28,8 @@
         "nom": "Ibumol cp B130 (2600)",
         "image": "../assets/images/Ibumol.jpg",
         "description": "Ibumol cp B130 est un médicament anti-inflammatoire non stéroïdien (AINS), utilisé pour soulager la douleur et réduire la fièvre.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Douleurs légères à modérées (maux de tête, douleurs dentaires, douleurs musculaires)",
             "Fièvre"
@@ -51,7 +53,8 @@
         "nom": "Linmox cp (500)",
         "image": "../assets/images/Linmox-500_02.jpg",
         "description": "Linmox cp est un antibiotique utilisé pour traiter les infections bactériennes.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Infections des voies respiratoires",
             "Infections urinaires",
@@ -76,7 +79,8 @@
         "nom": "Litacold cp B120 (4500)",
         "image": "../assets/images/Litacold cp B120.png",
         "description": "Litacold cp B120 est un médicament combiné souvent utilisé pour traiter les symptômes du rhume et de la grippe.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Nez qui coule",
             "Congestion nasale",
@@ -101,7 +105,8 @@
         "nom": "Parafiz cp (2700)",
         "image": "../assets/images/parafiz.jpeg",
         "description": "Parafiz cp est un médicament généralement utilisé comme antalgique et antipyrétique.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Douleurs",
             "Fièvre"
@@ -125,7 +130,8 @@
         "nom": "Apramol cp (1025)",
         "image": "../assets/images/Apramol cp (1025).webp",
         "description": "Antalgique utilisé pour soulager la douleur et réduire la fièvre.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Douleurs légères à modérées",
             "Fièvre"
@@ -149,7 +155,8 @@
         "nom": "Artefan (2100)",
         "image": "../assets/images/Artefan (2100).webp",
         "description": "Médicament généralement utilisé pour le traitement des infections à virus ou des infections bactériennes.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Rhumes",
             "Grippes",
@@ -174,7 +181,8 @@
         "nom": "Pinko (1100)",
         "image": "../assets/images/pinko.jpg",
         "description": "Médicament efficace contre les allergies et les symptômes associés.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Allergies",
             "Rhinite allergique"
@@ -198,8 +206,8 @@
         "nom": "Apdyl H (1500)",
         "image": "../assets/images/Apdyl H (1500).jpg",
         "description": "Médicament utilisé pour traiter les symptômes allergiques et inflammatoires.",
-
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Allergies",
             "Rhume des foins"
@@ -223,7 +231,8 @@
         "nom": "Paracetamol (500 mg)",
         "image": "../assets/images/Paracetamol (500 mg).jpg.webp",
         "description": "Médicament anti-inflammatoire non stéroïdien, utilisé pour soulager la douleur et la fièvre.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Douleurs légères à modérées",
             "Fièvre"
@@ -247,7 +256,8 @@
         "nom": "Ibuprofène (400 mg)",
         "image": "../assets/images/Ibuprofène (400 mg).jpg.webp",
         "description": "AINS utilisé pour réduire la douleur, l'inflammation et la fièvre.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Douleurs musculaires",
             "Douleurs articulaires",
@@ -273,7 +283,8 @@
         "nom": "Cetrizine (10 mg)",
         "image": "../assets/images/Cetrizine (10 mg).webp",
         "description": "Antihistaminique utilisé pour soulager les symptômes d'allergies.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Rhinites allergiques",
             "Urticaires",
@@ -298,7 +309,8 @@
         "nom": "Omeprazole (20 mg)",
         "image": "../assets/images/Omeprazole (20 mg).jpg.webp",
         "description": "Inhibiteur de la pompe à protons, utilisé pour réduire la production d'acide gastrique.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Ulcères gastroduodénaux",
             "Reflux gastro-œsophagien"
@@ -322,7 +334,8 @@
         "nom": "Amoxicilline + Acide Clavulanique (875/125 mg)",
         "image": "../assets/images/Amoxicilline + Acide Clavulanique.webp",
         "description": "Antibiotique combiné pour traiter les infections bactériennes.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Infections des voies respiratoires",
             "Sinusites",
@@ -347,7 +360,8 @@
         "nom": "Cetirizine + Pseudoéphédrine",
         "image": "../assets/images/Cetirizine + Pseudoéphédrine.jpeg",
         "description": "Combiné antihistaminique et décongestionnant.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Allergies",
             "Congestion nasale"
@@ -371,7 +385,8 @@
         "nom": "Montélukast (10 mg)",
         "image": "../assets/images/Montélukast.jpg",
         "description": "Antagoniste des récepteurs des leucotriènes, utilisé pour prévenir l'asthme.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Asthme",
             "Rhinite allergique"
@@ -395,7 +410,8 @@
         "nom": "Ranitidine (150 mg)",
         "image": "../assets/images/Ranitidine.jpg",
         "description": "Médicament utilisé pour réduire l'acidité gastrique.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Ulcères",
             "Reflux gastro-œsophagien"
@@ -419,7 +435,8 @@
         "nom": "Simvastatine (20 mg)",
         "image": "../assets/images/simvastatine.avif",
         "description": "Médicament hypolipémiant utilisé pour abaisser le taux de cholestérol.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Hypercholestérolémie",
             "Prévention des maladies cardiovasculaires"
@@ -443,7 +460,8 @@
         "nom": "Metformine (500 mg)",
         "image": "../assets/images/metformine2.jpg",
         "description": "Médicament antidiabétique utilisé pour traiter le diabète de type 2.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Diabète de type 2",
             "Résistance à l'insuline"
@@ -467,7 +485,8 @@
         "nom": "Lorazépam (1 mg)",
         "image": "../assets/images/Lorazepam.jpeg",
         "description": "Benzodiazépine utilisée pour l'anxiété et les troubles du sommeil.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Anxiété",
             "Insomnie"
@@ -491,7 +510,8 @@
         "nom": "Clopidogrel (75 mg)",
         "image": "../assets/images/clopidrogel.jpg",
         "description": "Médicament antiplaquettaire utilisé pour prévenir les caillots sanguins.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Prévention des accidents vasculaires cérébraux",
             "Infarctus du myocarde"
@@ -515,7 +535,8 @@
         "nom": "Lansoprazole (30 mg)",
         "image": "../assets/images/lansoprazole.jpeg",
         "description": "Inhibiteur de la pompe à protons pour réduire la production d'acide gastrique.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Ulcères",
             "Reflux gastro-œsophagien"
@@ -539,7 +560,8 @@
         "nom": "Furosemide (40 mg)",
         "image": "../assets/images/furosemide .jpeg",
         "description": "Diurétique utilisé pour réduire la rétention d'eau.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Hypertension",
             "Œdème"
@@ -563,7 +585,8 @@
         "nom": "Amlodipine (5 mg)",
         "image": "../assets/images/Amlodipine.webp",
         "description": "Antihypertenseur utilisé pour traiter l'hypertension et l'angine de poitrine.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Hypertension",
             "Angine"
@@ -587,7 +610,8 @@
         "nom": "Prednisone (20 mg)",
         "image": "../assets/images/prednisone.jpg",
         "description": "Corticostéroïde utilisé pour traiter l'inflammation.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Maladies inflammatoires",
             "Allergies graves"
@@ -611,7 +635,8 @@
         "nom": "Dexaméthasone (4 mg)",
         "image": "../assets/images/Dexaméthasone.webp",
         "description": "Corticostéroïde utilisé pour son effet anti-inflammatoire.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Allergies",
             "Inflammations",
@@ -636,7 +661,8 @@
         "nom": "Erythromycine (500 mg)",
         "image": "../assets/images/Erythromycine.jpg",
         "description": "Antibiotique macrolide efficace contre divers types d'infections bactériennes.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Infections respiratoires",
             "Infections cutanées"
@@ -660,7 +686,8 @@
         "nom": "Tétracycline (250 mg)",
         "image": "../assets/images/Tétracycline.jpg",
         "description": "Antibiotique utilisé contre diverses infections bactériennes.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Acné",
             "Infections urinaires",
@@ -685,7 +712,8 @@
         "nom": "Métronidazole (500 mg)",
         "image": "../assets/images/Métronidazole.png",
         "description": "Antibiotique utilisé contre certaines infections parasitaires et bactériennes.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Infections gastro-intestinales",
             "Infections vaginales"
@@ -709,7 +737,8 @@
         "nom": "Fluconazole (150 mg)",
         "image": "../assets/images/Fluconazole.jpeg",
         "description": "Antifongique utilisé pour traiter les infections fongiques, y compris celles à levures.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Candidoses",
             "Infections fongiques systémiques"
@@ -733,7 +762,8 @@
         "nom": "Levothyroxine (50 mcg)",
         "image": "../assets/images/Levothyroxine.jpg",
         "description": "Hormone thyroïdienne utilisée pour traiter l'hypothyroïdie.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Hypothyroïdie",
             "Goitre"
@@ -757,7 +787,8 @@
         "nom": "Sertraline (50 mg)",
         "image": "../assets/images/Sertraline.jpg",
         "description": "Antidépresseur (inhibiteur sélectif de la recapture de la sérotonine).",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Dépression",
             "Anxiété",
@@ -782,7 +813,8 @@
         "nom": "Zolpidem (10 mg)",
         "image": "../assets/images/Zolpidem.webp",
         "description": "Médicament utilisé pour traiter l'insomnie à court terme.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Insomnie"
         ],
@@ -804,7 +836,8 @@
         "nom": "Propranolol (40 mg)",
         "image": "../assets/images/Propranolol.jpg",
         "description": "Bêta-bloquant utilisé pour les maladies cardiovasculaires.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Hypertension",
             "Migraines",
@@ -829,7 +862,8 @@
         "nom": "Loratadine (10 mg)",
         "image": "../assets/images/Loratadine.jpg",
         "description": "Antihistaminique utilisé pour soulager les symptômes allergiques.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Rhinite allergique",
             "Urticaire"
@@ -853,7 +887,8 @@
         "nom": "Salmétérol (50 mcg)",
         "image": "../assets/images/Salmétérol.webp",
         "description": "Bronchodilatateur utilisé pour le traitement de l'asthme et de la BPCO.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Asthme",
             "Bronchopneumopathie chronique obstructive"
@@ -877,7 +912,8 @@
         "nom": "Ciprofloxacine (500 mg)",
         "image": "../assets/images/Ciprofloxacine.jpeg",
         "description": "Antibiotique fluoroquinolone utilisé contre diverses infections bactériennes.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Infections urinaires",
             "Gastro-intestinales",
@@ -902,7 +938,8 @@
         "nom": "Prazosine (1 mg)",
         "image": "../assets/images/Prazosine.webp",
         "description": "Médicament antihypertenseur qui agit en relaxant les vaisseaux sanguins.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Hypertension",
             "Symptômes d'hyperplasie bénigne de la prostate"
@@ -926,7 +963,8 @@
         "nom": "Tamsulosine (0,4 mg)",
         "image": "../assets/images/Tamsulosine.jpeg",
         "description": "Médicament utilisé pour traiter les symptômes de l'hyperplasie bénigne de la prostate.",
-        "prix" : 2500,
+        "prix": 2500,
+        "stock": 50,
         "maladies": [
             "Difficultés de miction",
             "Adénome de la prostate"
