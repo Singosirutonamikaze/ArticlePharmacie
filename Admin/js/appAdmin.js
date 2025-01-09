@@ -10,6 +10,14 @@ const AddDrugCard = document.getElementById("addElement2");
 const DeleteDrugCard = document.getElementById("addElement3");
 const UpdateDrugCard = document.getElementById("addElement1");
 const NotificationCard = document.getElementById("addElement4");
+const firsTPage = document.getElementById("addElement5");
+
+// Par défaut, afficher la première page
+firsTPage.style.display = "block";
+AddDrugCard.style.display = "none";
+DeleteDrugCard.style.display = "none";
+UpdateDrugCard.style.display = "none";
+NotificationCard.style.display = "none";
 
 // Événements pour les boutons
 addDrugBtn.addEventListener("click", () => {
@@ -17,6 +25,7 @@ addDrugBtn.addEventListener("click", () => {
     DeleteDrugCard.style.display = "none";
     UpdateDrugCard.style.display = "none";
     NotificationCard.style.display = "none"; 
+    firsTPage.style.display = "none";
 });
 
 delDrugBtn.addEventListener("click", () => {
@@ -24,6 +33,7 @@ delDrugBtn.addEventListener("click", () => {
     AddDrugCard.style.display = "none";
     UpdateDrugCard.style.display = "none";
     NotificationCard.style.display = "none"; 
+    firsTPage.style.display = "none";
 });
 
 updateDrugBtn.addEventListener("click", () => {
@@ -31,6 +41,7 @@ updateDrugBtn.addEventListener("click", () => {
     AddDrugCard.style.display = "none";
     DeleteDrugCard.style.display = "none";
     NotificationCard.style.display = "none";
+    firsTPage.style.display = "none";
 });
 
 notificationBtn.addEventListener("click", () => {
@@ -38,5 +49,5 @@ notificationBtn.addEventListener("click", () => {
     AddDrugCard.style.display = "none";
     DeleteDrugCard.style.display = "none";
     UpdateDrugCard.style.display = "none"; 
+    firsTPage.style.display = "none";
 });
-

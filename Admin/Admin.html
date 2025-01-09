@@ -127,6 +127,12 @@
                                     <input id="maladiesProduit" class="form-input" type="text"
                                         placeholder="Listez les maladies concernées" required>
                                 </div>
+                                <div class="form-group">
+                                    <label class="form-label">Stock du Produit<span
+                                            style="color: red;">*</span></label>
+                                    <input id="stockproduit" class="form-input" type="number"
+                                        placeholder="Entrer le stock du produits" required>
+                                </div>
                             </div>
 
                             <!-- Deuxième partie -->
@@ -159,7 +165,7 @@
                                             placeholder="Ajoutez des liens de référence" required>
                                     </div>
                                 </div>
-                                <button class="primary-button" type="submit">Ajouter le produit</button>
+                                <button class="primary-button" type="submit" style="margin-top: 3%;">Ajouter le produit</button>
                             </div>
                         </div>
                     </form>
@@ -184,21 +190,19 @@
 
         <div class="container" id="addElement4"></div>
 
-        <div class="container" id="addElement5">
-
-        </div>
+        <div class="container" id="addElement5"> </div>
     </main>
 
-    <div class="warbning">
-        <div class="card">
+    <div id="warbning" class="warbning">
+        <div class="card" id="card">
             <p class="cookieHeading">Suppression</p>
-            <p class="cookieDescription">Voullez-vous supprimer le medicaments/produit ?</p>
+            <p class="cookieDescription">Voullez-vous supprimer le médicament/produit ?</p>
             <div class="buttonContainer">
                 <button class="acceptButton">Oui</button>
                 <button class="declineButton">Non</button>
             </div>
         </div>
-    </div>
+    </div>    
     
     <!-- Lien vers le fichier JavaScript principal pour gérer les interactions et les fonctions dynamiques de la page -->
     <script src="../Admin/js/appAdmin.js" defer></script>

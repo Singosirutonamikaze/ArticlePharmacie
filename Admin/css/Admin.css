@@ -245,7 +245,7 @@ header h1 {
 
 /* Show third container */
 .container:nth-of-type(3) {
-    display: flex;
+    display: none;
 }
 
 .container:nth-of-type(4){
@@ -254,7 +254,7 @@ header h1 {
 
 /* Show third container */
 .container:last-of-type {
-    display: none;
+    display: flex;
 }
 
 /* --- Modal Styles --- */

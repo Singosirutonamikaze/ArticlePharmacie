@@ -1,17 +1,3 @@
-// Fonction pour charger les données JSON
-async function chargerMedicaments() {
-    try {
-        const reponse = await fetch('../Admin/dataSiteElement.json');
-        if (!reponse.ok) {
-            throw new Error('Erreur lors du chargement du fichier JSON');
-        }
-        const medicaments = await reponse.json();
-        afficherMedicaments(medicaments);
-    } catch (error) {
-        console.error('Erreur:', error);
-    }
-}
-
 // Fonction pour afficher les médicaments
 function afficherMedicaments(medicaments) {
     const conteneurs = document.querySelectorAll('.deleteDivContainer'); // Sélectionner tous les conteneurs
@@ -48,12 +34,14 @@ function afficherMedicaments(medicaments) {
                     <h3 id="med-name-${index}">${med.nom}</h3>
                     <img id="med-image-${index}" src="${med.image}" alt="${med.nom}" style="width: 100px;">
                     <p id="med-description-${index}"><strong>Description:</strong> ${med.description}</p>
-                    <button class="red-btn" id="${idSupprimer}">Supprimer</button>
+                    <button class="red-btn" id="${idSupprimer}" data-id="${med.id}">Supprimer</button>
                 `;
 
                 const boutonSupprimer = divContenuMedicament.querySelector(`#${idSupprimer}`);
                 boutonSupprimer.addEventListener('click', () => {
-                    divMedicament.remove();
+                    // Quand on clique sur un bouton, afficher l'alerte
+                    currentProductId = med.id; // Associer l'ID du produit à supprimer
+                    warningDiv.classList.add('show'); // Afficher l'alerte
                 });
 
                 divMedicament.appendChild(divContenuMedicament);
@@ -64,6 +52,7 @@ function afficherMedicaments(medicaments) {
         mettreAJourVisibiliteFleches();
     }
 
+    // Gérer la pagination
     function diviserEnPages(tableau, taille) {
         const resultat = [];
         for (let i = 0; i < tableau.length; i += taille) {
@@ -86,6 +75,7 @@ function afficherMedicaments(medicaments) {
         flecheDroite.style.display = pageActuelle === pages.length - 1 ? 'none' : 'block';
     }
 
+    // Gestion des flèches de pagination
     document.querySelector('.left_arrowR').addEventListener('click', () => {
         if (pageActuelle > 0) {
             pageActuelle--;
@@ -103,48 +93,5 @@ function afficherMedicaments(medicaments) {
     mettreAJourPage();
 }
 
+// Charger les médicaments et initialiser les événements
 chargerMedicaments();
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Récupération des éléments
-    const deleteButtons = document.querySelectorAll('.red-btn');
-    const warningDiv = document.querySelector('.warning');
-    const acceptButton = document.querySelector('.acceptButton');
-    const declineButton = document.querySelector('.declineButton');
-    
-    let currentProductId = null; // ID du produit actuel à supprimer
-
-    // Affichage de l'alerte lors du clic sur "Supprimer"
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            currentProductId = this.dataset.id; // Associer l'ID du produit (via un attribut data-id)
-            warningDiv.style.display = 'block';
-        });
-    });
-
-    // Gestion du bouton "Oui" (supprimer le produit)
-    acceptButton.addEventListener('click', function () {
-        if (currentProductId) {
-            fetch(`/delete-product/${currentProductId}`, {
-                method: 'DELETE',
-            })
-                .then(response => {
-                    if (response.ok) {
-                        alert('Produit supprimé avec succès.');
-                        // Rafraîchir la page ou retirer le produit du DOM
-                        location.reload();
-                    } else {
-                        alert('Une erreur est survenue lors de la suppression.');
-                    }
-                })
-                .catch(error => console.error('Erreur:', error));
-        }
-        warningDiv.style.display = 'none'; // Cacher la boîte d'alerte
-    });
-
-    // Gestion du bouton "Non" (annuler la suppression)
-    declineButton.addEventListener('click', function () {
-        warningDiv.style.display = 'none'; // Cacher la boîte d'alerte
-    });
-});
-
