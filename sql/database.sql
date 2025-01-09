@@ -21,8 +21,12 @@ CREATE TABLE commande (
     date_commande DATE,
     statut VARCHAR(50),
     total DECIMAL(10,2),
-    id_client INT,
-    FOREIGN KEY (id_client) REFERENCES client(id_client)
+    id_client SERIAL,
+	id_employe SERIAL,
+	id_livreur SERIAL,
+    FOREIGN KEY (id_client) REFERENCES client(id_client),
+    FOREIGN KEY (id_employe) REFERENCES employe(id_employe),
+    FOREIGN KEY (id_livreur) REFERENCES livreur(id_livreur)
 );
 
 -- Table des catégories
@@ -39,6 +43,7 @@ CREATE TABLE produit (
     description TEXT,
     prix DECIMAL(10, 2) NOT NULL,
     maladies TEXT,
+    stock INT,
     utilisations TEXT,
     posologie TEXT,
     precautions TEXT,
@@ -53,7 +58,7 @@ CREATE TABLE employe (
     nom VARCHAR(50),
     prenom VARCHAR(50),
     email VARCHAR(100) UNIQUE,
-    role VARCHAR(50)
+    roles VARCHAR(50)
 );
 
 -- Table des livreurs
