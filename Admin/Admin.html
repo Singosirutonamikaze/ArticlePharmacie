@@ -18,6 +18,7 @@
 
     <!-- Liens vers des logos populaires (par exemple, font-awesome pour des icônes de réseaux sociaux, de recherche, etc.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -127,6 +128,11 @@
                                     <input id="maladiesProduit" class="form-input" type="text"
                                         placeholder="Listez les maladies concernées" required>
                                 </div>
+                                <div class="form-group">
+                                    <label class="form-label">Stock du Produit<span style="color: red;">*</span></label>
+                                    <input id="stockproduit" class="form-input" type="number"
+                                        placeholder="Entrer le stock du produits" required>
+                                </div>
                             </div>
 
                             <!-- Deuxième partie -->
@@ -159,7 +165,8 @@
                                             placeholder="Ajoutez des liens de référence" required>
                                     </div>
                                 </div>
-                                <button class="primary-button" type="submit">Ajouter le produit</button>
+                                <button class="primary-button" type="submit" style="margin-top: 3%;">Ajouter le
+                                    produit</button>
                             </div>
                         </div>
                     </form>
@@ -182,26 +189,44 @@
             </div>
         </div>
 
-        <div class="container" id="addElement4"></div>
+        <div class="container" id="addElement4">
+            <h2>Notifications</h2>
+            <div id="notificationArea">
+                <p>Les notifications seront affichées ici...</p>
+            </div>
+        </div>
 
         <div class="container" id="addElement5">
-
+            <!-- Section de présentation -->
+            <div id="presentation">
+                <h1>Bienvenue, Administrateur</h1>
+                <p>
+                    Vous avez accès à la gestion complète des produits pharmaceutiques. Voici ce que vous pouvez
+                    faire :
+                </p>
+                <div class="button-container">
+                    <button class="btn-donate">Ajouter des produits</button>
+                    <button class="btn-donate">Mettre à jour les produits</button>
+                    <button class="btn-donate">Supprimer des produits</button>
+                    <button class="btn-donate">Gérer les informations</button>
+                    <button class="btn-donate">Consulter les commandes</button>
+                </div>
+                <p>Veuillez choisir l'option que vous souhaitez utiliser ci-dessus.</p>
+            </div>
         </div>
+
+
     </main>
 
-    <div class="warbning">
-        <div class="card">
+    <div id="warbning" class="warbning">
+        <div class="card" id="card">
             <p class="cookieHeading">Suppression</p>
-            <p class="cookieDescription">Voullez-vous supprimer le medicaments/produit ?</p>
+            <p class="cookieDescription">Voullez-vous supprimer le médicament/produit ?</p>
             <div class="buttonContainer">
                 <button class="acceptButton">Oui</button>
                 <button class="declineButton">Non</button>
             </div>
         </div>
-    </div>
-
-    <div class="formulaireUpdate">
-        
     </div>
 
     <!-- Lien vers le fichier JavaScript principal pour gérer les interactions et les fonctions dynamiques de la page -->

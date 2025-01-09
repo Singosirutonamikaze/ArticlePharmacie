@@ -91,10 +91,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const posologieInput = document.getElementById("posologieProduit");
         const precautionsInput = document.getElementById("precautionsProduit");
         const liensReferenceInput = document.getElementById("liensProduit");
+        const stockproduit = document.getElementById("stockproduit");
 
         // Vérification des champs
         if (!nomInput || !prixInput || !imageInput || !descriptionInput || !maladiesInput || 
-            !utilisationsInput || !posologieInput || !precautionsInput || !liensReferenceInput) {
+            !utilisationsInput || !posologieInput || !precautionsInput || !liensReferenceInput || !stockproduit) {
             console.error("Certains champs de formulaire sont introuvables !");
             return;
         }
@@ -109,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const posologie = posologieInput.value.split("\n");
         const precautions = precautionsInput.value.split("\n");
         const liens_de_reference = liensReferenceInput.value;
+        const stock = stockproduit.value;
 
         // Vérification des champs obligatoires
         if (!imageFile) {
@@ -129,7 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
             utilisations,
             posologie,
             precautions,
-            liens_de_reference
+            liens_de_reference,
+            stock
         };
 
         // Charger le JSON existant

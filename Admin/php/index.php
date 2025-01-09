@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $productDosage = $_POST['productDosage'];
     $productPrecautions = $_POST['productPrecautions'];
     $productLinks = $_POST['productLinks'];
+    $productstock = $_POST['productstock'];
 
     // Traitement de l'image
     if (isset($_FILES['productImage']) && $_FILES['productImage']['error'] === UPLOAD_ERR_OK) {
@@ -28,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Préparer la requête SQL pour insérer les données dans la base de données
-    $stmt = $conn->prepare("INSERT INTO products (name, price, image, description, diseases, uses, dosage, precautions, links) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO products (name, price, image, description, diseases, uses, dosage, precautions, links, stock) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssssss", $productName, $productPrice, $imagePath, $productDescription, $productDiseases, 
-                      $productUses, $productDosage, $productPrecautions, $productLinks);
+                      $productUses, $productDosage, $productPrecautions, $productLinks, $productstock);
 
     if ($stmt->execute()) {
         echo json_encode(['success' => true]);
