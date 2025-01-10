@@ -44,7 +44,7 @@
             </label>
         </div>
         <button class="submit">Envoyer</button>
-        <p class="signin">Déjà inscrit ? <a href="signIn.html">Se connecter</a> </p>
+        <p class="signin">Déjà inscrit ? <a href="signIn.php">Se connecter</a> </p>
     </form>
 </body>
 

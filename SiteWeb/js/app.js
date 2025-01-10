@@ -15,6 +15,7 @@ function nextSlideShow() {
 
     slideItems[current].classList.add("active");
 }
+nextArrow.addEventListener("click", () => nextSlideShow()); 
 
 function previousSlideShow() {
     slideItems[current].classList.remove("active");
@@ -28,8 +29,6 @@ function previousSlideShow() {
     slideItems[current].classList.add("active");
 }
 
-
-nextArrow.addEventListener("click", () => nextSlideShow());
 previousArrow.addEventListener("click", () => previousSlideShow());
 
 const checkInput = document.getElementById("validate_check") ;
@@ -60,5 +59,11 @@ checkInput.addEventListener('click', ()=>{
 })
 
 validateButton.addEventListener('click' , ()=>{
+    if(validateButton.disable){
+        alert("veuillez accepter les conditions d'utilisations")
+    }else{
+        window.open("livraison.php","_blank")
+    }
     
 })
+
