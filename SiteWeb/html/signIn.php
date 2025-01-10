@@ -47,7 +47,7 @@
       <span class="span"><a href="ForgotPassword.html">Mot de passe oublié ?</a></span>
     </div>
     <button class="button-submit">S'inscrire</button>
-   <p>Vous n'avez pas de compte ? <a href="signup.html">S'inscrire</a></p>
+    <p>Vous n'avez pas de compte ? <a href="signup.php">S'inscrire</a></p>
 
     </p>
     <p class="p line">Ou avec</p>
