@@ -175,7 +175,7 @@
 .warbning {
     display: none;
     /* Par défaut, l'alerte est masquée */
-    position: fixed;
+    position: absolute;
     /* Position fixe pour qu'elle reste à l'écran */
     top: 50%;
     /* Centré verticalement */
@@ -187,6 +187,8 @@
     /* Fond semi-transparent */
     padding: 20px;
     border-radius: 8px;
+    width: 100%;
+    height: 100%;
 }
 
 .warbning.show {

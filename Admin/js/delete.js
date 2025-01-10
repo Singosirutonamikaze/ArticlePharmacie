@@ -1,7 +1,26 @@
+// Fonction pour charger les médicaments depuis un fichier JSON
+function chargerMedicaments() {
+    fetch('../Admin/dataSiteElement.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erreur HTTP ! statut : ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Données des médicaments chargées:', data);
+            afficherMedicaments(data); // Appeler la fonction pour afficher les médicaments
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des médicaments:', error);
+        });
+}
+
 // Fonction pour afficher les médicaments
 function afficherMedicaments(medicaments) {
     const conteneurs = document.querySelectorAll('.deleteDivContainer'); // Sélectionner tous les conteneurs
     const conteneurFleches = document.querySelector('.deleteDivContainerRow');
+    const warningDiv = document.getElementById('warbning');
     const elementsParPage = 9;
     let pageActuelle = 0;
 
