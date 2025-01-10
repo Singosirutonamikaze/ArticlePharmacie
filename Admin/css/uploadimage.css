@@ -116,7 +116,8 @@
     overflow: hidden;
     /* Cache le débordement */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 3%;
     align-items: center;
     transition: transform 0.3s ease;
     /* Transition pour l'effet hover */
@@ -146,4 +147,14 @@
     /* Texte ou icône en blanc pour contraste */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     /* Ombre légère pour profondeur */
+}
+
+#addElement4{
+    display: none;
+    flex-direction:column;
+    align-items:Center;
+    justify-content:center;
+    text-align:center;
+    color: #272727;
+    background-color: #ffffff;
 }

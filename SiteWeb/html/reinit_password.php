@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Cet email n'est pas enregistré."; 
     } 
 } 
-?>
 
 
 

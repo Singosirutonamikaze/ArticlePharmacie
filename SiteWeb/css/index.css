@@ -125,3 +125,12 @@
         0 0 40px rgb(68, 197, 236), 
         0 0 50px rgb(0,0,255);
 }
+
+button a{
+    text-decoration: none;
+    color: #5b5b5b;
+}
+
+button a:hover{
+    color: #fff;
+}

@@ -1,7 +1,7 @@
 -- Création de la Base de données
-CREATE DATABASE IF NOT EXISTS Pharmacie_Gestion;
-USE Pharmacie_Gestion;
-
+--CREATE DATABASE IF NOT EXISTS Pharmacie_Gestion;
+--USE Pharmacie_Gestion;
+CREATE DATABASE Pharmacie_Gestion;
 -- Table des clients
 CREATE TABLE client (
     id_client SERIAL PRIMARY KEY,

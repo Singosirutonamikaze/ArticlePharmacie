@@ -29,20 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     file_put_contents($jsonFile, json_encode($products, JSON_PRETTY_PRINT));
 
     // Mettre à jour la base de données
-    try {
-        $pdo = new PDO('mysql:host=localhost;dbname=pharmacie', 'username', 'password', [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        ]);
-        $stmt = $pdo->prepare('UPDATE produits SET stock = ?, prix = ?, description = ?, image = ? WHERE nom = ?');
-        $stmt->execute([$stock, $prix, $description, $image, $nom]);
-    } catch (PDOException $e) {
-        echo "Erreur de mise à jour dans la base de données : " . $e->getMessage();
-        exit;
-    }
+    require_once("../Admin/php/db_connction.php");
 
     // Rediriger avec un message de confirmation
-    header('Location: Update.php?success=1');
-    exit;
+    // header('Location: Update.php?success=1');
+    // exit;
 }
 ?>
 
@@ -68,6 +59,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         });
     </script>
+    <!-- Lien vers le fichier JavaScript principal pour gérer les interactions et les fonctions dynamiques de la page -->
+    <script src="../Admin/js/appAdmin.js" defer></script>
+    <script type="module" src="../Admin/js/formulaire.js" defer></script>
+    <script type="module" src="../Admin/js/ProduitFormulaire.js" defer></script>
+    <script src="../Admin/js/update.js" defer></script>
+    <script src="../Admin/js/delete.js" defer></script>
 
     <!-- Lien vers la feuille de style CSS principale pour les styles généraux de la page -->
     <link rel="stylesheet" href="../Admin/css/Admin.css">
@@ -76,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-<div class="form-container">
+    <div class="form-container">
         <h1>Mettre à jour le produit</h1>
         <form action="updateProduct.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
@@ -105,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <textarea id="description" name="description" required></textarea>
             </div>
 
-            <button class="form-submit-btn" type="submit">Mettre à jour</button>
+            <button class="form-submit-btn" type="submit"><a href="../Admin/Admin.html">Mettre à jour</a></button>
         </form>
     </div>
 </body>
