@@ -32,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once("../Admin/php/db_connction.php");
 
     // Rediriger avec un message de confirmation
-    header('Location: Update.php?success=1');
-    exit;
+    // header('Location: Update.php?success=1');
+    // exit;
 }
 ?>
 
@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <textarea id="description" name="description" required></textarea>
             </div>
 
-            <button class="form-submit-btn" type="submit">Mettre à jour</button>
+            <button class="form-submit-btn" type="submit"><a href="../Admin/Admin.html">Mettre à jour</a></button>
         </form>
     </div>
 </body>

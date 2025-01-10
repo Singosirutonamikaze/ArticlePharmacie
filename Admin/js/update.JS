@@ -1,37 +1,43 @@
-
-document.querySelectorAll('.hoverButton').forEach(button => {
+document.querySelectorAll('.update').forEach(button => {
     button.addEventListener('click', (event) => {
         const parentElement = event.target.closest('.contentElement');
         
-        // Element retrieval with checks
+        if (!parentElement) {
+            console.error("Le parent .contentElement est introuvable");
+            return;
+        }
+
         const h3Element = parentElement.querySelector('h3');
         const imgElement = parentElement.querySelector('img');
         const pElement = parentElement.querySelector('p');
 
         if (!h3Element || !imgElement || !pElement) {
-            console.error("Required elements not found");
-            return; // Exit if elements are missing
+            console.error("Éléments requis non trouvés");
+            return; // Sortir si les éléments sont manquants
         }
 
         const product = {
             nom: h3Element.textContent,
             image: imgElement.src,
-            prix: pElement.textContent.match(/\d+/)[0] || '0', // Default to '0' if no match
+            prix: pElement.textContent.match(/\d+/)[0] || '0', // Valeur par défaut '0' si aucun match
             description: 'Description à compléter',
             stock: 'Stock à compléter'
         };
 
-        // Store the product in localStorage
+        // Enregistrer le produit dans le localStorage
         try {
             localStorage.setItem('selectedProduct', JSON.stringify(product));
         } catch (e) {
-            console.error("Local Storage limit exceeded:", e);
+            console.error("Limite du localStorage dépassée :", e);
         }
 
-        // Verify the product in localStorage
+        // Vérifier le produit dans le localStorage
         console.log(localStorage.getItem('selectedProduct'));
 
-        // Redirect to the update page
-        window.location.href = 'update.php'; // Ensure this path is correct
+        // Assurez-vous que le lien est correct
+        if (window.location.href !== 'update.php') {
+            alert("Redirection vers update.php");
+            window.location.href = '../Admin/update.php';
+        }
     });
 });

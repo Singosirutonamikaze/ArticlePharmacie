@@ -66,8 +66,8 @@ window.onload = () => {
     const addProductCard = document.getElementById("addElement2");
     const updateProductCard = document.getElementById("addElement1");
     const deleteProductCard = document.getElementById("addElement3");
-    //const manageInfoCard = document.getElementById("addElement4");
-    const viewOrdersCard = document.getElementById("addElement4");
+    const manageInfoCard = document.getElementById("addElement4");
+    const viewOrdersCard = document.getElementById("addElement5");
 
 
     // Ajout d'événements aux boutons
@@ -96,7 +96,7 @@ window.onload = () => {
     manageInfoBtn.addEventListener("click", () => {
         console.log("Gérer les informations");
         hideAllContainers();
-        //manageInfoCard.classList.add("active");
+        manageInfoCard.classList.add("active");
     });
 
     viewOrdersBtn.addEventListener("click", () => {
