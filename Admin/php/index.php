@@ -1,6 +1,6 @@
 <?php
 // Inclure la connexion à la base de données
-include('db_connction.php');
+require_once("../Admin/php/db_connction.php");
 
 // Vérifier si la requête est une requête POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -228,7 +228,7 @@ header h1 {
     flex-wrap: wrap;
     gap: 1%;
     position: relative;
-    background-color: #ccc;
+    background-color: #f3f1f1;
     overflow-y: scroll;
     overflow-x: hidden;
 }
