@@ -645,3 +645,16 @@ function getProducts(piece) {
 
 // Appel de la fonction principale pour le chargement des medicaments sur la page
 loadProducts();
+
+
+// recuperer l'input de recherche 
+
+const searchInput = document.getElementById("search");
+
+
+// ecouter sur ce input un evenement pou pouvoir touver un produit et l'afficher
+searchInput.addEventListener("input", () => {
+    const recherche = searchInput.value
+
+    console.log(recherche) ;
+})
