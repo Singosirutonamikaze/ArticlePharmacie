@@ -9,7 +9,7 @@ function chargerMedicaments() {
         })
         .then(data => {
             console.log('Données des médicaments chargées:', data);
-            afficherMedicaments(data); // Appeler la fonction pour afficher les médicaments
+            afficherMedicaments(data);
         })
         .catch(error => {
             console.error('Erreur lors du chargement des médicaments:', error);
@@ -18,14 +18,11 @@ function chargerMedicaments() {
 
 // Fonction pour afficher les médicaments
 function afficherMedicaments(medicaments) {
-    const conteneurs = document.querySelectorAll('.deleteDivContainer'); // Sélectionner tous les conteneurs
-    const conteneurFleches = document.querySelector('.deleteDivContainerRow');
-    const warningDiv = document.getElementById('warbning');
-    const acceptButton = warningDiv.querySelector('.acceptButton');
-    const declineButton = warningDiv.querySelector('.declineButton');
+    const conteneurs = document.querySelector('.deleteDivContainer');
+    const pageIndicator = document.getElementById('pageIndicator');
     const elementsParPage = 9;
     let pageActuelle = 0;
-    let currentProductId = null; // ID du produit à supprimer
+    let currentProductId = null;
 
     if (!medicaments || medicaments.length === 0) {
         console.error('Aucun médicament trouvé dans le JSON');
@@ -35,71 +32,39 @@ function afficherMedicaments(medicaments) {
     const pages = diviserEnPages(medicaments, elementsParPage);
 
     function mettreAJourPage() {
-        // Réinitialiser tous les conteneurs à chaque mise à jour de page
-        conteneurs.forEach(conteneur => conteneur.innerHTML = '');
+        conteneurs.innerHTML = '';
 
         const medicamentsActuels = pages[pageActuelle];
-        if (medicamentsActuels) {
-            // Diviser les médicaments entre les conteneurs disponibles
-            medicamentsActuels.forEach((med, index) => {
-                // Déterminer quel conteneur utiliser en fonction de l'index
-                const conteneurIndex = index % conteneurs.length;
-                const divMedicament = document.createElement('div');
-                divMedicament.classList.add('deleteDiv');
+        medicamentsActuels.forEach((med, index) => {
+            const divMedicament = document.createElement('div');
+            divMedicament.classList.add('group', 'relative', 'bg-white', 'p-6', 'rounded-lg', 'shadow-md', 'hover:shadow-lg', 'transition-shadow', 'transform', 'hover:scale-105', 'hover:border-green-500', 'hover:border-2', 'items-center', 'relative');
 
-                const divContenuMedicament = document.createElement('div');
-                divContenuMedicament.classList.add('deleteDivContent', 'contentElementLas');
+            const idSupprimer = `btn-supprimer-${index}-${med.nom.replace(/\s+/g, '-').replace(/[^\w-]/g, '')}`;
 
-                const idSupprimer = `btn-supprimer-${index}-${med.nom.replace(/\s+/g, '-').replace(/[^\w-]/g, '')}`;
+            divMedicament.innerHTML = `
+               <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">${med.nom}</h3>
+                <img src="${med.image}" alt="${med.nom}" class="w-24 h-24 object-cover rounded-full mb-4 flex center mx-auto">
+                <p class="text-sm text-gray-600 mb-4 text-center"><strong>Description:</strong> ${med.description}</p>
+                <button class="red-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity duration-200 bg-red-500 text-white p-2 rounded-lg hover:bg-red-600" id="${idSupprimer}" data-id="${med.id}">
+                    Supprimer
+                </button>
+            `;
 
-                divContenuMedicament.innerHTML = `
-                    <h3 id="med-name-${index}">${med.nom}</h3>
-                    <img id="med-image-${index}" src="${med.image}" alt="${med.nom}" style="width: 100px;">
-                    <p id="med-description-${index}"><strong>Description:</strong> ${med.description}</p>
-                    <button class="red-btn" id="${idSupprimer}" data-id="${med.id}">Supprimer</button>
-                `;
-
-                const boutonSupprimer = divContenuMedicament.querySelector(`#${idSupprimer}`);
-                boutonSupprimer.addEventListener('click', () => {
-                    // Quand on clique sur un bouton, afficher l'alerte
-                    currentProductId = med.id; // Associer l'ID du produit à supprimer
-                    warningDiv.classList.add('show'); // Afficher l'alerte
-                });
-
-                divMedicament.appendChild(divContenuMedicament);
-                conteneurs[conteneurIndex].appendChild(divMedicament);
+            const boutonSupprimer = divMedicament.querySelector(`#${idSupprimer}`);
+            boutonSupprimer.addEventListener('click', () => {
+                currentProductId = med.id;
+                if (confirm('Voulez-vous vraiment supprimer ce médicament ?')) {
+                    supprimerMedicament(currentProductId);
+                }
             });
-        }
 
+            conteneurs.appendChild(divMedicament);
+        });
+
+        pageIndicator.textContent = `Page ${pageActuelle + 1} sur ${pages.length}`;
         mettreAJourVisibiliteFleches();
     }
 
-    // Gestion des actions dans la fenêtre de confirmation
-    acceptButton.addEventListener('click', () => {
-        // Supprimer le produit à la fois du DOM et de la base de données JSON
-        if (currentProductId !== null) {
-            // Supprimer du DOM
-            const productElement = document.querySelector(`button[data-id="${currentProductId}"]`).closest('.deleteDiv');
-            if (productElement) {
-                productElement.remove();
-            }
-
-            // Supprimer du tableau JSON et mettre à jour
-            const updatedMedicaments = medicaments.filter(med => med.id !== currentProductId);
-            // Mettre à jour le fichier JSON (cela nécessitera une fonction côté serveur)
-            updateJSON(updatedMedicaments);
-
-            // Cacher la fenêtre de confirmation
-            warningDiv.classList.remove('show');
-        }
-    });
-
-    declineButton.addEventListener('click', () => {
-        // Fermer la fenêtre de confirmation sans rien faire
-        warningDiv.classList.remove('show');
-    });
-
-    // Gérer la pagination
     function diviserEnPages(tableau, taille) {
         const resultat = [];
         for (let i = 0; i < tableau.length; i += taille) {
@@ -112,17 +77,10 @@ function afficherMedicaments(medicaments) {
         const flecheGauche = document.querySelector('.left_arrowR');
         const flecheDroite = document.querySelector('.right_arrowR');
 
-        if (pages.length > 1) {
-            conteneurFleches.style.display = 'flex';
-        } else {
-            conteneurFleches.style.display = 'none';
-        }
-
         flecheGauche.style.display = pageActuelle === 0 ? 'none' : 'block';
         flecheDroite.style.display = pageActuelle === pages.length - 1 ? 'none' : 'block';
     }
 
-    // Gestion des flèches de pagination
     document.querySelector('.left_arrowR').addEventListener('click', () => {
         if (pageActuelle > 0) {
             pageActuelle--;
@@ -140,25 +98,31 @@ function afficherMedicaments(medicaments) {
     mettreAJourPage();
 }
 
-// Fonction pour mettre à jour le fichier JSON (requiert une API côté serveur)
+// Fonction pour supprimer un médicament
+function supprimerMedicament(id) {
+    fetch('../Admin/dataSiteElement.json')
+        .then(response => response.json())
+        .then(medicaments => {
+            const updatedMedicaments = medicaments.filter(med => med.id !== id);
+            updateJSON(updatedMedicaments);
+        })
+        .catch(error => console.error('Erreur lors de la suppression:', error));
+}
+
+// Fonction pour mettre à jour le fichier JSON
 function updateJSON(updatedMedicaments) {
     fetch('../Admin/updateMedicaments.php', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedMedicaments)
     })
     .then(response => {
-        if (!response.ok) {
-            throw new Error('Erreur lors de la mise à jour du fichier JSON');
-        }
+        if (!response.ok) throw new Error('Erreur lors de la mise à jour du fichier JSON');
         console.log('Médicaments mis à jour avec succès');
+        chargerMedicaments(); // Recharger la liste après mise à jour
     })
-    .catch(error => {
-        console.error(error);
-    });
+    .catch(error => console.error(error));
 }
 
-// Charger les médicaments et initialiser les événements
+// Charger les médicaments
 chargerMedicaments();

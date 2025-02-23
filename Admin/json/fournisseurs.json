@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "nom": "PharmaCorp",
+        "adresse": "1 Rue des Médicaments",
+        "telephone": "0123456789",
+        "email": "contact@pharmacorp.com",
+        "horaires": {
+            "Lundi": "08:00 - 18:00",
+            "Mardi": "08:00 - 18:00",
+            "Mercredi": "08:00 - 18:00",
+            "Jeudi": "08:00 - 18:00",
+            "Vendredi": "08:00 - 18:00",
+            "Samedi": "09:00 - 13:00",
+            "Dimanche": "Fermé"
+        },
+        "responsable": "Sophie Martin"
+    },
+    {
+        "id": 2,
+        "nom": "MediSupply",
+        "adresse": "2 Rue des Fournisseurs",
+        "telephone": "0123456790",
+        "email": "support@medisupply.com",
+        "horaires": {
+            "Lundi": "09:00 - 17:00",
+            "Mardi": "09:00 - 17:00",
+            "Mercredi": "09:00 - 17:00",
+            "Jeudi": "09:00 - 17:00",
+            "Vendredi": "09:00 - 17:00",
+            "Samedi": "Fermé",
+            "Dimanche": "Fermé"
+        },
+        "responsable": "Jean Dupont"
+    },
+    {
+        "id": 3,
+        "nom": "HealthPlus",
+        "adresse": "3 Rue du Bien-être",
+        "telephone": "0123456791",
+        "email": "sales@healthplus.com",
+        "horaires": {
+            "Lundi": "08:30 - 17:30",
+            "Mardi": "08:30 - 17:30",
+            "Mercredi": "08:30 - 17:30",
+            "Jeudi": "08:30 - 17:30",
+            "Vendredi": "08:30 - 17:30",
+            "Samedi": "10:00 - 14:00",
+            "Dimanche": "Fermé"
+        },
+        "responsable": "Claire Bernard"
+    },
+    {
+        "id": 4,
+        "nom": "MedWorld",
+        "adresse": "4 Avenue des Soins",
+        "telephone": "0123456792",
+        "email": "info@medworld.com",
+        "horaires": {
+            "Lundi": "07:00 - 19:00",
+            "Mardi": "07:00 - 19:00",
+            "Mercredi": "07:00 - 19:00",
+            "Jeudi": "07:00 - 19:00",
+            "Vendredi": "07:00 - 19:00",
+            "Samedi": "08:00 - 12:00",
+            "Dimanche": "Fermé"
+        },
+        "responsable": "Thomas Leroy"
+    },
+    {
+        "id": 5,
+        "nom": "CarePharma",
+        "adresse": "5 Boulevard des Pharmacies",
+        "telephone": "0123456793",
+        "email": "contact@carepharma.com",
+        "horaires": {
+            "Lundi": "08:00 - 16:00",
+            "Mardi": "08:00 - 16:00",
+            "Mercredi": "08:00 - 16:00",
+            "Jeudi": "08:00 - 16:00",
+            "Vendredi": "08:00 - 16:00",
+            "Samedi": "Fermé",
+            "Dimanche": "Fermé"
+        },
+        "responsable": "Isabelle Moreau"
+    }
+]

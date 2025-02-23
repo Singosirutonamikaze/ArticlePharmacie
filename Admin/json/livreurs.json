@@ -1,0 +1,71 @@
+[
+    {
+        "id": 1,
+        "nom": "Benoit",
+        "prenom": "Luc",
+        "email": "luc.benoit@example.com",
+        "vehicule": "Vélo",
+        "horaires": [
+            {"jour": "Lundi", "heures": "08:00 - 16:00"},
+            {"jour": "Mardi", "heures": "08:00 - 16:00"},
+            {"jour": "Mercredi", "heures": "08:00 - 12:00"}
+        ],
+        "salaire": 1800
+    },
+    {
+        "id": 2,
+        "nom": "Meyer",
+        "prenom": "Thierry",
+        "email": "thierry.meyer@example.com",
+        "vehicule": "Voiture",
+        "horaires": [
+            {"jour": "Lundi", "heures": "09:00 - 17:00"},
+            {"jour": "Mardi", "heures": "09:00 - 17:00"},
+            {"jour": "Jeudi", "heures": "09:00 - 17:00"},
+            {"jour": "Vendredi", "heures": "09:00 - 17:00"}
+        ],
+        "salaire": 2500
+    },
+    {
+        "id": 3,
+        "nom": "Cohen",
+        "prenom": "David",
+        "email": "david.cohen@example.com",
+        "vehicule": "Moto",
+        "horaires": [
+            {"jour": "Lundi", "heures": "07:00 - 15:00"},
+            {"jour": "Mardi", "heures": "07:00 - 15:00"},
+            {"jour": "Mercredi", "heures": "07:00 - 15:00"},
+            {"jour": "Jeudi", "heures": "07:00 - 15:00"}
+        ],
+        "salaire": 2300
+    },
+    {
+        "id": 4,
+        "nom": "Petit",
+        "prenom": "Jean-Pierre",
+        "email": "jean-pierre.petit@example.com",
+        "vehicule": "Camion",
+        "horaires": [
+            {"jour": "Lundi", "heures": "06:00 - 14:00"},
+            {"jour": "Mardi", "heures": "06:00 - 14:00"},
+            {"jour": "Mercredi", "heures": "06:00 - 14:00"},
+            {"jour": "Jeudi", "heures": "06:00 - 14:00"},
+            {"jour": "Vendredi", "heures": "06:00 - 14:00"}
+        ],
+        "salaire": 2700
+    },
+    {
+        "id": 5,
+        "nom": "Joubert",
+        "prenom": "Claire",
+        "email": "claire.joubert@example.com",
+        "vehicule": "Vélo",
+        "horaires": [
+            {"jour": "Lundi", "heures": "08:00 - 16:00"},
+            {"jour": "Mardi", "heures": "08:00 - 16:00"},
+            {"jour": "Jeudi", "heures": "08:00 - 16:00"}
+        ],
+        "salaire": 1900
+    }
+]

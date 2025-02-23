@@ -17,6 +17,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
 
+    <!-- tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,9 +30,9 @@
         <div class="lien_de_navigation">
             <ul>
                 <li><a href="./index.html">acceuil</a></li>
-                <li><a href="#">à propos</a></li>
+                <li><a href="#APropos">à propos</a></li>
                 <li> <a href="#">nos produits</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#Contact">Contact</a></li>
             </ul>
         </div>
 
@@ -83,6 +85,7 @@
             </div>
         </div>
     </section>
+
     <section class="commande">
         <div class="title">
             <h2>Votre commande</h2>
@@ -93,15 +96,174 @@
         </div>
 
         <div class="valider_achat">
-    
-                <div class="check">
-                    <input type="checkbox" name="check" id="validate_check" placeholder=" v">
+
+            <div class="check">
+                <input type="checkbox" name="check" id="validate_check" placeholder=" v">
                 <p><a href="#"> Accepter les termes et conditions d'utlisations</a></p>
-                </div>
-                <button id="button-validate" type="button">Valider vos achats</button>
+            </div>
+            <button id="button-validate" type="button">Valider vos achats</button>
         </div>
     </section>
 
+    <section class="APropos bg-gray-50 py-16" class="APropos">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-semibold text-center mb-8">À propos de l'entreprise</h2>
+    
+            <!-- Informations de l'entreprise -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+                <!-- Horaires de travail -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-center mb-4">Horaires de travail</h3>
+                    <p class="text-center text-gray-600 mb-4">Nos horaires de travail sont conçus pour répondre au mieux à vos besoins. Voici quand nous sommes disponibles :</p>
+                    
+                    <table class="w-full text-sm text-gray-600">
+                        <thead>
+                            <tr class="border-b">
+                                <th class="py-2 text-left">Jour</th>
+                                <th class="py-2 text-left">Horaire</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="py-2">Lundi - Vendredi</td>
+                                <td class="py-2">9h00 - 18h00</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2">Samedi</td>
+                                <td class="py-2">9h00 - 13h00</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2">Dimanche</td>
+                                <td class="py-2">Fermé</td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                    <!-- Explication des jours de garde -->
+                    <h4 class="text-lg font-semibold text-center mt-6 mb-4">Jour de Garde</h4>
+                    <p class="text-center text-gray-600">Nos jours de garde sont spécialement dédiés à répondre à des urgences. Pendant ces jours, nous restons disponibles pour toute demande urgente, même en dehors des horaires normaux.</p>
+                    <ul class="list-disc pl-5 text-gray-600 mt-4">
+                        <li><strong>Lundi - Vendredi:</strong> Disponibilité complète de 9h00 à 18h00.</li>
+                        <li><strong>Samedi:</strong> Disponibilité limitée de 9h00 à 13h00.</li>
+                        <li><strong>Dimanche:</strong> Fermé pour toutes les demandes, sauf urgences spécifiques.</li>
+                    </ul>
+                </div>
+    
+                <!-- Directeur de l'entreprise -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-center mb-4">Le Directeur</h3>
+                    <p class="text-center text-gray-600">M. Jean Dupont est le directeur de Article Pharmaceutique. Il est un expert dans le domaine pharmaceutique avec plus de 20 ans d'expérience. Il supervise toutes les opérations de l'entreprise pour garantir un service de qualité et une gestion efficace des produits.</p>
+                </div>
+    
+                <!-- Méthodes de commande -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-center mb-4">Méthodes de commande</h3>
+                    <p class="text-center text-gray-600 mb-4">Commander chez Article Pharmaceutique est simple et rapide. Voici comment vous pouvez procéder :</p>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>Commande en ligne via notre site web. Il vous suffit de parcourir notre catalogue et de passer votre commande directement depuis votre appareil.</li>
+                        <li>Commande par téléphone: Appelez-nous au <strong>+228 97 07 07 07</strong>, et nous vous guiderons pour passer votre commande.</li>
+                        <li>Commande par email: Vous pouvez également envoyer votre commande par email à <a href="mailto:ArticlePharmacie@gmail.com" class="text-blue-500 hover:text-blue-700">ArticlePharmacie@gmail.com</a>. Nous répondrons dans les plus brefs délais.</li>
+                        <li>Retrait en magasin: Si vous préférez retirer vos produits en personne, contactez-nous pour fixer un rendez-vous et récupérer vos articles directement en magasin.</li>
+                    </ul>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="contact py-16 bg-gray-100" id="Contact">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Contactez-nous</h2>
+
+                <form action="#" method="POST">
+                    <!-- Nom -->
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Votre nom</label>
+                        <input id="name" type="text" name="name" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Votre email</label>
+                        <input id="email" type="email" name="email" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Sujet -->
+                    <div class="mb-4">
+                        <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+                        <input id="subject" type="text" name="subject" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Message -->
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Votre message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class="bg-blue-600 text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-200">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-between">
+                <!-- Logo -->
+                <div class="footer_logo mb-8 w-full sm:w-1/4 text-center sm:text-left">
+                    <img src="../assets/images/logo.jpeg" alt="logo" class="w-40 mx-auto sm:mx-0">
+                </div>
+    
+                <!-- Footer Content -->
+                <div class="footer_content w-full sm:w-3/4 flex flex-wrap justify-between ">
+                    
+                    <!-- À propos -->
+                    <div class="footer_content__1 mb-8 sm:w-1/3 mr-8">
+                        <h3 class="text-lg font-semibold mb-4">À propos</h3>
+                        <p class="text-sm opacity-75">Article pharmaceutique est une entreprise spécialisée dans la vente de produits pharmaceutiques en ligne. Nous vous offrons des produits de qualité à des prix abordables.</p>
+                    </div>
+    
+                    <!-- Contacts -->
+                    <div class="footer_content__2 mb-8 sm:w-1/3">
+                        <h3 class="text-lg font-semibold mb-4">Contacts</h3>
+                        <p class="text-sm opacity-75">Adresse: 12 BP 12 Abidjan 12</p>
+                        <p class="text-sm opacity-75">Téléphone: +228 97 07 07 07</p>
+                        <p class="text-sm opacity-75">Email: <a href="mailto:ArticlePharmacie@gmail.com" class="text-blue-400 hover:text-blue-600">ArticlePharmacie@gmail.com</a></p>
+                    </div>
+    
+                    <!-- Liens utiles -->
+                    <div class="footer_content__3 sm:w-1/3">
+                        <h3 class="text-lg font-semibold mb-4">Liens utiles</h3>
+                        <ul class="text-sm">
+                            <li><a href="#" class="text-blue-400 hover:text-blue-600 transition duration-300">Accueil</a></li>
+                            <li><a href="#" class="text-blue-400 hover:text-blue-600 transition duration-300">À propos</a></li>
+                            <li><a href="#" class="text-blue-400 hover:text-blue-600 transition duration-300">Nos produits</a></li>
+                            <li><a href="#" class="text-blue-400 hover:text-blue-600 transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Footer Bottom -->
+            <div class="text-center mt-12 text-sm opacity-50">
+                <p>&copy; 2025 Article Pharmaceutique. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- js link -->
     <script type="module" src="../js/produit.js" defer></script>
     <script src="../js/app.js" defer></script>
 

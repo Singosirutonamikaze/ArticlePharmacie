@@ -1,3 +1,4 @@
+// Fonction pour charger et afficher les produits
 async function fetchAndRenderProducts() {
     try {
         const response = await fetch('../Admin/dataSiteElement.json');
@@ -22,7 +23,7 @@ async function fetchAndRenderProducts() {
                             <h3>${products[productIndex].nom}</h3>
                             <p>Prix : ${products[productIndex].prix} FCFA</p>
                         </span>
-                        <button class="hoverButton" class ="update"> Mis à jour</button>
+                        <button class="hoverButton update" data-product-id="${products[productIndex].id}">Mis à jour</button>
                     `;
                     element.style.display = "block"; // Réaffiche l'élément
                 } else {
@@ -59,4 +60,5 @@ async function fetchAndRenderProducts() {
     }
 }
 
+// Charger et afficher les produits
 fetchAndRenderProducts();

@@ -1,7 +1,7 @@
 -- Création de la Base de données
---CREATE DATABASE IF NOT EXISTS Pharmacie_Gestion;
---USE Pharmacie_Gestion;
-CREATE DATABASE Pharmacie_Gestion;
+CREATE DATABASE IF NOT EXISTS Pharmacie_Gestion;
+USE Pharmacie_Gestion;
+
 -- Table des clients
 CREATE TABLE client (
     id_client SERIAL PRIMARY KEY,
@@ -14,6 +14,7 @@ CREATE TABLE client (
 );
 CREATE INDEX idx_client_email ON client(email);
 
+SELECT * FROM client WHERE email = "jean.dupont@example.com";
 -- Table des employés
 CREATE TABLE employe (
     id_employe SERIAL PRIMARY KEY,
@@ -22,6 +23,11 @@ CREATE TABLE employe (
     email VARCHAR(100) UNIQUE,
     roles VARCHAR(50)
 );
+ALTER TABLE employe
+ADD COLUMN departement VARCHAR(30);
+
+select * from employe;
+
 CREATE INDEX idx_employe_email ON employe(email);
 
 -- Table des livreurs
@@ -405,6 +411,21 @@ BEGIN
 END;
 $$;
 
+--Procédure pour ajouter un employé avec un rôle
+CREATE OR REPLACE FUNCTION AjouterEmployeAvecRole( 
+	p_nom VARCHAR, 
+	p_prenom VARCHAR, 
+	p_email VARCHAR, 
+	p_departement VARCHAR,
+	p_role VARCHAR
+)
+RETURNS VOID AS $$
+BEGIN 
+	INSERT INTO employe (nom, prenom, email, departement) 
+	VALUES (p_nom, p_prenom, p_email, p_departement); 
+END; 
+$$ LANGUAGE plpgsql;
+
 -- Procédure pour ajouter un livreur avec un rôle
 CREATE OR REPLACE PROCEDURE AjouterLivreurAvecRole(
     p_nom VARCHAR(50),
@@ -517,11 +538,11 @@ CALL AjouterClientAvecRole('Bernard', 'Pierre', 'pierre.bernard@example.com', 'p
 CALL AjouterClientAvecRole('Martin', 'Claire', 'claire.martin@example.com', 'password654', '654 Rue de Toulouse', '0123456783', 'client');
 
 -- Ajouter 5 employés avec le rôle 'employé'
-CALL AjouterEmployeAvecRole('Martin', 'Claire', 'claire.martin@example.com', 'Vente', 'employé');
-CALL AjouterEmployeAvecRole('Lemoine', 'Marc', 'marc.lemoine@example.com', 'Marketing', 'employé');
-CALL AjouterEmployeAvecRole('Dupont', 'Sylvie', 'sylvie.dupont@example.com', 'Gestion', 'employé');
-CALL AjouterEmployeAvecRole('Leclerc', 'Paul', 'paul.leclerc@example.com', 'Finances', 'employé');
-CALL AjouterEmployeAvecRole('Tremblay', 'Lucie', 'lucie.tremblay@example.com', 'Vente', 'employé');
+SELECT AjouterEmployeAvecRole('Martin', 'Claire', 'claire.martin@example.com','Vente',  'employé');
+SELECT AjouterEmployeAvecRole('Lemoine', 'Marc', 'marc.lemoine@example.com', 'Marketing', 'employé');
+SELECT AjouterEmployeAvecRole('Dupont', 'Sylvie', 'sylvie.dupont@example.com', 'Gestion', 'employé');
+SELECT AjouterEmployeAvecRole('Leclerc', 'Paul', 'paul.leclerc@example.com', 'Finances', 'employé');
+SELECT AjouterEmployeAvecRole('Tremblay', 'Lucie', 'lucie.tremblay@example.com', 'Vente', 'employé');
 
 -- Ajouter 5 livreurs avec le rôle 'livreur'
 CALL AjouterLivreurAvecRole('Tremblay', 'Michel', 'michel.tremblay@example.com', 'Vélo', 'livreur');
@@ -531,22 +552,21 @@ CALL AjouterLivreurAvecRole('Benoit', 'Paul', 'paul.benoit@example.com', 'Vélo'
 CALL AjouterLivreurAvecRole('Lemoine', 'Lucie', 'lucie.lemoine@example.com', 'Moto', 'livreur');
 
 -- Appel pour ajouter 5 produits
-CALL AjouterProduit('Aspirine', 'aspirine.jpg', 'Médicament pour soulager les douleurs', 5.99, 'Douleurs', 'Douleur de tête', '1 à 2 comprimés par jour', 'Ne pas dépasser la dose recommandée', 'https://exemple.com/aspirine', 1);
-CALL AjouterProduit('Paracétamol', 'paracetamol.jpg', 'Antidouleur et antipyrétique', 3.49, 'Fièvre, Douleurs', 'Fièvre, Maux de tête', '1 à 2 comprimés toutes les 4 heures', 'Ne pas dépasser 8 comprimés par jour', 'https://exemple.com/paracetamol', 2);
-CALL AjouterProduit('Ibuprofène', 'ibuprofene.jpg', 'Anti-inflammatoire pour douleurs musculaires', 8.99, 'Douleurs musculaires', 'Douleurs inflammatoires', '1 comprimé toutes les 6 heures', 'Ne pas prendre avec certains médicaments', 'https://exemple.com/ibuprofene', 1);
-CALL AjouterProduit('Vitamine C', 'vitamineC.jpg', 'Complément alimentaire pour renforcer le système immunitaire', 12.99, 'Système immunitaire', 'Prévention de la grippe', '1 comprimé par jour', 'Aucun effet secondaire connu', 'https://exemple.com/vitamineC', 3);
-CALL AjouterProduit('Antibiotique Amoxicilline', 'amoxicilline.jpg', 'Antibiotique pour traiter les infections bactériennes', 15.99, 'Infections bactériennes', 'Infections respiratoires', '1 capsule toutes les 8 heures', 'Ne pas prendre si allergique à la pénicilline', 'https://exemple.com/amoxicilline', 2);
+SELECT AjouterProduit('Aspirine', 'aspirine.jpg', 'Médicament pour soulager les douleurs', 5.99, 'Douleurs', 'Douleur de tête', '1 à 2 comprimés par jour', 'Ne pas dépasser la dose recommandée', 'https://exemple.com/aspirine', 1);
+SELECT AjouterProduit('Paracétamol', 'paracetamol.jpg', 'Antidouleur et antipyrétique', 3.49, 'Fièvre, Douleurs', 'Fièvre, Maux de tête', '1 à 2 comprimés toutes les 4 heures', 'Ne pas dépasser 8 comprimés par jour', 'https://exemple.com/paracetamol', 1);
+SELECT AjouterProduit('Ibuprofène', 'ibuprofene.jpg', 'Anti-inflammatoire pour douleurs musculaires', 8.99, 'Douleurs musculaires', 'Douleurs inflammatoires', '1 comprimé toutes les 6 heures', 'Ne pas prendre avec certains médicaments', 'https://exemple.com/ibuprofene', 1);
+SELECT AjouterProduit('Vitamine C', 'vitamineC.jpg', 'Complément alimentaire pour renforcer le système immunitaire', 12.99, 'Système immunitaire', 'Prévention de la grippe', '1 comprimé par jour', 'Aucun effet secondaire connu', 'https://exemple.com/vitamineC', 2);
+SELECT AjouterProduit('Antibiotique Amoxicilline', 'amoxicilline.jpg', 'Antibiotique pour traiter les infections bactériennes', 15.99, 'Infections bactériennes', 'Infections respiratoires', '1 capsule toutes les 8 heures', 'Ne pas prendre si allergique à la pénicilline', 'https://exemple.com/amoxicilline', 1);
 
-
---Les requêtes d'insertion
+--LES REQUÊTES D'INSERTION
 -- Insertion dans la table des clients
 INSERT INTO client (nom, prenom, email, mot_de_passe, adresse, telephone)
 VALUES
-    ('Dupont', 'Jean', 'jean.dupont@example.com', 'password123', '123 Rue de Paris', '0123456789'),
-    ('Martin', 'Claire', 'claire.martin@example.com', 'password456', '456 Rue des Champs', '0123456780'),
+    ('Duplancher', 'Marinette', 'marinette.duplancher@example.com', 'password123', '123 Rue de Paris', '0123456789'),
+    ('Martin', 'Pascal', 'pascal.martin@example.com', 'password456', '456 Rue des Champs', '0123456780'),
     ('Tremblay', 'Michel', 'michel.tremblay@example.com', 'password789', '789 Rue du Moulin', '0123456781'),
     ('Bernard', 'Luc', 'luc.bernard@example.com', 'password321', '321 Rue du Lac', '0123456782'),
-    ('Lemoine', 'Sophie', 'sophie.lemoine@example.com', 'password654', '654 Rue des Fleurs', '0123456783');
+    ('Lemoine', 'Sarah', 'sarah.lemoine@example.com', 'password654', '654 Rue des Fleurs', '0123456783');
 
 -- Insertion dans la table des employés
 INSERT INTO employe (nom, prenom, email, roles)
@@ -576,22 +596,23 @@ VALUES
     ('CarePharma', '5 Boulevard des Pharmacies', '0123456793', 'contact@carepharma.com');
 
 -- Insertion dans la table des catégories de produits
-INSERT INTO categorie (nom)
+INSERT INTO categorie (id_categorie,nom)
 VALUES
-    ('Médicaments'),
-    ('Compléments alimentaires'),
-    ('Soins et hygiène'),
-    ('Accessoires médicaux'),
-    ('Produits vétérinaires');
+    (1,'Médicaments'),
+    (2,'Compléments alimentaires'),
+    (3,'Soins et hygiène'),
+    (4,'Accessoires médicaux'),
+    (5,'Produits vétérinaires');
 
 -- Insertion dans la table des produits
-INSERT INTO produit (nom, image, description, prix, maladies, stock, utilisations, posologie, precautions, liens_de_reference, id_categorie)
+
+INSERT INTO produit (id_produit, nom, image, description, prix, maladies, stock, utilisations, posologie, precautions, liens_de_reference, id_categorie)
 VALUES
-    ('Aspirine', 'aspirine.jpg', 'Médicament pour soulager les douleurs', 5.99, 'Douleurs', 100, 'Douleur de tête', '1 à 2 comprimés par jour', 'Ne pas dépasser la dose recommandée', 'https://exemple.com/aspirine', 1),
-    ('Paracétamol', 'paracetamol.jpg', 'Antidouleur et antipyrétique', 3.49, 'Fièvre, Douleurs', 50, 'Fièvre, Maux de tête', '1 à 2 comprimés toutes les 4 heures', 'Ne pas dépasser 8 comprimés par jour', 'https://exemple.com/paracetamol', 1),
-    ('Ibuprofène', 'ibuprofene.jpg', 'Anti-inflammatoire pour douleurs musculaires', 8.99, 'Douleurs musculaires', 75, 'Douleurs inflammatoires', '1 comprimé toutes les 6 heures', 'Ne pas prendre avec certains médicaments', 'https://exemple.com/ibuprofene', 1),
-    ('Vitamine C', 'vitamineC.jpg', 'Complément alimentaire pour renforcer le système immunitaire', 12.99, 'Système immunitaire', 200, 'Prévention de la grippe', '1 comprimé par jour', 'Aucun effet secondaire connu', 'https://exemple.com/vitamineC', 2),
-    ('Antibiotique Amoxicilline', 'amoxicilline.jpg', 'Antibiotique pour traiter les infections bactériennes', 15.99, 'Infections bactériennes', 30, 'Infections respiratoires', '1 capsule toutes les 8 heures', 'Ne pas prendre si allergique à la pénicilline', 'https://exemple.com/amoxicilline', 1);
+    (1,'Aspirine', 'aspirine.jpg', 'Médicament pour soulager les douleurs', 5.99, 'Douleurs', 100, 'Douleur de tête', '1 à 2 comprimés par jour', 'Ne pas dépasser la dose recommandée', 'https://exemple.com/aspirine', 1),
+    (2,'Paracétamol', 'paracetamol.jpg', 'Antidouleur et antipyrétique', 3.49, 'Fièvre, Douleurs', 50, 'Fièvre, Maux de tête', '1 à 2 comprimés toutes les 4 heures', 'Ne pas dépasser 8 comprimés par jour', 'https://exemple.com/paracetamol', 1),
+    (3,'Ibuprofène', 'ibuprofene.jpg', 'Anti-inflammatoire pour douleurs musculaires', 8.99, 'Douleurs musculaires', 75, 'Douleurs inflammatoires', '1 comprimé toutes les 6 heures', 'Ne pas prendre avec certains médicaments', 'https://exemple.com/ibuprofene', 1),
+    (4,'Vitamine C', 'vitamineC.jpg', 'Complément alimentaire pour renforcer le système immunitaire', 12.99, 'Système immunitaire', 200, 'Prévention de la grippe', '1 comprimé par jour', 'Aucun effet secondaire connu', 'https://exemple.com/vitamineC', 2),
+    (5,'Antibiotique Amoxicilline', 'amoxicilline.jpg', 'Antibiotique pour traiter les infections bactériennes', 15.99, 'Infections bactériennes', 30, 'Infections respiratoires', '1 capsule toutes les 8 heures', 'Ne pas prendre si allergique à la pénicilline', 'https://exemple.com/amoxicilline', 1);
 
 -- Insertion dans la table des produits fournis par les fournisseurs
 INSERT INTO fournit (id_produit, id_fournisseur)
@@ -620,6 +641,8 @@ VALUES
     (2, 4, 1),
     (3, 5, 1);
 
+--Sélectionner tous les produits
+SELECT * FROM produit;
 -- Sélectionner tous les clients
 SELECT * FROM client;
 

@@ -4,12 +4,16 @@ window.onload = () => {
     const updateDrugBtn = document.getElementById('UpdateDRUG');
     const notificationBtn = document.getElementById('notification');
     const userProfileBtn = document.getElementById('userProfile');
+    const managementInfoBtn = document.getElementById('manageInfo');
+    const dashboard = document.getElementById('dashboard');
 
     const addDrugCard = document.getElementById("addElement2");
     const deleteDrugCard = document.getElementById("addElement3");
     const updateDrugCard = document.getElementById("addElement1");
     const notificationCard = document.getElementById("addElement4");
     const firstPage = document.getElementById("addElement5");
+    const userProfileCard = document.getElementById("addElement6");
+    const dashboardCard = document.getElementById("addElement7");
 
     // Afficher la première page par défaut
     firstPage.classList.add("active");
@@ -17,91 +21,90 @@ window.onload = () => {
     // Cacher tous les conteneurs
     const hideAllContainers = () => {
         const containers = document.querySelectorAll(".container");
-        containers.forEach(container => container.classList.remove("active"));
+        containers.forEach(container => {
+            container.classList.remove("active");
+            container.style.display = "none";
+        });
     };
 
+    // Afficher un conteneur spécifique
+    const showContainer = (container) => {
+        hideAllContainers();
+        container.style.display = "flex";
+        container.classList.add("active");
+    };
+
+    // Gestion des clics sur les boutons
     userProfileBtn.addEventListener("click", () => {
         console.log("User Profile clicked");
-        firstPage.style.display = "flex";
-        hideAllContainers();
-        firstPage.classList.add("active");
+        showContainer(firstPage);
     });
 
     addDrugBtn.addEventListener("click", () => {
         console.log("Add Drug clicked");
-        hideAllContainers();
-        firstPage.style.display = "none";
-        addDrugCard.classList.add("active");
+        showContainer(addDrugCard);
     });
 
     delDrugBtn.addEventListener("click", () => {
         console.log("Delete Drug clicked");
-        firstPage.style.display = "none";
-        hideAllContainers();
-        deleteDrugCard.classList.add("active");
+        showContainer(deleteDrugCard);
     });
 
     updateDrugBtn.addEventListener("click", () => {
         console.log("Update Drug clicked");
-        firstPage.style.display = "none";
-        hideAllContainers();
-        updateDrugCard.classList.add("active");
+        showContainer(updateDrugCard);
     });
 
     notificationBtn.addEventListener("click", () => {
         console.log("Notification clicked");
-        firstPage.style.display = "none";
-        hideAllContainers();
-        notificationCard.classList.add("active");
+        showContainer(notificationCard);
     });
 
-    // Récupérer les éléments
+    managementInfoBtn.addEventListener("click", () => {
+        console.log("Manage Information clicked");
+        showContainer(userProfileCard);
+    });
+
+    dashboard.addEventListener("click", () => {
+        console.log("Dashboard clicked");
+        showContainer(dashboardCard);
+    });
+
+    // Gestion des boutons de la première page
     const addProductBtn = document.getElementById('addProductBtn');
     const updateProductBtn = document.getElementById('updateProductBtn');
     const deleteProductBtn = document.getElementById('deleteProductBtn');
-    const manageInfoBtn = document.getElementById('manageInfoBtn');
+    const manageInfoBtnPage = document.getElementById('manageInfoBtn');
     const viewOrdersBtn = document.getElementById('viewOrdersBtn');
+    const dashboardBtn = document.getElementById('DashboardBtn');
 
-    // Récupérer les cartes/sections à afficher
-    const addProductCard = document.getElementById("addElement2");
-    const updateProductCard = document.getElementById("addElement1");
-    const deleteProductCard = document.getElementById("addElement3");
-    const manageInfoCard = document.getElementById("addElement4");
-    const viewOrdersCard = document.getElementById("addElement5");
-
-
-    // Ajout d'événements aux boutons
     addProductBtn.addEventListener("click", () => {
         console.log("Ajouter des produits");
-        firstPage.style.display = "none";
-        hideAllContainers();
-        addProductCard.classList.add("active");
+        showContainer(addDrugCard);
     });
 
     updateProductBtn.addEventListener("click", () => {
         console.log("Mettre à jour les produits");
-        firstPage.style.display = "none";
-        hideAllContainers();
-        updateProductCard.classList.add("active");
+        showContainer(updateDrugCard);
     });
 
     deleteProductBtn.addEventListener("click", () => {
         console.log("Supprimer des produits");
-        firstPage.style.display = "none";
-        hideAllContainers();
-        deleteProductCard.style.display = "flex";
-        deleteProductCard.classList.add("active");
+        showContainer(deleteDrugCard);
     });
 
-    manageInfoBtn.addEventListener("click", () => {
+    manageInfoBtnPage.addEventListener("click", () => {
         console.log("Gérer les informations");
-        hideAllContainers();
-        manageInfoCard.classList.add("active");
+        showContainer(userProfileCard);
     });
 
     viewOrdersBtn.addEventListener("click", () => {
         console.log("Consulter les commandes");
-        hideAllContainers();
-        viewOrdersCard.classList.add("active");
+        showContainer(notificationCard);
+    });
+
+    dashboardBtn.addEventListener("click", () => {
+        console.log("Dashboard");
+        showContainer(dashboardCard);
     });
 };

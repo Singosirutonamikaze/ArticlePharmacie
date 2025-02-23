@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "nom": "Robert",
+        "prenom": "Paul",
+        "email": "paul.robert@example.com",
+        "roles": "Vente",
+        "salaire": 1800,
+        "horaires": {
+            "Lundi": "09:00 - 17:00",
+            "Mardi": "09:00 - 17:00",
+            "Mercredi": "09:00 - 17:00",
+            "Jeudi": "09:00 - 17:00",
+            "Vendredi": "09:00 - 17:00",
+            "Samedi": "10:00 - 14:00",
+            "Dimanche": "Fermé"
+        }
+    },
+    {
+        "id": 2,
+        "nom": "Durand",
+        "prenom": "Julie",
+        "email": "julie.durand@example.com",
+        "roles": "Vente",
+        "salaire": 1850,
+        "horaires": {
+            "Lundi": "09:00 - 17:00",
+            "Mardi": "09:00 - 17:00",
+            "Mercredi": "09:00 - 17:00",
+            "Jeudi": "09:00 - 17:00",
+            "Vendredi": "09:00 - 17:00",
+            "Samedi": "10:00 - 14:00",
+            "Dimanche": "Fermé"
+        }
+    },
+    {
+        "id": 3,
+        "nom": "Leclerc",
+        "prenom": "Eric",
+        "email": "eric.leclerc@example.com",
+        "roles": "Gestion des stocks",
+        "salaire": 2000,
+        "horaires": {
+            "Lundi": "08:00 - 16:00",
+            "Mardi": "08:00 - 16:00",
+            "Mercredi": "08:00 - 16:00",
+            "Jeudi": "08:00 - 16:00",
+            "Vendredi": "08:00 - 16:00",
+            "Samedi": "Fermé",
+            "Dimanche": "Fermé"
+        }
+    },
+    {
+        "id": 4,
+        "nom": "Garcia",
+        "prenom": "Isabelle",
+        "email": "isabelle.garcia@example.com",
+        "roles": "Administration",
+        "salaire": 2200,
+        "horaires": {
+            "Lundi": "08:30 - 17:30",
+            "Mardi": "08:30 - 17:30",
+            "Mercredi": "08:30 - 17:30",
+            "Jeudi": "08:30 - 17:30",
+            "Vendredi": "08:30 - 17:30",
+            "Samedi": "Fermé",
+            "Dimanche": "Fermé"
+        }
+    },
+    {
+        "id": 5,
+        "nom": "Pires",
+        "prenom": "Nathalie",
+        "email": "nathalie.pires@example.com",
+        "roles": "Direction",
+        "salaire": 3000,
+        "horaires": {
+            "Lundi": "09:00 - 18:00",
+            "Mardi": "09:00 - 18:00",
+            "Mercredi": "09:00 - 18:00",
+            "Jeudi": "09:00 - 18:00",
+            "Vendredi": "09:00 - 18:00",
+            "Samedi": "Fermé",
+            "Dimanche": "Fermé"
+        }
+    }
+]

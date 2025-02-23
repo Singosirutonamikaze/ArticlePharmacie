@@ -17,23 +17,23 @@
             <h3>Votre commande vous sera livrée directement grâce à votre Adresse et nous vous enverrons un email pour confirmer la réception de la commande  </h3>
         <div class="name-fields">
             <label>
-                <input required="" placeholder="" type="text" class="input">
+                <input required="" placeholder="" type="text" class="input" name="nom">
                 <span>Nom</span>
             </label>
             <label>
-                <input required="" placeholder="" type="text" class="input">
+                <input required="" placeholder="" type="text" class="input" name="prenoms">
                 <span>Prénoms</span>
             </label>
         </div>
         <div class="flex">
             <label>
-                <input required="" placeholder="" type="email" class="input">
+                <input required="" placeholder="" type="email" class="input" name="email">
                 <span>Email</span>
             </label>
         </div>
         <div class="flex">
             <label>
-                <input required="" placeholder="" type="text" class="input" style="width: 510px ;">
+                <input required="" placeholder="" type="text" class="input" style="width: 510px ;" name="adresse">
                 <span>Adresse</span>
             </label>
         </div>

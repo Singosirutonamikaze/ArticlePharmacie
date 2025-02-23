@@ -13,12 +13,22 @@
 
     <!-- Lien vers la feuille de style CSS principale pour les styles généraux de la page -->
     <link rel="stylesheet" href="../Admin/css/Admin.css">
-    <link rel="stylesheet" href="../Admin/css/uploadimage.css">
     <link rel="stylesheet" href="../Admin/css/cardCSS.css">
 
     <!-- Liens vers des logos populaires (par exemple, font-awesome pour des icônes de réseaux sociaux, de recherche, etc.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,7 +36,13 @@
     <main>
         <!-- Conteneur du header -->
         <header>
-            <h1>Admin</h1>
+            <!-- Logo de l'application -->
+            <div class="flex-col items-center space-x-4 justify-center">
+                <img src="../SiteWeb/assets/images/logo.jpeg" alt="LogoApplication"
+                    class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
+            </div>
+
+            <h1 class="text-2xl font-bold text-indigo-600 logo">Admin</h1>
             <nav>
                 <!-- Boutons pour les actions administratives -->
                 <button class="BtnUser" id="userProfile" title="Cliquer pour voir le profil utilisateur">
@@ -60,6 +76,22 @@
                 <button class="BtnUser" id="notification" title="Veuillez cliquer pour voir les notifications">
                     <span class="svgContainer">
                         <a><i class="fa-solid fa-bell" style="aspect-ratio: 1/1;"></i></a>
+                        <span id="notificationCount" class="notification-count">0</span>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+
+                <button class="BtnUser" id="manageInfo" title="Veuillez cliquer pour gérer les informations">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-info" style="aspect-ratio: 1/1;"></i></a>
+                    </span>
+                    <span class="BG"></span>
+                </button>
+
+                <button class="BtnUser" id="dashboard" title="Dashboard de la semaine">
+                    <span class="svgContainer">
+                        <a><i class="fa-solid fa-chart-bar" style="aspect-ratio: 1/1;"></i></a>
                     </span>
                     <span class="BG"></span>
                 </button>
@@ -68,7 +100,7 @@
 
         <!-- Remplacer les sections par des divs -->
         <!-- Conteneur pour le premier groupe d'éléments -->
-        <div class="container" id="addElement1">
+        <div class="container w-full" id="addElement1">
             <div class="contentElement"></div>
             <div class="contentElement"></div>
             <div class="contentElement"></div>
@@ -91,7 +123,7 @@
         </div>
 
         <!-- Conteneur pour le deuxième groupe d'éléments -->
-        <div class="container" id="addElement2">
+        <div class="container w-full" id="addElement2">
             <!-- Modal Container -->
             <div class="modal-container">
                 <div class="modal-content">
@@ -174,29 +206,39 @@
             </div>
         </div>
 
-        <!-- Conteneur pour le troisième groupe d'éléments -->
-        <div class="container" id="addElement3">
-            <!-- Conteneurs des médicaments -->
-            <div class="deleteDivContainer"></div>
-            <!-- Conteneur pour les flèches (caché initialement) -->
-            <div class="deleteDivContainerRow">
-                <div class="left_arrowR">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-                <div class="right_arrowR">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </div>
+        <!-- Conteneur principal -->
+        <div class="container mx-auto p-4" id="addElement3">
+            <!-- Titre -->
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Gestion des médicaments</h1>
+
+            <!-- Conteneur des médicaments -->
+            <div class="deleteDivContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+            <!-- Conteneur pour les flèches de navigation -->
+            <div
+                class="deleteDivContainerRow flex justify-center items-center mt-8 space-x-4 p-6 h-80 w-96 relative bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow transform hover:scale-105 hover:border-green-500 hover:border-2 items-center relative">
+                <!-- Flèche gauche -->
+                <button class="left_arrowR p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-chevron-left text-gray-700"></i>
+                </button>
+
+                <!-- Indicateur de page -->
+                <span id="pageIndicator" class="text-gray-700 font-medium">Page 1 sur 3</span>
+
+                <!-- Flèche droite -->
+                <button class="right_arrowR p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-chevron-right text-gray-700"></i>
+                </button>
             </div>
         </div>
 
-        <div class="container" id="addElement4">
-            <h2>Notifications</h2>
-            <div id="notificationArea">
-                <p>Les notifications seront affichées ici...</p>
+        <div class="container w-full p-6 bg-gray-100 rounded shadow-md" id="addElement4">
+            <!-- Passage d'un layout en grille pour 3 éléments par ligne -->
+            <div class="CommandeEnvoye">
             </div>
         </div>
 
-        <div class="container" id="addElement5">
+        <div class="container w-full" id="addElement5">
             <!-- Section de présentation -->
             <div id="presentation">
                 <h1>Bienvenue, Administrateur</h1>
@@ -210,12 +252,170 @@
                     <button id="deleteProductBtn" class="btn-donate">Supprimer des produits</button>
                     <button id="manageInfoBtn" class="btn-donate">Gérer les informations</button>
                     <button id="viewOrdersBtn" class="btn-donate">Consulter les commandes</button>
+                    <button id="DashboardBtn" class="btn-donate">Consulter les graphes</button>
                 </div>
                 <p>Veuillez choisir l'option que vous souhaitez utiliser ci-dessus.</p>
             </div>
         </div>
 
+        <div class="container p-4 w-full" id="addElement6">
+            <!-- Titre de la section -->
+            <div class="gestion-Information mb-6 w-full">
+                <h2 class="text-2xl font-bold text-center text-gray-800">Gestion des Informations</h2>
+            </div>
 
+            <!-- Alertes -->
+            <div id="alertContainer" class="mb-4"></div>
+
+            <!-- Sections combinées sans espace -->
+            <div class="grid grid-cols-1 gap-0 w-full">
+                <!-- Clients -->
+                <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">Clients</h3>
+                    <div id="client-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+                    <table class="w-full mt-4 table-auto border-collapse border border-gray-300 mb-4">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="border border-gray-300 p-2">Nom</th>
+                                <th class="border border-gray-300 p-2">Prénom</th>
+                            </tr>
+                        </thead>
+                        <tbody id="client-horaires"></tbody>
+                    </table>
+                </div>
+
+                <!-- Fournisseurs -->
+                <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">Fournisseurs</h3>
+                    <div id="fournisseur-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+                    <table class="w-full mt-4 table-auto border-collapse border border-gray-300 mb-4">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="border border-gray-300 p-2">Nom</th>
+                                <th class="border border-gray-300 p-2">Prénom</th>
+                                <th class="border border-gray-300 p-2">Email</th>
+                                <th class="border border-gray-300 p-2">Téléphone</th>
+                                <th class="border border-gray-300 p-2">Adresse</th>
+                                <th class="border border-gray-300 p-2">Responsable</th>
+                                <th class="border border-gray-300 p-2">Horaires</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fournisseur-horaires"></tbody>
+                    </table>
+                </div>
+
+                <!-- Employés -->
+                <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">Employés</h3>
+                    <div id="employe-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+                    <table class="w-full mt-4 table-auto border-collapse border border-gray-300 mb-4">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="border border-gray-300 p-2">Nom</th>
+                                <th class="border border-gray-300 p-2">Prénom</th>
+                                <th class="border border-gray-300 p-2">Salaire</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employe-horaires"></tbody>
+                    </table>
+                </div>
+
+                <!-- Livreurs -->
+                <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Livreurs</h3>
+                    <div id="livreur-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+                    <table class="w-full mt-4 table-auto border-collapse border border-gray-300 mb-4">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="border border-gray-300 p-2">Nom</th>
+                                <th class="border border-gray-300 p-2">Prénom</th>
+                                <th class="border border-gray-300 p-2">Horaires</th>
+                                <th class="border border-gray-300 p-2">Véhicule</th>
+                            </tr>
+                        </thead>
+                        <tbody id="livreur-horaires"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container w-full p-6 bg-gray-100 rounded shadow-md" id="addElement7">
+            <!-- Section des indicateurs clés -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-24 mb-8 w-full">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Clients</h2>
+                    <p class="text-3xl font-bold text-gray-900">+12,5</p>
+                    <p class="text-sm text-gray-500">Taux de complétion: 85%</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Commandes</h2>
+                    <p class="text-3xl font-bold text-gray-900">+2.8%</p>
+                    <p class="text-sm text-gray-500">65% Femmes, 35% Hommes</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Commentaires</h2>
+                    <p class="text-3xl font-bold text-gray-900">+1,5</p>
+                    <p class="text-sm text-gray-500">Commentaires : 45</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Visite du site</h2>
+                    <p class="text-3xl font-bold text-gray-900">+5,4</p>
+                    <p class="text-sm text-gray-500">Taux d'engagement: 4.2%</p>
+                </div>
+            </div>
+    
+            <!-- Section des graphiques -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-24 mb-8 w-full">
+                <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-xl">
+                    <h2 class="text-xl font-semibold text-center text-gray-700">Activité par Jour</h2>
+                    <canvas id="lineChart" class="h-72"></canvas>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-xl">
+                    <h2 class="text-xl font-semibold text-center text-gray-700">Répartition des Clients</h2>
+                    <canvas id="pieChart" class="h-72 w-1/2"></canvas>
+                </div>
+            </div>
+            
+    
+            <!-- Section des statistiques supplémentaires -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-24 mb-8 w-full">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Croissance des visites</h2>
+                    <p class="text-3xl font-bold text-gray-900">15,478</p>
+                    <p class="text-sm text-gray-500">Nouveaux visites: +1,230</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Interactions Mensuelles</h2>
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+    
+            <!-- Section des graphiques supplémentaires -->
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8 w-full">
+                <h2 class="text-xl font-semibold text-center text-gray-700">Interactions Annuelles</h2>
+                <canvas id="areaChart"></canvas>
+            </div>
+    
+            <!-- Section des actions -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-24 w-full">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Paramètres</h2>
+                    <p class="text-sm text-gray-500">Gérez vos préférences</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Centre d'Aide</h2>
+                    <p class="text-sm text-gray-500">Obtenez de l'aide</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Déconnexion</h2>
+                    <p class="text-sm text-gray-500">Quittez la session</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-gray-700">Mises à Jour</h2>
+                    <p class="text-sm text-gray-500">Voir les nouveautés</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <div id="warbning" class="warbning">
@@ -229,12 +429,60 @@
         </div>
     </div>
 
+    <!-- Modale (initialement cachée) pour la mise à jour du produit -->
+    <div id="updateModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-4">Modifier le produit</h2>
+            <form id="updateForm">
+                <div class="mb-4">
+                    <label for="productName" class="block text-gray-700">Nom</label>
+                    <input type="text" id="productName" name="nom"
+                        class="mt-1 block w-full border border-gray-300 rounded p-2">
+                </div>
+                <div class="mb-4">
+                    <label for="productImage" class="block text-gray-700">URL de l'image</label>
+                    <input type="text" id="productImage" name="image"
+                        class="mt-1 block w-full border border-gray-300 rounded p-2">
+                </div>
+                <div class="mb-4">
+                    <label for="productPrice" class="block text-gray-700">Prix</label>
+                    <input type="text" id="productPrice" name="prix"
+                        class="mt-1 block w-full border border-gray-300 rounded p-2">
+                </div>
+                <div class="mb-4">
+                    <label for="productDescription" class="block text-gray-700">Description</label>
+                    <textarea id="productDescription" name="description"
+                        class="mt-1 block w-full border border-gray-300 rounded p-2"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="productStock" class="block text-gray-700">Stock</label>
+                    <input type="text" id="productStock" name="stock"
+                        class="mt-1 block w-full border border-gray-300 rounded p-2">
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" id="cancelBtn"
+                        class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+                        Annuler
+                    </button>
+                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
+                        Mettre à jour
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
     <!-- Lien vers le fichier JavaScript principal pour gérer les interactions et les fonctions dynamiques de la page -->
     <script src="../Admin/js/appAdmin.js" defer></script>
     <script type="module" src="../Admin/js/formulaire.js" defer></script>
     <script type="module" src="../Admin/js/ProduitFormulaire.js" defer></script>
     <script src="../Admin/js/update.js" defer></script>
     <script src="../Admin/js/delete.js" defer></script>
+    <script src="../Admin/js/gestionInformation.js" defer></script>
+    <script src="../Admin/js/commande.js" defer></script>
+    <script src="../Admin/js/dashboard.Js"></script>
+    <!-- <script src="../Admin/js/validationCommande.js"></script> -->
 </body>
 
 </html>

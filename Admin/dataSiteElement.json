@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "nom": "Fedal Sirop (2800 mg)",
         "image": "../Admin/assets/images/Fedal Sirop.png",
         "description": "Fedal Sirop est un médicament utilisé pour le traitement des infections et des inflammations.",
@@ -25,6 +26,7 @@
         "liens_de_reference": "https://www.fedal.fr/medicaments/medicament/fedal-sirop/"
     },
     {
+        "id":2,
         "nom": "Ibumol cp B130 (2600)",
         "image": "../Admin/assets/images/Ibumol.jpg",
         "description": "Ibumol cp B130 est un médicament anti-inflammatoire non stéroïdien (AINS), utilisé pour soulager la douleur et réduire la fièvre.",
@@ -50,6 +52,7 @@
         "liens_de_reference": "https://www.dapmed-africa.com/medicaments/view/ibumol-400-mg-500-mg-cp-boite-de-30/"
     },
     {
+        "id":3,
         "nom": "Linmox cp (500)",
         "image": "../Admin/assets/images/Linmox-500_02.jpg",
         "description": "Linmox cp est un antibiotique utilisé pour traiter les infections bactériennes.",
@@ -76,6 +79,7 @@
         "liens_de_reference": "https://www.exemple.com/linmox"
     },
     {
+        "id":4,
         "nom": "Litacold cp B120 (4500)",
         "image": "../Admin/assets/images/Litacold cp B120.png",
         "description": "Litacold cp B120 est un médicament combiné souvent utilisé pour traiter les symptômes du rhume et de la grippe.",
@@ -102,6 +106,7 @@
         "liens_de_reference": "https://www.exemple.com/litacold"
     },
     {
+        "id":5,
         "nom": "Parafiz cp (2700)",
         "image": "../Admin/assets/images/parafiz.jpeg",
         "description": "Parafiz cp est un médicament généralement utilisé comme antalgique et antipyrétique.",
@@ -127,6 +132,7 @@
         "liens_de_reference": "https://www.exemple.com/parafiz"
     },
     {
+        "id":6,
         "nom": "Apramol cp (1025)",
         "image": "../Admin/assets/images/Apramol cp (1025).webp",
         "description": "Antalgique utilisé pour soulager la douleur et réduire la fièvre.",
@@ -152,6 +158,7 @@
         "liens_de_reference": "https://www.exemple.com/apramol"
     },
     {
+        "id":7,
         "nom": "Artefan (2100)",
         "image": "../Admin/assets/images/Artefan (2100).webp",
         "description": "Médicament généralement utilisé pour le traitement des infections à virus ou des infections bactériennes.",
@@ -178,6 +185,7 @@
         "liens_de_reference": "https://www.exemple.com/artefan"
     },
     {
+        "id":8,
         "nom": "Pinko (1100)",
         "image": "../Admin/assets/images/pinko.jpg",
         "description": "Médicament efficace contre les allergies et les symptômes associés.",
@@ -203,6 +211,7 @@
         "liens_de_reference": "https://www.exemple.com/pinko"
     },
     {
+        "id":9,
         "nom": "Apdyl H (1500)",
         "image": "../Admin/assets/images/Apdyl H (1500).jpg",
         "description": "Médicament utilisé pour traiter les symptômes allergiques et inflammatoires.",
@@ -228,6 +237,7 @@
         "liens_de_reference": "https://www.exemple.com/apdyl_h"
     },
     {
+        "id":10,
         "nom": "Paracetamol (500 mg)",
         "image": "../Admin/assets/images/Paracetamol (500 mg).jpg.webp",
         "description": "Médicament anti-inflammatoire non stéroïdien, utilisé pour soulager la douleur et la fièvre.",
@@ -253,6 +263,7 @@
         "liens_de_reference": "https://www.exemple.com/paracetamol"
     },
     {
+        "id":11,
         "nom": "Ibuprofène (400 mg)",
         "image": "../Admin/assets/images/Ibuprofène (400 mg).jpg.webp",
         "description": "AINS utilisé pour réduire la douleur, l'inflammation et la fièvre.",
@@ -280,6 +291,7 @@
         "liens_de_reference": "https://www.exemple.com/ibuprofène"
     },
     {
+        "id":12,
         "nom": "Cetrizine (10 mg)",
         "image": "../Admin/assets/images/Cetrizine (10 mg).webp",
         "description": "Antihistaminique utilisé pour soulager les symptômes d'allergies.",
@@ -306,6 +318,7 @@
         "liens_de_reference": "https://www.exemple.com/cetrizine"
     },
     {
+        "id":13,
         "nom": "Omeprazole (20 mg)",
         "image": "../Admin/assets/images/Omeprazole (20 mg).jpg.webp",
         "description": "Inhibiteur de la pompe à protons, utilisé pour réduire la production d'acide gastrique.",
@@ -331,6 +344,7 @@
         "liens_de_reference": "https://www.exemple.com/omeprazole"
     },
     {
+        "id":14,
         "nom": "Amoxicilline + Acide Clavulanique (875/125 mg)",
         "image": "../Admin/assets/images/Amoxicilline + Acide Clavulanique.webp",
         "description": "Antibiotique combiné pour traiter les infections bactériennes.",
@@ -357,6 +371,7 @@
         "liens_de_reference": "https://www.exemple.com/amoxicilline_clavulanique"
     },
     {
+        "id":15,
         "nom": "Cetirizine + Pseudoéphédrine",
         "image": "../Admin/assets/images/Cetirizine + Pseudoéphédrine.jpeg",
         "description": "Combiné antihistaminique et décongestionnant.",
@@ -382,6 +397,7 @@
         "liens_de_reference": "https://www.exemple.com/cetirizine_pseudoéphédrine"
     },
     {
+        "id":16,
         "nom": "Montélukast (10 mg)",
         "image": "../Admin/assets/images/Montélukast.jpg",
         "description": "Antagoniste des récepteurs des leucotriènes, utilisé pour prévenir l'asthme.",
@@ -407,6 +423,7 @@
         "liens_de_reference": "https://www.exemple.com/montelukast"
     },
     {
+        "id":17,
         "nom": "Ranitidine (150 mg)",
         "image": "../Admin/assets/images/Ranitidine.jpg",
         "description": "Médicament utilisé pour réduire l'acidité gastrique.",
@@ -432,6 +449,7 @@
         "liens_de_reference": "https://www.exemple.com/ranitidine"
     },
     {
+        "id":18,
         "nom": "Simvastatine (20 mg)",
         "image": "../Admin/assets/images/simvastatine.avif",
         "description": "Médicament hypolipémiant utilisé pour abaisser le taux de cholestérol.",
@@ -457,6 +475,7 @@
         "liens_de_reference": "https://www.exemple.com/simvastatine"
     },
     {
+        "id":19,
         "nom": "Metformine (500 mg)",
         "image": "../Admin/assets/images/metformine2.jpg",
         "description": "Médicament antidiabétique utilisé pour traiter le diabète de type 2.",
@@ -482,6 +501,7 @@
         "liens_de_reference": "https://www.exemple.com/metformine"
     },
     {
+        "id":20,
         "nom": "Lorazépam (1 mg)",
         "image": "../Admin/assets/images/Lorazepam.jpeg",
         "description": "Benzodiazépine utilisée pour l'anxiété et les troubles du sommeil.",
@@ -507,6 +527,7 @@
         "liens_de_reference": "https://www.exemple.com/lorazepam"
     },
     {
+        "id":21,
         "nom": "Clopidogrel (75 mg)",
         "image": "../Admin/assets/images/clopidrogel.jpg",
         "description": "Médicament antiplaquettaire utilisé pour prévenir les caillots sanguins.",
@@ -531,6 +552,7 @@
         "liens_de_reference": "https://www.exemple.com/clopidogrel"
     },
     {
+        "id":22,
         "nom": "Lansoprazole (30 mg)",
         "image": "../Admin/assets/images/lansoprazole.jpeg",
         "description": "Inhibiteur de la pompe à protons pour réduire la production d'acide gastrique.",
@@ -556,6 +578,7 @@
         "liens_de_reference": "https://www.exemple.com/lansoprazole"
     },
     {
+        "id":23,
         "nom": "Furosemide (40 mg)",
         "image": "../Admin/assets/images/furosemide.jpeg",
         "description": "Diurétique utilisé pour réduire la rétention d'eau.",
@@ -581,6 +604,7 @@
         "liens_de_reference": "https://www.exemple.com/furosemide"
     },
     {
+        "id":24,
         "nom": "Amlodipine (5 mg)",
         "image": "../Admin/assets/images/Amlodipine.webp",
         "description": "Antihypertenseur utilisé pour traiter l'hypertension et l'angine de poitrine.",
@@ -606,6 +630,7 @@
         "liens_de_reference": "https://www.exemple.com/amlodipine"
     },
     {
+        "id":25,
         "nom": "Prednisone (20 mg)",
         "image": "../Admin/assets/images/prednisone.jpg",
         "description": "Corticostéroïde utilisé pour traiter l'inflammation.",
@@ -631,6 +656,7 @@
         "liens_de_reference": "https://www.exemple.com/prednisone"
     },
     {
+        "id":26,
         "nom": "Dexaméthasone (4 mg)",
         "image": "../Admin/assets/images/Dexaméthasone.webp",
         "description": "Corticostéroïde utilisé pour son effet anti-inflammatoire.",
@@ -657,6 +683,7 @@
         "liens_de_reference": "https://www.exemple.com/dexamethasone"
     },
     {
+        "id":27,
         "nom": "Erythromycine (500 mg)",
         "image": "../Admin/assets/images/Erythromycine.jpg",
         "description": "Antibiotique macrolide efficace contre divers types d'infections bactériennes.",
@@ -682,6 +709,7 @@
         "liens_de_reference": "https://www.exemple.com/erythromycine"
     },
     {
+        "id":28,
         "nom": "Tétracycline (250 mg)",
         "image": "../Admin/assets/images/Tétracycline.jpg",
         "description": "Antibiotique utilisé contre diverses infections bactériennes.",
@@ -708,6 +736,7 @@
         "liens_de_reference": "https://www.exemple.com/tetracycline"
     },
     {
+        "id":29,
         "nom": "Métronidazole (500 mg)",
         "image": "../Admin/assets/images/Métronidazole.png",
         "description": "Antibiotique utilisé contre certaines infections parasitaires et bactériennes.",
@@ -733,6 +762,7 @@
         "liens_de_reference": "https://www.exemple.com/metronidazole"
     },
     {
+        "id":30,
         "nom": "Fluconazole (150 mg)",
         "image": "../Admin/assets/images/Fluconazole.jpeg",
         "description": "Antifongique utilisé pour traiter les infections fongiques, y compris celles à levures.",
@@ -758,6 +788,7 @@
         "liens_de_reference": "https://www.exemple.com/fluconazole"
     },
     {
+        "id":31,
         "nom": "Levothyroxine (50 mcg)",
         "image": "../Admin/assets/images/Levothyroxine.jpg",
         "description": "Hormone thyroïdienne utilisée pour traiter l'hypothyroïdie.",
@@ -783,6 +814,7 @@
         "liens_de_reference": "https://www.exemple.com/levothyroxine"
     },
     {
+        "id":32,
         "nom": "Sertraline (50 mg)",
         "image": "../Admin/assets/images/Sertraline.jpg",
         "description": "Antidépresseur (inhibiteur sélectif de la recapture de la sérotonine).",
@@ -809,6 +841,7 @@
         "liens_de_reference": "https://www.exemple.com/sertraline"
     },
     {
+        "id":33,
         "nom": "Zolpidem (10 mg)",
         "image": "../Admin/assets/images/Zolpidem.webp",
         "description": "Médicament utilisé pour traiter l'insomnie à court terme.",
@@ -832,6 +865,7 @@
         "liens_de_reference": "https://www.exemple.com/zolpidem"
     },
     {
+        "id":34,
         "nom": "Propranolol (40 mg)",
         "image": "../Admin/assets/images/Propranolol.jpg",
         "description": "Bêta-bloquant utilisé pour les maladies cardiovasculaires.",
@@ -858,6 +892,7 @@
         "liens_de_reference": "https://www.exemple.com/propranolol"
     },
     {
+        "id":35,
         "nom": "Loratadine (10 mg)",
         "image": "../Admin/assets/images/Loratadine.jpg",
         "description": "Antihistaminique utilisé pour soulager les symptômes allergiques.",
@@ -883,6 +918,7 @@
         "liens_de_reference": "https://www.exemple.com/loratadine"
     },
     {
+        "id":36,
         "nom": "Salmétérol (50 mcg)",
         "image": "../Admin/assets/images/Salmétérol.webp",
         "description": "Bronchodilatateur utilisé pour le traitement de l'asthme et de la BPCO.",
@@ -908,6 +944,7 @@
         "liens_de_reference": "https://www.exemple.com/salmetérol"
     },
     {
+        "id":37,
         "nom": "Ciprofloxacine (500 mg)",
         "image": "../Admin/assets/images/Ciprofloxacine.jpeg",
         "description": "Antibiotique fluoroquinolone utilisé contre diverses infections bactériennes.",
@@ -934,6 +971,7 @@
         "liens_de_reference": "https://www.exemple.com/ciprofloxacine"
     },
     {
+        "id":38,
         "nom": "Prazosine (1 mg)",
         "image": "../Admin/assets/images/Prazosine.webp",
         "description": "Médicament antihypertenseur qui agit en relaxant les vaisseaux sanguins.",
@@ -959,6 +997,7 @@
         "liens_de_reference": "https://www.exemple.com/prazosine"
     },
     {
+        "id":39,
         "nom": "Tamsulosine (0,4 mg)",
         "image": "../Admin/assets/images/Tamsulosine.jpeg",
         "description": "Médicament utilisé pour traiter les symptômes de l'hyperplasie bénigne de la prostate.",

@@ -18,8 +18,8 @@
                     <img src="../assets\images/Logo.png" alt="logo">
                     <h1>Mot de passe oublié ? </h1>
                     <p>Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe</p>
-                    <div class="flex-column>
-                        <label for=" email">Email</label>
+                    <div class="flex-column">
+                        <label for="email" >Email</label>
                     </div>
                     <div class="inputForm">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" height="20">
